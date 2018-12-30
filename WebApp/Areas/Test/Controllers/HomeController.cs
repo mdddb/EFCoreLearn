@@ -8,11 +8,11 @@ using WebApp.Data.IMS;
 namespace WebApp.Areas.Test.Controllers
 {
     [Area(AreaNames.Test)]
-    public class HomeController : Controller
+    public class HomeController : AppBaseController
     {
-        public IActionResult Index([FromServices]IMSContext db)
+        public IActionResult Index()
         {
-            return View(db.TbEmployees);
+            return View(IMSDB.TbEmployees);
         }
     }
 }
