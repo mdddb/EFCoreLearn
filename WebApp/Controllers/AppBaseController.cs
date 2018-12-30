@@ -38,7 +38,7 @@ namespace WebApp
 
         private T GetServiceOfType<T>()
         {
-            return (T)HttpContext.RequestServices.GetService(typeof(T)));
+            return (T)HttpContext.RequestServices.GetService(typeof(T));
         }
     }
 }
