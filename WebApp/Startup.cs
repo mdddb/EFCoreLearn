@@ -67,7 +67,15 @@ namespace WebApp
                 options.User.RequireUniqueEmail = false;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(options =>
+                {
+                    var settings = options.SerializerSettings;
+                    settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                    settings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                    settings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+                    settings.Formatting = Newtonsoft.Json.Formatting.Indented;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -97,8 +105,7 @@ namespace WebApp
                     template: "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "areas",
-                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-          );
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

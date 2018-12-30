@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Castle.Core.Configuration;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Data;
 using WebApp.Data.IMS;
 
 namespace WebApp
@@ -20,6 +21,18 @@ namespace WebApp
             set
             {
                 _IMSDB = value;
+            }
+        }
+        private DBContext _db { get; set; }
+        protected DBContext db
+        {
+            get
+            {
+                return _db ?? (_db = GetServiceOfType<DBContext>());
+            }
+            set
+            {
+                _db = value;
             }
         }
 
