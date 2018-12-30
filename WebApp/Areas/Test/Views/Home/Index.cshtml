@@ -1,0 +1,22 @@
+﻿@using Microsoft.EntityFrameworkCore
+@model System.Linq.IQueryable<WebApp.Data.IMS.TbEmployee>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table-bordered">
+    <tbody>
+        @foreach (var emp in Model.Where(e => e.TmsrequestEmployees.Any()).Select(e => new { e.EmpBadge, e.EmpLname, e.EmpFname, e.EmpMname, TmsrequestEmployees = e.TmsrequestEmployees.Select(r => new { r.RefNumber }).ToList() }))
+        {
+            <tr>
+                <td>@emp.EmpBadge</td>
+                <td>@(emp.EmpLname + " " + emp.EmpFname + " " + emp.EmpMname)</td>
+                <td>
+                    @string.Join(", ", emp.TmsrequestEmployees.Select(r => r.RefNumber))
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

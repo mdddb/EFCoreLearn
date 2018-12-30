@@ -13,6 +13,7 @@ using WebApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApp.Data.Identity;
+using WebApp.Data.IMS;
 
 namespace WebApp
 {
@@ -38,6 +39,11 @@ namespace WebApp
             services.AddDbContext<DBContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<IMSContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("IMS")));
+
             services.AddDefaultIdentity<User>()
                 .AddEntityFrameworkStores<DBContext>();
 
@@ -89,6 +95,10 @@ namespace WebApp
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+          );
             });
         }
     }
