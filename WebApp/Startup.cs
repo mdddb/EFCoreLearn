@@ -78,6 +78,11 @@ namespace WebApp
                     settings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
                     settings.Formatting = Newtonsoft.Json.Formatting.Indented;
                 });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info() { Title = "My Api", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -110,6 +115,9 @@ namespace WebApp
                     name: "areas",
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseSwagger()
+                .UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Api V1"));
         }
     }
 }

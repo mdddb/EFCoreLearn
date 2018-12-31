@@ -17,7 +17,10 @@ namespace WebApp.Controllers
         {
             IMSDB.ChangeTracker.LazyLoadingEnabled = false;
             //return db.Users.First();
-            return IMSDB.TbEmployees.Include(e => e.TmsrequestEmployees).First(e => e.TmsrequestEmployees.Any());
+            if (true)
+                return IMSDB.TbEmployees.Include(e => e.TmsrequestEmployees).First(e => e.TmsrequestEmployees.Any());
+            else
+                return NotFound();
         }
     }
 }
