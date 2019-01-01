@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+
+    {
+      "provider": "cdnjs",
+      "library": "air-datepicker@2.2.3",
+      "destination": "wwwroot/lib/air-datepicker/"
+    }
+  ]
+}

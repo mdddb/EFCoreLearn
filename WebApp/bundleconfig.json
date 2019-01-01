@@ -1,0 +1,22 @@
+[
+  {
+    "outputFileName": "wwwroot/Bundles/libraries.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/jquery.js",
+      "wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "wwwroot/lib/air-datepicker/js/i18n/datepicker.en.js",
+      "wwwroot/lib/air-datepicker/js/datepicker.js",
+      "wwwroot/js/site.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/Bundles/libraries.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/lib/air-datepicker/css/datepicker.css",
+      "wwwroot/css/site.css"
+    ]
+  }
+]
