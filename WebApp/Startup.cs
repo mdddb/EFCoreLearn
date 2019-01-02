@@ -88,6 +88,8 @@ namespace WebApp
             {
                 options.EnableForHttps = true;
             });
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -125,6 +127,11 @@ namespace WebApp
 
             app.UseSwagger()
                 .UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Api V1"));
+
+            app.UseSignalR(x =>
+            {
+                x.MapHub<ChatHub>("/chat");
+            });
         }
     }
 }

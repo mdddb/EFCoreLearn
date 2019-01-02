@@ -6,7 +6,8 @@
       "wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "wwwroot/lib/air-datepicker/js/i18n/datepicker.en.js",
       "wwwroot/lib/air-datepicker/js/datepicker.js",
-      "wwwroot/js/site.js"
+      "wwwroot/js/site.js",
+      "wwwroot/lib/jquery.signalR.js"
     ]
   },
   {
