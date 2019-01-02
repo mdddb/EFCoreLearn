@@ -8,9 +8,8 @@
       "destination": "wwwroot/lib/air-datepicker/"
     },
     {
-      "library": "signalr.js@2.4.0",
-      "destination": "wwwroot/lib/",
-      "provider": "cdnjs"
+      "library": "moment.js@2.23.0",
+      "destination": "wwwroot/lib/moment.js/"
     }
   ]
 }
