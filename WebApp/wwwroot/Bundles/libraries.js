@@ -14308,18 +14308,6 @@ return jQuery;
 })));
 //# sourceMappingURL=bootstrap.js.map
 
-;(function ($) { $.fn.datepicker.language['en'] = {
-    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-    months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
-    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    today: 'Today',
-    clear: 'Clear',
-    dateFormat: 'mm/dd/yyyy',
-    timeFormat: 'hh:ii aa',
-    firstDay: 0
-}; })(jQuery);
 ;(function (window, $, undefined) { ;(function () {
     var VERSION = '2.2.3',
         pluginName = 'datepicker',
@@ -16556,3127 +16544,4108 @@ return jQuery;
     };
 })();
  })(window, jQuery);
+;(function ($) { $.fn.datepicker.language['en'] = {
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    today: 'Today',
+    clear: 'Clear',
+    dateFormat: 'mm/dd/yyyy',
+    timeFormat: 'hh:ii aa',
+    firstDay: 0
+}; })(jQuery);
 // Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
 
-/* jquery.signalR.core.js */
-/*global window:false */
-/*!
- * ASP.NET SignalR JavaScript Library 2.4.0
- * http://signalr.net/
- *
- * Copyright (c) .NET Foundation. All rights reserved.
- * Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
- *
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["signalR"] = factory();
+	else
+		root["signalR"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var es6_promise_dist_es6_promise_auto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var es6_promise_dist_es6_promise_auto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(es6_promise_dist_es6_promise_auto_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VERSION", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["VERSION"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AbortError", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["AbortError"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpError", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["HttpError"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeoutError", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["TimeoutError"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpClient", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpResponse", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["HttpResponse"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DefaultHttpClient", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["DefaultHttpClient"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HubConnection", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["HubConnection"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HubConnectionState", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["HubConnectionState"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HubConnectionBuilder", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["HubConnectionBuilder"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MessageType", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["MessageType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LogLevel", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["LogLevel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpTransportType", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["HttpTransportType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TransferFormat", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["TransferFormat"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NullLogger", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["NullLogger"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JsonHubProtocol", function() { return _index__WEBPACK_IMPORTED_MODULE_1__["JsonHubProtocol"]; });
+
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+// This is where we add any polyfills we'll need for the browser. It is the entry module for browser-specific builds.
+
+// Copy from Array.prototype into Uint8Array to polyfill on IE. It's OK because the implementations of indexOf and slice use properties
+// that exist on Uint8Array with the same name, and JavaScript is magic.
+// We make them 'writable' because the Buffer polyfill messes with it as well.
+if (!Uint8Array.prototype.indexOf) {
+    Object.defineProperty(Uint8Array.prototype, "indexOf", {
+        value: Array.prototype.indexOf,
+        writable: true,
+    });
+}
+if (!Uint8Array.prototype.slice) {
+    Object.defineProperty(Uint8Array.prototype, "slice", {
+        value: Array.prototype.slice,
+        writable: true,
+    });
+}
+if (!Uint8Array.prototype.forEach) {
+    Object.defineProperty(Uint8Array.prototype, "forEach", {
+        value: Array.prototype.forEach,
+        writable: true,
+    });
+}
+
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var require;/*!
+ * @overview es6-promise - a tiny implementation of Promises/A+.
+ * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
+ * @license   Licensed under MIT license
+ *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
+ * @version   v4.2.2+97478eb6
  */
 
-/// <reference path="Scripts/jquery-1.6.4.js" />
-/// <reference path="jquery.signalR.version.js" />
-(function ($, window, undefined) {
+(function (global, factory) {
+	 true ? module.exports = factory() :
+	undefined;
+}(this, (function () { 'use strict';
 
-    var resources = {
-        nojQuery: "jQuery was not found. Please ensure jQuery is referenced before the SignalR client JavaScript file.",
-        noTransportOnInit: "No transport could be initialized successfully. Try specifying a different transport or none at all for auto initialization.",
-        errorOnNegotiate: "Error during negotiation request.",
-        stoppedWhileLoading: "The connection was stopped during page load.",
-        stoppedWhileNegotiating: "The connection was stopped during the negotiate request.",
-        errorParsingNegotiateResponse: "Error parsing negotiate response.",
-        errorRedirectionExceedsLimit: "Negotiate redirection limit exceeded.",
-        errorDuringStartRequest: "Error during start request. Stopping the connection.",
-        errorFromServer: "Error message received from the server: '{0}'.",
-        stoppedDuringStartRequest: "The connection was stopped during the start request.",
-        errorParsingStartResponse: "Error parsing start response: '{0}'. Stopping the connection.",
-        invalidStartResponse: "Invalid start response: '{0}'. Stopping the connection.",
-        protocolIncompatible: "You are using a version of the client that isn't compatible with the server. Client version {0}, server version {1}.",
-        aspnetCoreSignalrServer: "Detected a connection attempt to an ASP.NET Core SignalR Server. This client only supports connecting to an ASP.NET SignalR Server. See https://aka.ms/signalr-core-differences for details.",
-        sendFailed: "Send failed.",
-        parseFailed: "Failed at parsing response: {0}",
-        longPollFailed: "Long polling request failed.",
-        eventSourceFailedToConnect: "EventSource failed to connect.",
-        eventSourceError: "Error raised by EventSource",
-        webSocketClosed: "WebSocket closed.",
-        pingServerFailedInvalidResponse: "Invalid ping response when pinging server: '{0}'.",
-        pingServerFailed: "Failed to ping server.",
-        pingServerFailedStatusCode: "Failed to ping server.  Server responded with status code {0}, stopping the connection.",
-        pingServerFailedParse: "Failed to parse ping server response, stopping the connection.",
-        noConnectionTransport: "Connection is in an invalid state, there is no transport active.",
-        webSocketsInvalidState: "The Web Socket transport is in an invalid state, transitioning into reconnecting.",
-        reconnectTimeout: "Couldn't reconnect within the configured timeout of {0} ms, disconnecting.",
-        reconnectWindowTimeout: "The client has been inactive since {0} and it has exceeded the inactivity timeout of {1} ms. Stopping the connection.",
-        jsonpNotSupportedWithAccessToken: "The JSONP protocol does not support connections that require a Bearer token to connect, such as the Azure SignalR Service."
+function objectOrFunction(x) {
+  var type = typeof x;
+  return x !== null && (type === 'object' || type === 'function');
+}
+
+function isFunction(x) {
+  return typeof x === 'function';
+}
+
+
+
+var _isArray = void 0;
+if (Array.isArray) {
+  _isArray = Array.isArray;
+} else {
+  _isArray = function (x) {
+    return Object.prototype.toString.call(x) === '[object Array]';
+  };
+}
+
+var isArray = _isArray;
+
+var len = 0;
+var vertxNext = void 0;
+var customSchedulerFn = void 0;
+
+var asap = function asap(callback, arg) {
+  queue[len] = callback;
+  queue[len + 1] = arg;
+  len += 2;
+  if (len === 2) {
+    // If len is 2, that means that we need to schedule an async flush.
+    // If additional callbacks are queued before the queue is flushed, they
+    // will be processed by this flush that we are scheduling.
+    if (customSchedulerFn) {
+      customSchedulerFn(flush);
+    } else {
+      scheduleFlush();
+    }
+  }
+};
+
+function setScheduler(scheduleFn) {
+  customSchedulerFn = scheduleFn;
+}
+
+function setAsap(asapFn) {
+  asap = asapFn;
+}
+
+var browserWindow = typeof window !== 'undefined' ? window : undefined;
+var browserGlobal = browserWindow || {};
+var BrowserMutationObserver = browserGlobal.MutationObserver || browserGlobal.WebKitMutationObserver;
+var isNode = typeof self === 'undefined' && typeof process !== 'undefined' && {}.toString.call(process) === '[object process]';
+
+// test for web worker but not in IE10
+var isWorker = typeof Uint8ClampedArray !== 'undefined' && typeof importScripts !== 'undefined' && typeof MessageChannel !== 'undefined';
+
+// node
+function useNextTick() {
+  // node version 0.10.x displays a deprecation warning when nextTick is used recursively
+  // see https://github.com/cujojs/when/issues/410 for details
+  return function () {
+    return process.nextTick(flush);
+  };
+}
+
+// vertx
+function useVertxTimer() {
+  if (typeof vertxNext !== 'undefined') {
+    return function () {
+      vertxNext(flush);
     };
+  }
 
-    if (typeof ($) !== "function") {
-        // no jQuery!
-        throw new Error(resources.nojQuery);
+  return useSetTimeout();
+}
+
+function useMutationObserver() {
+  var iterations = 0;
+  var observer = new BrowserMutationObserver(flush);
+  var node = document.createTextNode('');
+  observer.observe(node, { characterData: true });
+
+  return function () {
+    node.data = iterations = ++iterations % 2;
+  };
+}
+
+// web worker
+function useMessageChannel() {
+  var channel = new MessageChannel();
+  channel.port1.onmessage = flush;
+  return function () {
+    return channel.port2.postMessage(0);
+  };
+}
+
+function useSetTimeout() {
+  // Store setTimeout reference so es6-promise will be unaffected by
+  // other code modifying setTimeout (like sinon.useFakeTimers())
+  var globalSetTimeout = setTimeout;
+  return function () {
+    return globalSetTimeout(flush, 1);
+  };
+}
+
+var queue = new Array(1000);
+function flush() {
+  for (var i = 0; i < len; i += 2) {
+    var callback = queue[i];
+    var arg = queue[i + 1];
+
+    callback(arg);
+
+    queue[i] = undefined;
+    queue[i + 1] = undefined;
+  }
+
+  len = 0;
+}
+
+function attemptVertx() {
+  try {
+    var r = require;
+    var vertx = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'vertx'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+    vertxNext = vertx.runOnLoop || vertx.runOnContext;
+    return useVertxTimer();
+  } catch (e) {
+    return useSetTimeout();
+  }
+}
+
+var scheduleFlush = void 0;
+// Decide what async method to use to triggering processing of queued callbacks:
+if (isNode) {
+  scheduleFlush = useNextTick();
+} else if (BrowserMutationObserver) {
+  scheduleFlush = useMutationObserver();
+} else if (isWorker) {
+  scheduleFlush = useMessageChannel();
+} else if (browserWindow === undefined && "function" === 'function') {
+  scheduleFlush = attemptVertx();
+} else {
+  scheduleFlush = useSetTimeout();
+}
+
+function then(onFulfillment, onRejection) {
+  var parent = this;
+
+  var child = new this.constructor(noop);
+
+  if (child[PROMISE_ID] === undefined) {
+    makePromise(child);
+  }
+
+  var _state = parent._state;
+
+
+  if (_state) {
+    var callback = arguments[_state - 1];
+    asap(function () {
+      return invokeCallback(_state, child, callback, parent._result);
+    });
+  } else {
+    subscribe(parent, child, onFulfillment, onRejection);
+  }
+
+  return child;
+}
+
+/**
+  `Promise.resolve` returns a promise that will become resolved with the
+  passed `value`. It is shorthand for the following:
+
+  ```javascript
+  let promise = new Promise(function(resolve, reject){
+    resolve(1);
+  });
+
+  promise.then(function(value){
+    // value === 1
+  });
+  ```
+
+  Instead of writing the above, your code now simply becomes the following:
+
+  ```javascript
+  let promise = Promise.resolve(1);
+
+  promise.then(function(value){
+    // value === 1
+  });
+  ```
+
+  @method resolve
+  @static
+  @param {Any} value value that the returned promise will be resolved with
+  Useful for tooling.
+  @return {Promise} a promise that will become fulfilled with the given
+  `value`
+*/
+function resolve$1(object) {
+  /*jshint validthis:true */
+  var Constructor = this;
+
+  if (object && typeof object === 'object' && object.constructor === Constructor) {
+    return object;
+  }
+
+  var promise = new Constructor(noop);
+  resolve(promise, object);
+  return promise;
+}
+
+var PROMISE_ID = Math.random().toString(36).substring(16);
+
+function noop() {}
+
+var PENDING = void 0;
+var FULFILLED = 1;
+var REJECTED = 2;
+
+var GET_THEN_ERROR = new ErrorObject();
+
+function selfFulfillment() {
+  return new TypeError("You cannot resolve a promise with itself");
+}
+
+function cannotReturnOwn() {
+  return new TypeError('A promises callback cannot return that same promise.');
+}
+
+function getThen(promise) {
+  try {
+    return promise.then;
+  } catch (error) {
+    GET_THEN_ERROR.error = error;
+    return GET_THEN_ERROR;
+  }
+}
+
+function tryThen(then$$1, value, fulfillmentHandler, rejectionHandler) {
+  try {
+    then$$1.call(value, fulfillmentHandler, rejectionHandler);
+  } catch (e) {
+    return e;
+  }
+}
+
+function handleForeignThenable(promise, thenable, then$$1) {
+  asap(function (promise) {
+    var sealed = false;
+    var error = tryThen(then$$1, thenable, function (value) {
+      if (sealed) {
+        return;
+      }
+      sealed = true;
+      if (thenable !== value) {
+        resolve(promise, value);
+      } else {
+        fulfill(promise, value);
+      }
+    }, function (reason) {
+      if (sealed) {
+        return;
+      }
+      sealed = true;
+
+      reject(promise, reason);
+    }, 'Settle: ' + (promise._label || ' unknown promise'));
+
+    if (!sealed && error) {
+      sealed = true;
+      reject(promise, error);
+    }
+  }, promise);
+}
+
+function handleOwnThenable(promise, thenable) {
+  if (thenable._state === FULFILLED) {
+    fulfill(promise, thenable._result);
+  } else if (thenable._state === REJECTED) {
+    reject(promise, thenable._result);
+  } else {
+    subscribe(thenable, undefined, function (value) {
+      return resolve(promise, value);
+    }, function (reason) {
+      return reject(promise, reason);
+    });
+  }
+}
+
+function handleMaybeThenable(promise, maybeThenable, then$$1) {
+  if (maybeThenable.constructor === promise.constructor && then$$1 === then && maybeThenable.constructor.resolve === resolve$1) {
+    handleOwnThenable(promise, maybeThenable);
+  } else {
+    if (then$$1 === GET_THEN_ERROR) {
+      reject(promise, GET_THEN_ERROR.error);
+      GET_THEN_ERROR.error = null;
+    } else if (then$$1 === undefined) {
+      fulfill(promise, maybeThenable);
+    } else if (isFunction(then$$1)) {
+      handleForeignThenable(promise, maybeThenable, then$$1);
+    } else {
+      fulfill(promise, maybeThenable);
+    }
+  }
+}
+
+function resolve(promise, value) {
+  if (promise === value) {
+    reject(promise, selfFulfillment());
+  } else if (objectOrFunction(value)) {
+    handleMaybeThenable(promise, value, getThen(value));
+  } else {
+    fulfill(promise, value);
+  }
+}
+
+function publishRejection(promise) {
+  if (promise._onerror) {
+    promise._onerror(promise._result);
+  }
+
+  publish(promise);
+}
+
+function fulfill(promise, value) {
+  if (promise._state !== PENDING) {
+    return;
+  }
+
+  promise._result = value;
+  promise._state = FULFILLED;
+
+  if (promise._subscribers.length !== 0) {
+    asap(publish, promise);
+  }
+}
+
+function reject(promise, reason) {
+  if (promise._state !== PENDING) {
+    return;
+  }
+  promise._state = REJECTED;
+  promise._result = reason;
+
+  asap(publishRejection, promise);
+}
+
+function subscribe(parent, child, onFulfillment, onRejection) {
+  var _subscribers = parent._subscribers;
+  var length = _subscribers.length;
+
+
+  parent._onerror = null;
+
+  _subscribers[length] = child;
+  _subscribers[length + FULFILLED] = onFulfillment;
+  _subscribers[length + REJECTED] = onRejection;
+
+  if (length === 0 && parent._state) {
+    asap(publish, parent);
+  }
+}
+
+function publish(promise) {
+  var subscribers = promise._subscribers;
+  var settled = promise._state;
+
+  if (subscribers.length === 0) {
+    return;
+  }
+
+  var child = void 0,
+      callback = void 0,
+      detail = promise._result;
+
+  for (var i = 0; i < subscribers.length; i += 3) {
+    child = subscribers[i];
+    callback = subscribers[i + settled];
+
+    if (child) {
+      invokeCallback(settled, child, callback, detail);
+    } else {
+      callback(detail);
+    }
+  }
+
+  promise._subscribers.length = 0;
+}
+
+function ErrorObject() {
+  this.error = null;
+}
+
+var TRY_CATCH_ERROR = new ErrorObject();
+
+function tryCatch(callback, detail) {
+  try {
+    return callback(detail);
+  } catch (e) {
+    TRY_CATCH_ERROR.error = e;
+    return TRY_CATCH_ERROR;
+  }
+}
+
+function invokeCallback(settled, promise, callback, detail) {
+  var hasCallback = isFunction(callback),
+      value = void 0,
+      error = void 0,
+      succeeded = void 0,
+      failed = void 0;
+
+  if (hasCallback) {
+    value = tryCatch(callback, detail);
+
+    if (value === TRY_CATCH_ERROR) {
+      failed = true;
+      error = value.error;
+      value.error = null;
+    } else {
+      succeeded = true;
     }
 
-    var signalR,
-        _connection,
-        _pageLoaded = (window.document.readyState === "complete"),
-        _pageWindow = $(window),
-        _negotiateAbortText = "__Negotiate Aborted__",
-        events = {
-            onStart: "onStart",
-            onStarting: "onStarting",
-            onReceived: "onReceived",
-            onError: "onError",
-            onConnectionSlow: "onConnectionSlow",
-            onReconnecting: "onReconnecting",
-            onReconnect: "onReconnect",
-            onStateChanged: "onStateChanged",
-            onDisconnect: "onDisconnect"
-        },
-        ajaxDefaults = {
-            processData: true,
-            timeout: null,
-            async: true,
-            global: false,
-            cache: false
-        },
-        log = function (msg, logging) {
-            if (logging === false) {
-                return;
+    if (promise === value) {
+      reject(promise, cannotReturnOwn());
+      return;
+    }
+  } else {
+    value = detail;
+    succeeded = true;
+  }
+
+  if (promise._state !== PENDING) {
+    // noop
+  } else if (hasCallback && succeeded) {
+    resolve(promise, value);
+  } else if (failed) {
+    reject(promise, error);
+  } else if (settled === FULFILLED) {
+    fulfill(promise, value);
+  } else if (settled === REJECTED) {
+    reject(promise, value);
+  }
+}
+
+function initializePromise(promise, resolver) {
+  try {
+    resolver(function resolvePromise(value) {
+      resolve(promise, value);
+    }, function rejectPromise(reason) {
+      reject(promise, reason);
+    });
+  } catch (e) {
+    reject(promise, e);
+  }
+}
+
+var id = 0;
+function nextId() {
+  return id++;
+}
+
+function makePromise(promise) {
+  promise[PROMISE_ID] = id++;
+  promise._state = undefined;
+  promise._result = undefined;
+  promise._subscribers = [];
+}
+
+function validationError() {
+  return new Error('Array Methods must be provided an Array');
+}
+
+function validationError() {
+  return new Error('Array Methods must be provided an Array');
+}
+
+var Enumerator = function () {
+  function Enumerator(Constructor, input) {
+    this._instanceConstructor = Constructor;
+    this.promise = new Constructor(noop);
+
+    if (!this.promise[PROMISE_ID]) {
+      makePromise(this.promise);
+    }
+
+    if (isArray(input)) {
+      this.length = input.length;
+      this._remaining = input.length;
+
+      this._result = new Array(this.length);
+
+      if (this.length === 0) {
+        fulfill(this.promise, this._result);
+      } else {
+        this.length = this.length || 0;
+        this._enumerate(input);
+        if (this._remaining === 0) {
+          fulfill(this.promise, this._result);
+        }
+      }
+    } else {
+      reject(this.promise, validationError());
+    }
+  }
+
+  Enumerator.prototype._enumerate = function _enumerate(input) {
+    for (var i = 0; this._state === PENDING && i < input.length; i++) {
+      this._eachEntry(input[i], i);
+    }
+  };
+
+  Enumerator.prototype._eachEntry = function _eachEntry(entry, i) {
+    var c = this._instanceConstructor;
+    var resolve$$1 = c.resolve;
+
+
+    if (resolve$$1 === resolve$1) {
+      var _then = getThen(entry);
+
+      if (_then === then && entry._state !== PENDING) {
+        this._settledAt(entry._state, i, entry._result);
+      } else if (typeof _then !== 'function') {
+        this._remaining--;
+        this._result[i] = entry;
+      } else if (c === Promise$2) {
+        var promise = new c(noop);
+        handleMaybeThenable(promise, entry, _then);
+        this._willSettleAt(promise, i);
+      } else {
+        this._willSettleAt(new c(function (resolve$$1) {
+          return resolve$$1(entry);
+        }), i);
+      }
+    } else {
+      this._willSettleAt(resolve$$1(entry), i);
+    }
+  };
+
+  Enumerator.prototype._settledAt = function _settledAt(state, i, value) {
+    var promise = this.promise;
+
+
+    if (promise._state === PENDING) {
+      this._remaining--;
+
+      if (state === REJECTED) {
+        reject(promise, value);
+      } else {
+        this._result[i] = value;
+      }
+    }
+
+    if (this._remaining === 0) {
+      fulfill(promise, this._result);
+    }
+  };
+
+  Enumerator.prototype._willSettleAt = function _willSettleAt(promise, i) {
+    var enumerator = this;
+
+    subscribe(promise, undefined, function (value) {
+      return enumerator._settledAt(FULFILLED, i, value);
+    }, function (reason) {
+      return enumerator._settledAt(REJECTED, i, reason);
+    });
+  };
+
+  return Enumerator;
+}();
+
+/**
+  `Promise.all` accepts an array of promises, and returns a new promise which
+  is fulfilled with an array of fulfillment values for the passed promises, or
+  rejected with the reason of the first passed promise to be rejected. It casts all
+  elements of the passed iterable to promises as it runs this algorithm.
+
+  Example:
+
+  ```javascript
+  let promise1 = resolve(1);
+  let promise2 = resolve(2);
+  let promise3 = resolve(3);
+  let promises = [ promise1, promise2, promise3 ];
+
+  Promise.all(promises).then(function(array){
+    // The array here would be [ 1, 2, 3 ];
+  });
+  ```
+
+  If any of the `promises` given to `all` are rejected, the first promise
+  that is rejected will be given as an argument to the returned promises's
+  rejection handler. For example:
+
+  Example:
+
+  ```javascript
+  let promise1 = resolve(1);
+  let promise2 = reject(new Error("2"));
+  let promise3 = reject(new Error("3"));
+  let promises = [ promise1, promise2, promise3 ];
+
+  Promise.all(promises).then(function(array){
+    // Code here never runs because there are rejected promises!
+  }, function(error) {
+    // error.message === "2"
+  });
+  ```
+
+  @method all
+  @static
+  @param {Array} entries array of promises
+  @param {String} label optional string for labeling the promise.
+  Useful for tooling.
+  @return {Promise} promise that is fulfilled when all `promises` have been
+  fulfilled, or rejected if any of them become rejected.
+  @static
+*/
+function all(entries) {
+  return new Enumerator(this, entries).promise;
+}
+
+/**
+  `Promise.race` returns a new promise which is settled in the same way as the
+  first passed promise to settle.
+
+  Example:
+
+  ```javascript
+  let promise1 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+      resolve('promise 1');
+    }, 200);
+  });
+
+  let promise2 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+      resolve('promise 2');
+    }, 100);
+  });
+
+  Promise.race([promise1, promise2]).then(function(result){
+    // result === 'promise 2' because it was resolved before promise1
+    // was resolved.
+  });
+  ```
+
+  `Promise.race` is deterministic in that only the state of the first
+  settled promise matters. For example, even if other promises given to the
+  `promises` array argument are resolved, but the first settled promise has
+  become rejected before the other promises became fulfilled, the returned
+  promise will become rejected:
+
+  ```javascript
+  let promise1 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+      resolve('promise 1');
+    }, 200);
+  });
+
+  let promise2 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+      reject(new Error('promise 2'));
+    }, 100);
+  });
+
+  Promise.race([promise1, promise2]).then(function(result){
+    // Code here never runs
+  }, function(reason){
+    // reason.message === 'promise 2' because promise 2 became rejected before
+    // promise 1 became fulfilled
+  });
+  ```
+
+  An example real-world use case is implementing timeouts:
+
+  ```javascript
+  Promise.race([ajax('foo.json'), timeout(5000)])
+  ```
+
+  @method race
+  @static
+  @param {Array} promises array of promises to observe
+  Useful for tooling.
+  @return {Promise} a promise which settles in the same way as the first passed
+  promise to settle.
+*/
+function race(entries) {
+  /*jshint validthis:true */
+  var Constructor = this;
+
+  if (!isArray(entries)) {
+    return new Constructor(function (_, reject) {
+      return reject(new TypeError('You must pass an array to race.'));
+    });
+  } else {
+    return new Constructor(function (resolve, reject) {
+      var length = entries.length;
+      for (var i = 0; i < length; i++) {
+        Constructor.resolve(entries[i]).then(resolve, reject);
+      }
+    });
+  }
+}
+
+/**
+  `Promise.reject` returns a promise rejected with the passed `reason`.
+  It is shorthand for the following:
+
+  ```javascript
+  let promise = new Promise(function(resolve, reject){
+    reject(new Error('WHOOPS'));
+  });
+
+  promise.then(function(value){
+    // Code here doesn't run because the promise is rejected!
+  }, function(reason){
+    // reason.message === 'WHOOPS'
+  });
+  ```
+
+  Instead of writing the above, your code now simply becomes the following:
+
+  ```javascript
+  let promise = Promise.reject(new Error('WHOOPS'));
+
+  promise.then(function(value){
+    // Code here doesn't run because the promise is rejected!
+  }, function(reason){
+    // reason.message === 'WHOOPS'
+  });
+  ```
+
+  @method reject
+  @static
+  @param {Any} reason value that the returned promise will be rejected with.
+  Useful for tooling.
+  @return {Promise} a promise rejected with the given `reason`.
+*/
+function reject$1(reason) {
+  /*jshint validthis:true */
+  var Constructor = this;
+  var promise = new Constructor(noop);
+  reject(promise, reason);
+  return promise;
+}
+
+function needsResolver() {
+  throw new TypeError('You must pass a resolver function as the first argument to the promise constructor');
+}
+
+function needsNew() {
+  throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");
+}
+
+/**
+  Promise objects represent the eventual result of an asynchronous operation. The
+  primary way of interacting with a promise is through its `then` method, which
+  registers callbacks to receive either a promise's eventual value or the reason
+  why the promise cannot be fulfilled.
+
+  Terminology
+  -----------
+
+  - `promise` is an object or function with a `then` method whose behavior conforms to this specification.
+  - `thenable` is an object or function that defines a `then` method.
+  - `value` is any legal JavaScript value (including undefined, a thenable, or a promise).
+  - `exception` is a value that is thrown using the throw statement.
+  - `reason` is a value that indicates why a promise was rejected.
+  - `settled` the final resting state of a promise, fulfilled or rejected.
+
+  A promise can be in one of three states: pending, fulfilled, or rejected.
+
+  Promises that are fulfilled have a fulfillment value and are in the fulfilled
+  state.  Promises that are rejected have a rejection reason and are in the
+  rejected state.  A fulfillment value is never a thenable.
+
+  Promises can also be said to *resolve* a value.  If this value is also a
+  promise, then the original promise's settled state will match the value's
+  settled state.  So a promise that *resolves* a promise that rejects will
+  itself reject, and a promise that *resolves* a promise that fulfills will
+  itself fulfill.
+
+
+  Basic Usage:
+  ------------
+
+  ```js
+  let promise = new Promise(function(resolve, reject) {
+    // on success
+    resolve(value);
+
+    // on failure
+    reject(reason);
+  });
+
+  promise.then(function(value) {
+    // on fulfillment
+  }, function(reason) {
+    // on rejection
+  });
+  ```
+
+  Advanced Usage:
+  ---------------
+
+  Promises shine when abstracting away asynchronous interactions such as
+  `XMLHttpRequest`s.
+
+  ```js
+  function getJSON(url) {
+    return new Promise(function(resolve, reject){
+      let xhr = new XMLHttpRequest();
+
+      xhr.open('GET', url);
+      xhr.onreadystatechange = handler;
+      xhr.responseType = 'json';
+      xhr.setRequestHeader('Accept', 'application/json');
+      xhr.send();
+
+      function handler() {
+        if (this.readyState === this.DONE) {
+          if (this.status === 200) {
+            resolve(this.response);
+          } else {
+            reject(new Error('getJSON: `' + url + '` failed with status: [' + this.status + ']'));
+          }
+        }
+      };
+    });
+  }
+
+  getJSON('/posts.json').then(function(json) {
+    // on fulfillment
+  }, function(reason) {
+    // on rejection
+  });
+  ```
+
+  Unlike callbacks, promises are great composable primitives.
+
+  ```js
+  Promise.all([
+    getJSON('/posts'),
+    getJSON('/comments')
+  ]).then(function(values){
+    values[0] // => postsJSON
+    values[1] // => commentsJSON
+
+    return values;
+  });
+  ```
+
+  @class Promise
+  @param {Function} resolver
+  Useful for tooling.
+  @constructor
+*/
+
+var Promise$2 = function () {
+  function Promise(resolver) {
+    this[PROMISE_ID] = nextId();
+    this._result = this._state = undefined;
+    this._subscribers = [];
+
+    if (noop !== resolver) {
+      typeof resolver !== 'function' && needsResolver();
+      this instanceof Promise ? initializePromise(this, resolver) : needsNew();
+    }
+  }
+
+  /**
+  The primary way of interacting with a promise is through its `then` method,
+  which registers callbacks to receive either a promise's eventual value or the
+  reason why the promise cannot be fulfilled.
+   ```js
+  findUser().then(function(user){
+    // user is available
+  }, function(reason){
+    // user is unavailable, and you are given the reason why
+  });
+  ```
+   Chaining
+  --------
+   The return value of `then` is itself a promise.  This second, 'downstream'
+  promise is resolved with the return value of the first promise's fulfillment
+  or rejection handler, or rejected if the handler throws an exception.
+   ```js
+  findUser().then(function (user) {
+    return user.name;
+  }, function (reason) {
+    return 'default name';
+  }).then(function (userName) {
+    // If `findUser` fulfilled, `userName` will be the user's name, otherwise it
+    // will be `'default name'`
+  });
+   findUser().then(function (user) {
+    throw new Error('Found user, but still unhappy');
+  }, function (reason) {
+    throw new Error('`findUser` rejected and we're unhappy');
+  }).then(function (value) {
+    // never reached
+  }, function (reason) {
+    // if `findUser` fulfilled, `reason` will be 'Found user, but still unhappy'.
+    // If `findUser` rejected, `reason` will be '`findUser` rejected and we're unhappy'.
+  });
+  ```
+  If the downstream promise does not specify a rejection handler, rejection reasons will be propagated further downstream.
+   ```js
+  findUser().then(function (user) {
+    throw new PedagogicalException('Upstream error');
+  }).then(function (value) {
+    // never reached
+  }).then(function (value) {
+    // never reached
+  }, function (reason) {
+    // The `PedgagocialException` is propagated all the way down to here
+  });
+  ```
+   Assimilation
+  ------------
+   Sometimes the value you want to propagate to a downstream promise can only be
+  retrieved asynchronously. This can be achieved by returning a promise in the
+  fulfillment or rejection handler. The downstream promise will then be pending
+  until the returned promise is settled. This is called *assimilation*.
+   ```js
+  findUser().then(function (user) {
+    return findCommentsByAuthor(user);
+  }).then(function (comments) {
+    // The user's comments are now available
+  });
+  ```
+   If the assimliated promise rejects, then the downstream promise will also reject.
+   ```js
+  findUser().then(function (user) {
+    return findCommentsByAuthor(user);
+  }).then(function (comments) {
+    // If `findCommentsByAuthor` fulfills, we'll have the value here
+  }, function (reason) {
+    // If `findCommentsByAuthor` rejects, we'll have the reason here
+  });
+  ```
+   Simple Example
+  --------------
+   Synchronous Example
+   ```javascript
+  let result;
+   try {
+    result = findResult();
+    // success
+  } catch(reason) {
+    // failure
+  }
+  ```
+   Errback Example
+   ```js
+  findResult(function(result, err){
+    if (err) {
+      // failure
+    } else {
+      // success
+    }
+  });
+  ```
+   Promise Example;
+   ```javascript
+  findResult().then(function(result){
+    // success
+  }, function(reason){
+    // failure
+  });
+  ```
+   Advanced Example
+  --------------
+   Synchronous Example
+   ```javascript
+  let author, books;
+   try {
+    author = findAuthor();
+    books  = findBooksByAuthor(author);
+    // success
+  } catch(reason) {
+    // failure
+  }
+  ```
+   Errback Example
+   ```js
+   function foundBooks(books) {
+   }
+   function failure(reason) {
+   }
+   findAuthor(function(author, err){
+    if (err) {
+      failure(err);
+      // failure
+    } else {
+      try {
+        findBoooksByAuthor(author, function(books, err) {
+          if (err) {
+            failure(err);
+          } else {
+            try {
+              foundBooks(books);
+            } catch(reason) {
+              failure(reason);
             }
-            var m;
-            if (typeof (window.console) === "undefined") {
-                return;
-            }
-            m = "[" + new Date().toTimeString() + "] SignalR: " + msg;
-            if (window.console.debug) {
-                window.console.debug(m);
-            } else if (window.console.log) {
-                window.console.log(m);
-            }
-        },
+          }
+        });
+      } catch(error) {
+        failure(err);
+      }
+      // success
+    }
+  });
+  ```
+   Promise Example;
+   ```javascript
+  findAuthor().
+    then(findBooksByAuthor).
+    then(function(books){
+      // found books
+  }).catch(function(reason){
+    // something went wrong
+  });
+  ```
+   @method then
+  @param {Function} onFulfilled
+  @param {Function} onRejected
+  Useful for tooling.
+  @return {Promise}
+  */
 
-        changeState = function (connection, expectedState, newState) {
-            if (expectedState === connection.state) {
-                connection.state = newState;
+  /**
+  `catch` is simply sugar for `then(undefined, onRejection)` which makes it the same
+  as the catch block of a try/catch statement.
+  ```js
+  function findAuthor(){
+  throw new Error('couldn't find that author');
+  }
+  // synchronous
+  try {
+  findAuthor();
+  } catch(reason) {
+  // something went wrong
+  }
+  // async with promises
+  findAuthor().catch(function(reason){
+  // something went wrong
+  });
+  ```
+  @method catch
+  @param {Function} onRejection
+  Useful for tooling.
+  @return {Promise}
+  */
 
-                $(connection).triggerHandler(events.onStateChanged, [{ oldState: expectedState, newState: newState }]);
-                return true;
-            }
 
-            return false;
-        },
+  Promise.prototype.catch = function _catch(onRejection) {
+    return this.then(null, onRejection);
+  };
 
-        isDisconnecting = function (connection) {
-            return connection.state === signalR.connectionState.disconnected;
-        },
+  /**
+    `finally` will be invoked regardless of the promise's fate just as native
+    try/catch/finally behaves
+  
+    Synchronous example:
+  
+    ```js
+    findAuthor() {
+      if (Math.random() > 0.5) {
+        throw new Error();
+      }
+      return new Author();
+    }
+  
+    try {
+      return findAuthor(); // succeed or fail
+    } catch(error) {
+      return findOtherAuther();
+    } finally {
+      // always runs
+      // doesn't affect the return value
+    }
+    ```
+  
+    Asynchronous example:
+  
+    ```js
+    findAuthor().catch(function(reason){
+      return findOtherAuther();
+    }).finally(function(){
+      // author was either found, or not
+    });
+    ```
+  
+    @method finally
+    @param {Function} callback
+    @return {Promise}
+  */
 
-        supportsKeepAlive = function (connection) {
-            return connection._.keepAliveData.activated &&
-                connection.transport.supportsKeepAlive(connection);
-        },
 
-        configureStopReconnectingTimeout = function (connection) {
-            var stopReconnectingTimeout,
-                onReconnectTimeout;
+  Promise.prototype.finally = function _finally(callback) {
+    var promise = this;
+    var constructor = promise.constructor;
 
-            // Check if this connection has already been configured to stop reconnecting after a specified timeout.
-            // Without this check if a connection is stopped then started events will be bound multiple times.
-            if (!connection._.configuredStopReconnectingTimeout) {
-                onReconnectTimeout = function (connection) {
-                    var message = signalR._.format(signalR.resources.reconnectTimeout, connection.disconnectTimeout);
-                    connection.log(message);
-                    $(connection).triggerHandler(events.onError, [signalR._.error(message, /* source */ "TimeoutException")]);
-                    connection.stop(/* async */ false, /* notifyServer */ false);
-                };
+    return promise.then(function (value) {
+      return constructor.resolve(callback()).then(function () {
+        return value;
+      });
+    }, function (reason) {
+      return constructor.resolve(callback()).then(function () {
+        throw reason;
+      });
+    });
+  };
 
-                connection.reconnecting(function () {
-                    var connection = this;
+  return Promise;
+}();
 
-                    // Guard against state changing in a previous user defined even handler
-                    if (connection.state === signalR.connectionState.reconnecting) {
-                        stopReconnectingTimeout = window.setTimeout(function () { onReconnectTimeout(connection); }, connection.disconnectTimeout);
-                    }
+Promise$2.prototype.then = then;
+Promise$2.all = all;
+Promise$2.race = race;
+Promise$2.resolve = resolve$1;
+Promise$2.reject = reject$1;
+Promise$2._setScheduler = setScheduler;
+Promise$2._setAsap = setAsap;
+Promise$2._asap = asap;
+
+/*global self*/
+function polyfill() {
+    var local = void 0;
+
+    if (typeof global !== 'undefined') {
+        local = global;
+    } else if (typeof self !== 'undefined') {
+        local = self;
+    } else {
+        try {
+            local = Function('return this')();
+        } catch (e) {
+            throw new Error('polyfill failed because global object is unavailable in this environment');
+        }
+    }
+
+    var P = local.Promise;
+
+    if (P) {
+        var promiseToString = null;
+        try {
+            promiseToString = Object.prototype.toString.call(P.resolve());
+        } catch (e) {
+            // silently ignored
+        }
+
+        if (promiseToString === '[object Promise]' && !P.cast) {
+            return;
+        }
+    }
+
+    local.Promise = Promise$2;
+}
+
+// Strange compat..
+Promise$2.polyfill = polyfill;
+Promise$2.Promise = Promise$2;
+
+Promise$2.polyfill();
+
+return Promise$2;
+
+})));
+
+
+
+//# sourceMappingURL=es6-promise.auto.map
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VERSION", function() { return VERSION; });
+/* harmony import */ var _Errors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AbortError", function() { return _Errors__WEBPACK_IMPORTED_MODULE_0__["AbortError"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpError", function() { return _Errors__WEBPACK_IMPORTED_MODULE_0__["HttpError"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeoutError", function() { return _Errors__WEBPACK_IMPORTED_MODULE_0__["TimeoutError"]; });
+
+/* harmony import */ var _HttpClient__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpClient", function() { return _HttpClient__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpResponse", function() { return _HttpClient__WEBPACK_IMPORTED_MODULE_1__["HttpResponse"]; });
+
+/* harmony import */ var _DefaultHttpClient__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DefaultHttpClient", function() { return _DefaultHttpClient__WEBPACK_IMPORTED_MODULE_2__["DefaultHttpClient"]; });
+
+/* harmony import */ var _HubConnection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HubConnection", function() { return _HubConnection__WEBPACK_IMPORTED_MODULE_3__["HubConnection"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HubConnectionState", function() { return _HubConnection__WEBPACK_IMPORTED_MODULE_3__["HubConnectionState"]; });
+
+/* harmony import */ var _HubConnectionBuilder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HubConnectionBuilder", function() { return _HubConnectionBuilder__WEBPACK_IMPORTED_MODULE_4__["HubConnectionBuilder"]; });
+
+/* harmony import */ var _IHubProtocol__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MessageType", function() { return _IHubProtocol__WEBPACK_IMPORTED_MODULE_5__["MessageType"]; });
+
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LogLevel", function() { return _ILogger__WEBPACK_IMPORTED_MODULE_6__["LogLevel"]; });
+
+/* harmony import */ var _ITransport__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(17);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpTransportType", function() { return _ITransport__WEBPACK_IMPORTED_MODULE_7__["HttpTransportType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TransferFormat", function() { return _ITransport__WEBPACK_IMPORTED_MODULE_7__["TransferFormat"]; });
+
+/* harmony import */ var _Loggers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(13);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NullLogger", function() { return _Loggers__WEBPACK_IMPORTED_MODULE_8__["NullLogger"]; });
+
+/* harmony import */ var _JsonHubProtocol__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(22);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JsonHubProtocol", function() { return _JsonHubProtocol__WEBPACK_IMPORTED_MODULE_9__["JsonHubProtocol"]; });
+
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+// Version token that will be replaced by the prepack command
+/** The version of the SignalR client. */
+var VERSION = "1.1.0";
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpError", function() { return HttpError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeoutError", function() { return TimeoutError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AbortError", function() { return AbortError; });
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/** Error thrown when an HTTP request fails. */
+var HttpError = /** @class */ (function (_super) {
+    __extends(HttpError, _super);
+    /** Constructs a new instance of {@link @aspnet/signalr.HttpError}.
+     *
+     * @param {string} errorMessage A descriptive error message.
+     * @param {number} statusCode The HTTP status code represented by this error.
+     */
+    function HttpError(errorMessage, statusCode) {
+        var _newTarget = this.constructor;
+        var _this = this;
+        var trueProto = _newTarget.prototype;
+        _this = _super.call(this, errorMessage) || this;
+        _this.statusCode = statusCode;
+        // Workaround issue in Typescript compiler
+        // https://github.com/Microsoft/TypeScript/issues/13965#issuecomment-278570200
+        _this.__proto__ = trueProto;
+        return _this;
+    }
+    return HttpError;
+}(Error));
+
+/** Error thrown when a timeout elapses. */
+var TimeoutError = /** @class */ (function (_super) {
+    __extends(TimeoutError, _super);
+    /** Constructs a new instance of {@link @aspnet/signalr.TimeoutError}.
+     *
+     * @param {string} errorMessage A descriptive error message.
+     */
+    function TimeoutError(errorMessage) {
+        var _newTarget = this.constructor;
+        if (errorMessage === void 0) { errorMessage = "A timeout occurred."; }
+        var _this = this;
+        var trueProto = _newTarget.prototype;
+        _this = _super.call(this, errorMessage) || this;
+        // Workaround issue in Typescript compiler
+        // https://github.com/Microsoft/TypeScript/issues/13965#issuecomment-278570200
+        _this.__proto__ = trueProto;
+        return _this;
+    }
+    return TimeoutError;
+}(Error));
+
+/** Error thrown when an action is aborted. */
+var AbortError = /** @class */ (function (_super) {
+    __extends(AbortError, _super);
+    /** Constructs a new instance of {@link AbortError}.
+     *
+     * @param {string} errorMessage A descriptive error message.
+     */
+    function AbortError(errorMessage) {
+        var _newTarget = this.constructor;
+        if (errorMessage === void 0) { errorMessage = "An abort occurred."; }
+        var _this = this;
+        var trueProto = _newTarget.prototype;
+        _this = _super.call(this, errorMessage) || this;
+        // Workaround issue in Typescript compiler
+        // https://github.com/Microsoft/TypeScript/issues/13965#issuecomment-278570200
+        _this.__proto__ = trueProto;
+        return _this;
+    }
+    return AbortError;
+}(Error));
+
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpResponse", function() { return HttpResponse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpClient", function() { return HttpClient; });
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+/** Represents an HTTP response. */
+var HttpResponse = /** @class */ (function () {
+    function HttpResponse(statusCode, statusText, content) {
+        this.statusCode = statusCode;
+        this.statusText = statusText;
+        this.content = content;
+    }
+    return HttpResponse;
+}());
+
+/** Abstraction over an HTTP client.
+ *
+ * This class provides an abstraction over an HTTP client so that a different implementation can be provided on different platforms.
+ */
+var HttpClient = /** @class */ (function () {
+    function HttpClient() {
+    }
+    HttpClient.prototype.get = function (url, options) {
+        return this.send(__assign({}, options, { method: "GET", url: url }));
+    };
+    HttpClient.prototype.post = function (url, options) {
+        return this.send(__assign({}, options, { method: "POST", url: url }));
+    };
+    HttpClient.prototype.delete = function (url, options) {
+        return this.send(__assign({}, options, { method: "DELETE", url: url }));
+    };
+    /** Gets all cookies that apply to the specified URL.
+     *
+     * @param url The URL that the cookies are valid for.
+     * @returns {string} A string containing all the key-value cookie pairs for the specified URL.
+     */
+    // @ts-ignore
+    HttpClient.prototype.getCookieString = function (url) {
+        return "";
+    };
+    return HttpClient;
+}());
+
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DefaultHttpClient", function() { return DefaultHttpClient; });
+/* harmony import */ var _Errors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _HttpClient__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _XhrHttpClient__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+var nodeHttpClientModule;
+if (typeof XMLHttpRequest === "undefined") {
+    // In order to ignore the dynamic require in webpack builds we need to do this magic
+    // @ts-ignore: TS doesn't know about these names
+    var requireFunc =  true ? require : undefined;
+    nodeHttpClientModule = requireFunc("./NodeHttpClient");
+}
+/** Default implementation of {@link @aspnet/signalr.HttpClient}. */
+var DefaultHttpClient = /** @class */ (function (_super) {
+    __extends(DefaultHttpClient, _super);
+    /** Creates a new instance of the {@link @aspnet/signalr.DefaultHttpClient}, using the provided {@link @aspnet/signalr.ILogger} to log messages. */
+    function DefaultHttpClient(logger) {
+        var _this = _super.call(this) || this;
+        if (typeof XMLHttpRequest !== "undefined") {
+            _this.httpClient = new _XhrHttpClient__WEBPACK_IMPORTED_MODULE_2__["XhrHttpClient"](logger);
+        }
+        else if (typeof nodeHttpClientModule !== "undefined") {
+            _this.httpClient = new nodeHttpClientModule.NodeHttpClient(logger);
+        }
+        else {
+            throw new Error("No HttpClient could be created.");
+        }
+        return _this;
+    }
+    /** @inheritDoc */
+    DefaultHttpClient.prototype.send = function (request) {
+        // Check that abort was not signaled before calling send
+        if (request.abortSignal && request.abortSignal.aborted) {
+            return Promise.reject(new _Errors__WEBPACK_IMPORTED_MODULE_0__["AbortError"]());
+        }
+        if (!request.method) {
+            return Promise.reject(new Error("No method defined."));
+        }
+        if (!request.url) {
+            return Promise.reject(new Error("No url defined."));
+        }
+        return this.httpClient.send(request);
+    };
+    DefaultHttpClient.prototype.getCookieString = function (url) {
+        return this.httpClient.getCookieString(url);
+    };
+    return DefaultHttpClient;
+}(_HttpClient__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XhrHttpClient", function() { return XhrHttpClient; });
+/* harmony import */ var _Errors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _HttpClient__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+var XhrHttpClient = /** @class */ (function (_super) {
+    __extends(XhrHttpClient, _super);
+    function XhrHttpClient(logger) {
+        var _this = _super.call(this) || this;
+        _this.logger = logger;
+        return _this;
+    }
+    /** @inheritDoc */
+    XhrHttpClient.prototype.send = function (request) {
+        var _this = this;
+        // Check that abort was not signaled before calling send
+        if (request.abortSignal && request.abortSignal.aborted) {
+            return Promise.reject(new _Errors__WEBPACK_IMPORTED_MODULE_0__["AbortError"]());
+        }
+        if (!request.method) {
+            return Promise.reject(new Error("No method defined."));
+        }
+        if (!request.url) {
+            return Promise.reject(new Error("No url defined."));
+        }
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open(request.method, request.url, true);
+            xhr.withCredentials = true;
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            // Explicitly setting the Content-Type header for React Native on Android platform.
+            xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+            var headers = request.headers;
+            if (headers) {
+                Object.keys(headers)
+                    .forEach(function (header) {
+                    xhr.setRequestHeader(header, headers[header]);
                 });
-
-                connection.stateChanged(function (data) {
-                    if (data.oldState === signalR.connectionState.reconnecting) {
-                        // Clear the pending reconnect timeout check
-                        window.clearTimeout(stopReconnectingTimeout);
-                    }
-                });
-
-                connection._.configuredStopReconnectingTimeout = true;
             }
-        };
-
-    signalR = function (url, qs, logging) {
-        /// <summary>Creates a new SignalR connection for the given url</summary>
-        /// <param name="url" type="String">The URL of the long polling endpoint</param>
-        /// <param name="qs" type="Object">
-        ///     [Optional] Custom querystring parameters to add to the connection URL.
-        ///     If an object, every non-function member will be added to the querystring.
-        ///     If a string, it's added to the QS as specified.
-        /// </param>
-        /// <param name="logging" type="Boolean">
-        ///     [Optional] A flag indicating whether connection logging is enabled to the browser
-        ///     console/log. Defaults to false.
-        /// </param>
-
-        return new signalR.fn.init(url, qs, logging);
-    };
-
-    signalR._ = {
-        defaultContentType: "application/x-www-form-urlencoded; charset=UTF-8",
-
-        ieVersion: (function () {
-            var version,
-                matches;
-
-            if (window.navigator.appName === 'Microsoft Internet Explorer') {
-                // Check if the user agent has the pattern "MSIE (one or more numbers).(one or more numbers)";
-                matches = /MSIE ([0-9]+\.[0-9]+)/.exec(window.navigator.userAgent);
-
-                if (matches) {
-                    version = window.parseFloat(matches[1]);
-                }
+            if (request.responseType) {
+                xhr.responseType = request.responseType;
             }
-
-            // undefined value means not IE
-            return version;
-        })(),
-
-        error: function (message, source, context) {
-            var e = new Error(message);
-            e.source = source;
-
-            if (typeof context !== "undefined") {
-                e.context = context;
-            }
-
-            return e;
-        },
-
-        transportError: function (message, transport, source, context) {
-            var e = this.error(message, source, context);
-            e.transport = transport ? transport.name : undefined;
-            return e;
-        },
-
-        format: function () {
-            /// <summary>Usage: format("Hi {0}, you are {1}!", "Foo", 100) </summary>
-            var s = arguments[0];
-            for (var i = 0; i < arguments.length - 1; i++) {
-                s = s.replace("{" + i + "}", arguments[i + 1]);
-            }
-            return s;
-        },
-
-        firefoxMajorVersion: function (userAgent) {
-            // Firefox user agents: http://useragentstring.com/pages/Firefox/
-            var matches = userAgent.match(/Firefox\/(\d+)/);
-            if (!matches || !matches.length || matches.length < 2) {
-                return 0;
-            }
-            return parseInt(matches[1], 10 /* radix */);
-        },
-
-        configurePingInterval: function (connection) {
-            var config = connection._.config,
-                onFail = function (error) {
-                    $(connection).triggerHandler(events.onError, [error]);
+            if (request.abortSignal) {
+                request.abortSignal.onabort = function () {
+                    xhr.abort();
+                    reject(new _Errors__WEBPACK_IMPORTED_MODULE_0__["AbortError"]());
                 };
-
-            if (config && !connection._.pingIntervalId && config.pingInterval) {
-                connection._.pingIntervalId = window.setInterval(function () {
-                    signalR.transports._logic.pingServer(connection).fail(onFail);
-                }, config.pingInterval);
             }
-        }
-    };
-
-    signalR.events = events;
-
-    signalR.resources = resources;
-
-    signalR.ajaxDefaults = ajaxDefaults;
-
-    signalR.changeState = changeState;
-
-    signalR.isDisconnecting = isDisconnecting;
-
-    signalR.connectionState = {
-        connecting: 0,
-        connected: 1,
-        reconnecting: 2,
-        disconnected: 4
-    };
-
-    signalR.hub = {
-        start: function () {
-            // This will get replaced with the real hub connection start method when hubs is referenced correctly
-            throw new Error("SignalR: Error loading hubs. Ensure your hubs reference is correct, e.g. <script src='/signalr/js'></script>.");
-        }
-    };
-
-    // .on() was added in version 1.7.0, .load() was removed in version 3.0.0 so we fallback to .load() if .on() does
-    // not exist to not break existing applications
-    if (typeof _pageWindow.on == "function") {
-        _pageWindow.on("load", function () { _pageLoaded = true; });
-    }
-    else {
-        _pageWindow.load(function () { _pageLoaded = true; });
-    }
-
-    function validateTransport(requestedTransport, connection) {
-        /// <summary>Validates the requested transport by cross checking it with the pre-defined signalR.transports</summary>
-        /// <param name="requestedTransport" type="Object">The designated transports that the user has specified.</param>
-        /// <param name="connection" type="signalR">The connection that will be using the requested transports.  Used for logging purposes.</param>
-        /// <returns type="Object" />
-
-        if ($.isArray(requestedTransport)) {
-            // Go through transport array and remove an "invalid" tranports
-            for (var i = requestedTransport.length - 1; i >= 0; i--) {
-                var transport = requestedTransport[i];
-                if ($.type(transport) !== "string" || !signalR.transports[transport]) {
-                    connection.log("Invalid transport: " + transport + ", removing it from the transports list.");
-                    requestedTransport.splice(i, 1);
+            if (request.timeout) {
+                xhr.timeout = request.timeout;
+            }
+            xhr.onload = function () {
+                if (request.abortSignal) {
+                    request.abortSignal.onabort = null;
                 }
-            }
-
-            // Verify we still have transports left, if we dont then we have invalid transports
-            if (requestedTransport.length === 0) {
-                connection.log("No transports remain within the specified transport array.");
-                requestedTransport = null;
-            }
-        } else if (!signalR.transports[requestedTransport] && requestedTransport !== "auto") {
-            connection.log("Invalid transport: " + requestedTransport.toString() + ".");
-            requestedTransport = null;
-        } else if (requestedTransport === "auto" && signalR._.ieVersion <= 8) {
-            // If we're doing an auto transport and we're IE8 then force longPolling, #1764
-            return ["longPolling"];
-
-        }
-
-        return requestedTransport;
-    }
-
-    function getDefaultPort(protocol) {
-        if (protocol === "http:") {
-            return 80;
-        } else if (protocol === "https:") {
-            return 443;
-        }
-    }
-
-    function addDefaultPort(protocol, url) {
-        // Remove ports  from url.  We have to check if there's a / or end of line
-        // following the port in order to avoid removing ports such as 8080.
-        if (url.match(/:\d+$/)) {
-            return url;
-        } else {
-            return url + ":" + getDefaultPort(protocol);
-        }
-    }
-
-    function ConnectingMessageBuffer(connection, drainCallback) {
-        var that = this,
-            buffer = [];
-
-        that.tryBuffer = function (message) {
-            if (connection.state === $.signalR.connectionState.connecting) {
-                buffer.push(message);
-
-                return true;
-            }
-
-            return false;
-        };
-
-        that.drain = function () {
-            // Ensure that the connection is connected when we drain (do not want to drain while a connection is not active)
-            if (connection.state === $.signalR.connectionState.connected) {
-                while (buffer.length > 0) {
-                    drainCallback(buffer.shift());
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(new _HttpClient__WEBPACK_IMPORTED_MODULE_1__["HttpResponse"](xhr.status, xhr.statusText, xhr.response || xhr.responseText));
                 }
-            }
-        };
-
-        that.clear = function () {
-            buffer = [];
-        };
-    }
-
-    signalR.fn = signalR.prototype = {
-        init: function (url, qs, logging) {
-            var $connection = $(this);
-
-            this.url = url;
-            this.qs = qs;
-            this.lastError = null;
-            this._ = {
-                keepAliveData: {},
-                connectingMessageBuffer: new ConnectingMessageBuffer(this, function (message) {
-                    $connection.triggerHandler(events.onReceived, [message]);
-                }),
-                lastMessageAt: new Date().getTime(),
-                lastActiveAt: new Date().getTime(),
-                beatInterval: 5000, // Default value, will only be overridden if keep alive is enabled,
-                beatHandle: null,
-                totalTransportConnectTimeout: 0 // This will be the sum of the TransportConnectTimeout sent in response to negotiate and connection.transportConnectTimeout
-            };
-            if (typeof (logging) === "boolean") {
-                this.logging = logging;
-            }
-        },
-
-        _parseResponse: function (response) {
-            var that = this;
-
-            if (!response) {
-                return response;
-            } else if (typeof response === "string") {
-                return that.json.parse(response);
-            } else {
-                return response;
-            }
-        },
-
-        _originalJson: window.JSON,
-
-        json: window.JSON,
-
-        isCrossDomain: function (url, against) {
-            /// <summary>Checks if url is cross domain</summary>
-            /// <param name="url" type="String">The base URL</param>
-            /// <param name="against" type="Object">
-            ///     An optional argument to compare the URL against, if not specified it will be set to window.location.
-            ///     If specified it must contain a protocol and a host property.
-            /// </param>
-            var link;
-
-            url = $.trim(url);
-
-            against = against || window.location;
-
-            if (url.indexOf("http") !== 0) {
-                return false;
-            }
-
-            // Create an anchor tag.
-            link = window.document.createElement("a");
-            link.href = url;
-
-            // When checking for cross domain we have to special case port 80 because the window.location will remove the
-            return link.protocol + addDefaultPort(link.protocol, link.host) !== against.protocol + addDefaultPort(against.protocol, against.host);
-        },
-
-        ajaxDataType: "text",
-
-        contentType: "application/json; charset=UTF-8",
-
-        logging: false,
-
-        state: signalR.connectionState.disconnected,
-
-        clientProtocol: "2.0",
-
-        // We want to support older servers since the 2.0 change is to support redirection results, which isn't
-        // really breaking in the protocol. So if a user updates their client to 2.0 protocol version there's
-        // no reason they can't still connect to a 1.5 server.
-        supportedProtocols: ["1.5", "2.0"],
-
-        reconnectDelay: 2000,
-
-        transportConnectTimeout: 0,
-
-        disconnectTimeout: 30000, // This should be set by the server in response to the negotiate request (30s default)
-
-        reconnectWindow: 30000, // This should be set by the server in response to the negotiate request
-
-        keepAliveWarnAt: 2 / 3, // Warn user of slow connection if we breach the X% mark of the keep alive timeout
-
-        start: function (options, callback) {
-            /// <summary>Starts the connection</summary>
-            /// <param name="options" type="Object">Options map</param>
-            /// <param name="callback" type="Function">A callback function to execute when the connection has started</param>
-            var connection = this,
-                config = {
-                    pingInterval: 300000,
-                    waitForPageLoad: true,
-                    transport: "auto",
-                    jsonp: false
-                },
-                initialize,
-                deferred = connection._deferral || $.Deferred(), // Check to see if there is a pre-existing deferral that's being built on, if so we want to keep using it
-                parser = window.document.createElement("a"),
-                setConnectionUrl = function (connection, url) {
-                    if (connection.url === url && connection.baseUrl) {
-                        // when the url related properties are already set
-                        return;
-                    }
-
-                    connection.url = url;
-
-                    // Resolve the full url
-                    parser.href = connection.url;
-                    if (!parser.protocol || parser.protocol === ":") {
-                        connection.protocol = window.document.location.protocol;
-                        connection.host = parser.host || window.document.location.host;
-                    } else {
-                        connection.protocol = parser.protocol;
-                        connection.host = parser.host;
-                    }
-
-                    connection.baseUrl = connection.protocol + "//" + connection.host;
-
-                    // Set the websocket protocol
-                    connection.wsProtocol = connection.protocol === "https:" ? "wss://" : "ws://";
-
-                    // If the url is protocol relative, prepend the current windows protocol to the url.
-                    if (connection.url.indexOf("//") === 0) {
-                        connection.url = window.location.protocol + connection.url;
-                        connection.log("Protocol relative URL detected, normalizing it to '" + connection.url + "'.");
-                    }
-
-                    if (connection.isCrossDomain(connection.url)) {
-                        connection.log("Auto detected cross domain url.");
-
-                        if (config.transport === "auto") {
-                            // Cross-domain does not support foreverFrame
-                            config.transport = ["webSockets", "serverSentEvents", "longPolling"];
-                        }
-
-                        if (typeof connection.withCredentials === "undefined") {
-                            connection.withCredentials = true;
-                        }
-
-                        // Determine if jsonp is the only choice for negotiation, ajaxSend and ajaxAbort.
-                        // i.e. if the browser doesn't supports CORS
-                        // If it is, ignore any preference to the contrary, and switch to jsonp.
-                        if (!$.support.cors) {
-                            connection.ajaxDataType = "jsonp";
-                            connection.log("Using jsonp because this browser doesn't support CORS.");
-                        }
-
-                        connection.contentType = signalR._.defaultContentType;
-                    }
-                };
-
-            connection.lastError = null;
-
-            // Persist the deferral so that if start is called multiple times the same deferral is used.
-            connection._deferral = deferred;
-
-            if (!connection.json) {
-                // no JSON!
-                throw new Error("SignalR: No JSON parser found. Please ensure json2.js is referenced before the SignalR.js file if you need to support clients without native JSON parsing support, e.g. IE<8.");
-            }
-
-            if ($.type(options) === "function") {
-                // Support calling with single callback parameter
-                callback = options;
-            } else if ($.type(options) === "object") {
-                $.extend(config, options);
-                if ($.type(config.callback) === "function") {
-                    callback = config.callback;
-                }
-            }
-
-            config.transport = validateTransport(config.transport, connection);
-
-            // If the transport is invalid throw an error and abort start
-            if (!config.transport) {
-                throw new Error("SignalR: Invalid transport(s) specified, aborting start.");
-            }
-
-            connection._.config = config;
-
-            // Check to see if start is being called prior to page load
-            // If waitForPageLoad is true we then want to re-direct function call to the window load event
-            if (!_pageLoaded && config.waitForPageLoad === true) {
-                connection._.deferredStartHandler = function () {
-                    connection.start(options, callback);
-                };
-                _pageWindow.bind("load", connection._.deferredStartHandler);
-
-                return deferred.promise();
-            }
-
-            // If we're already connecting just return the same deferral as the original connection start
-            if (connection.state === signalR.connectionState.connecting) {
-                return deferred.promise();
-            } else if (changeState(connection,
-                signalR.connectionState.disconnected,
-                signalR.connectionState.connecting) === false) {
-                // We're not connecting so try and transition into connecting.
-                // If we fail to transition then we're either in connected or reconnecting.
-
-                deferred.resolve(connection);
-                return deferred.promise();
-            }
-
-            configureStopReconnectingTimeout(connection);
-
-            // If jsonp with no/auto transport is specified, then set the transport to long polling
-            // since that is the only transport for which jsonp really makes sense.
-            // Some developers might actually choose to specify jsonp for same origin requests
-            // as demonstrated by Issue #623.
-            if (config.transport === "auto" && config.jsonp === true) {
-                config.transport = "longPolling";
-            }
-
-            connection.withCredentials = config.withCredentials;
-
-            setConnectionUrl(connection, connection.url);
-
-            // Save the original url so that we can reset it when we stop and restart the connection
-            connection._originalUrl = connection.url;
-
-            connection.ajaxDataType = config.jsonp ? "jsonp" : "text";
-
-            $(connection).bind(events.onStart, function (e, data) {
-                if ($.type(callback) === "function") {
-                    callback.call(connection);
-                }
-                deferred.resolve(connection);
-            });
-
-            connection._.initHandler = signalR.transports._logic.initHandler(connection);
-
-            initialize = function (transports, index) {
-                var noTransportError = signalR._.error(resources.noTransportOnInit);
-
-                index = index || 0;
-                if (index >= transports.length) {
-                    if (index === 0) {
-                        connection.log("No transports supported by the server were selected.");
-                    } else if (index === 1) {
-                        connection.log("No fallback transports were selected.");
-                    } else {
-                        connection.log("Fallback transports exhausted.");
-                    }
-
-                    // No transport initialized successfully
-                    $(connection).triggerHandler(events.onError, [noTransportError]);
-                    deferred.reject(noTransportError);
-                    // Stop the connection if it has connected and move it into the disconnected state
-                    connection.stop();
-                    return;
-                }
-
-                // The connection was aborted
-                if (connection.state === signalR.connectionState.disconnected) {
-                    return;
-                }
-
-                var transportName = transports[index],
-                    transport = signalR.transports[transportName],
-                    onFallback = function () {
-                        initialize(transports, index + 1);
-                    };
-
-                connection.transport = transport;
-
-                try {
-                    connection._.initHandler.start(transport, function () { // success
-                        // Firefox 11+ doesn't allow sync XHR withCredentials: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#withCredentials
-                        var isFirefox11OrGreater = signalR._.firefoxMajorVersion(window.navigator.userAgent) >= 11,
-                            asyncAbort = true;
-
-                        connection.log("The start request succeeded. Transitioning to the connected state.");
-
-                        if (supportsKeepAlive(connection)) {
-                            signalR.transports._logic.monitorKeepAlive(connection);
-                        }
-
-                        signalR.transports._logic.startHeartbeat(connection);
-
-                        // Used to ensure low activity clients maintain their authentication.
-                        // Must be configured once a transport has been decided to perform valid ping requests.
-                        signalR._.configurePingInterval(connection);
-
-                        if (!changeState(connection,
-                            signalR.connectionState.connecting,
-                            signalR.connectionState.connected)) {
-                            connection.log("WARNING! The connection was not in the connecting state.");
-                        }
-
-                        // Drain any incoming buffered messages (messages that came in prior to connect)
-                        connection._.connectingMessageBuffer.drain();
-
-                        $(connection).triggerHandler(events.onStart);
-
-                        // wire the stop handler for when the user leaves the page
-                        _pageWindow.bind("unload", function () {
-                            connection.log("Window unloading, stopping the connection.");
-
-                            connection.stop(asyncAbort);
-                        });
-
-                        if (isFirefox11OrGreater) {
-                            // Firefox does not fire cross-domain XHRs in the normal unload handler on tab close.
-                            // #2400
-                            _pageWindow.bind("beforeunload", function () {
-                                // If connection.stop() runs runs in beforeunload and fails, it will also fail
-                                // in unload unless connection.stop() runs after a timeout.
-                                window.setTimeout(function () {
-                                    connection.stop(asyncAbort);
-                                }, 0);
-                            });
-                        }
-                    }, onFallback);
-                }
-                catch (error) {
-                    connection.log(transport.name + " transport threw '" + error.message + "' when attempting to start.");
-                    onFallback();
+                else {
+                    reject(new _Errors__WEBPACK_IMPORTED_MODULE_0__["HttpError"](xhr.statusText, xhr.status));
                 }
             };
+            xhr.onerror = function () {
+                _this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Warning, "Error from HTTP request. " + xhr.status + ": " + xhr.statusText + ".");
+                reject(new _Errors__WEBPACK_IMPORTED_MODULE_0__["HttpError"](xhr.statusText, xhr.status));
+            };
+            xhr.ontimeout = function () {
+                _this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Warning, "Timeout from HTTP request.");
+                reject(new _Errors__WEBPACK_IMPORTED_MODULE_0__["TimeoutError"]());
+            };
+            xhr.send(request.content || "");
+        });
+    };
+    return XhrHttpClient;
+}(_HttpClient__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
 
-            var url = connection.url + "/negotiate",
-                onFailed = function (error, connection) {
-                    var err = signalR._.error(resources.errorOnNegotiate, error, connection._.negotiateRequest);
 
-                    $(connection).triggerHandler(events.onError, err);
-                    deferred.reject(err);
-                    // Stop the connection if negotiate failed
-                    connection.stop();
-                };
 
-            $(connection).triggerHandler(events.onStarting);
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-            url = signalR.transports._logic.prepareQueryString(connection, url);
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogLevel", function() { return LogLevel; });
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+// These values are designed to match the ASP.NET Log Levels since that's the pattern we're emulating here.
+/** Indicates the severity of a log message.
+ *
+ * Log Levels are ordered in increasing severity. So `Debug` is more severe than `Trace`, etc.
+ */
+var LogLevel;
+(function (LogLevel) {
+    /** Log level for very low severity diagnostic messages. */
+    LogLevel[LogLevel["Trace"] = 0] = "Trace";
+    /** Log level for low severity diagnostic messages. */
+    LogLevel[LogLevel["Debug"] = 1] = "Debug";
+    /** Log level for informational diagnostic messages. */
+    LogLevel[LogLevel["Information"] = 2] = "Information";
+    /** Log level for diagnostic messages that indicate a non-fatal problem. */
+    LogLevel[LogLevel["Warning"] = 3] = "Warning";
+    /** Log level for diagnostic messages that indicate a failure in the current operation. */
+    LogLevel[LogLevel["Error"] = 4] = "Error";
+    /** Log level for diagnostic messages that indicate a failure that will terminate the entire application. */
+    LogLevel[LogLevel["Critical"] = 5] = "Critical";
+    /** The highest possible log level. Used when configuring logging to indicate that no log messages should be emitted. */
+    LogLevel[LogLevel["None"] = 6] = "None";
+})(LogLevel || (LogLevel = {}));
 
-            connection.log("Negotiating with '" + url + "'.");
 
-            // Save the ajax negotiate request object so we can abort it if stop is called while the request is in flight.
-            connection._.negotiateRequest = function () {
-                var res,
-                    redirects = 0,
-                    MAX_REDIRECTS = 100,
-                    keepAliveData,
-                    protocolError,
-                    transports = [],
-                    supportedTransports = [],
-                    negotiate = function (connection, onSuccess) {
-                        var url = signalR.transports._logic.prepareQueryString(connection, connection.url + "/negotiate");
-                        connection.log("Negotiating with '" + url + "'.");
-                        var options = {
-                            url: url,
-                            error: function (error, statusText) {
-                                // We don't want to cause any errors if we're aborting our own negotiate request.
-                                if (statusText !== _negotiateAbortText) {
-                                    onFailed(error, connection);
-                                } else {
-                                    // This rejection will noop if the deferred has already been resolved or rejected.
-                                    deferred.reject(signalR._.error(resources.stoppedWhileNegotiating, null /* error */, connection._.negotiateRequest));
-                                }
-                            },
-                            success: onSuccess
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HubConnectionState", function() { return HubConnectionState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HubConnection", function() { return HubConnection; });
+/* harmony import */ var _HandshakeProtocol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+var DEFAULT_TIMEOUT_IN_MS = 30 * 1000;
+var DEFAULT_PING_INTERVAL_IN_MS = 15 * 1000;
+/** Describes the current state of the {@link HubConnection} to the server. */
+var HubConnectionState;
+(function (HubConnectionState) {
+    /** The hub connection is disconnected. */
+    HubConnectionState[HubConnectionState["Disconnected"] = 0] = "Disconnected";
+    /** The hub connection is connected. */
+    HubConnectionState[HubConnectionState["Connected"] = 1] = "Connected";
+})(HubConnectionState || (HubConnectionState = {}));
+/** Represents a connection to a SignalR Hub. */
+var HubConnection = /** @class */ (function () {
+    function HubConnection(connection, logger, protocol) {
+        var _this = this;
+        _Utils__WEBPACK_IMPORTED_MODULE_3__["Arg"].isRequired(connection, "connection");
+        _Utils__WEBPACK_IMPORTED_MODULE_3__["Arg"].isRequired(logger, "logger");
+        _Utils__WEBPACK_IMPORTED_MODULE_3__["Arg"].isRequired(protocol, "protocol");
+        this.serverTimeoutInMilliseconds = DEFAULT_TIMEOUT_IN_MS;
+        this.keepAliveIntervalInMilliseconds = DEFAULT_PING_INTERVAL_IN_MS;
+        this.logger = logger;
+        this.protocol = protocol;
+        this.connection = connection;
+        this.handshakeProtocol = new _HandshakeProtocol__WEBPACK_IMPORTED_MODULE_0__["HandshakeProtocol"]();
+        this.connection.onreceive = function (data) { return _this.processIncomingData(data); };
+        this.connection.onclose = function (error) { return _this.connectionClosed(error); };
+        this.callbacks = {};
+        this.methods = {};
+        this.closedCallbacks = [];
+        this.id = 0;
+        this.receivedHandshakeResponse = false;
+        this.connectionState = HubConnectionState.Disconnected;
+        this.cachedPingMessage = this.protocol.writeMessage({ type: _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Ping });
+    }
+    /** @internal */
+    // Using a public static factory method means we can have a private constructor and an _internal_
+    // create method that can be used by HubConnectionBuilder. An "internal" constructor would just
+    // be stripped away and the '.d.ts' file would have no constructor, which is interpreted as a
+    // public parameter-less constructor.
+    HubConnection.create = function (connection, logger, protocol) {
+        return new HubConnection(connection, logger, protocol);
+    };
+    Object.defineProperty(HubConnection.prototype, "state", {
+        /** Indicates the state of the {@link HubConnection} to the server. */
+        get: function () {
+            return this.connectionState;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Starts the connection.
+     *
+     * @returns {Promise<void>} A Promise that resolves when the connection has been successfully established, or rejects with an error.
+     */
+    HubConnection.prototype.start = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var handshakeRequest, handshakePromise;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        handshakeRequest = {
+                            protocol: this.protocol.name,
+                            version: this.protocol.version,
                         };
-
-                        if (connection.accessToken) {
-                            options.headers = { "Authorization": "Bearer " + connection.accessToken };
-                        }
-
-                        return signalR.transports._logic.ajax(connection, options);
-                    },
-                    callback = function (result) {
-                        try {
-                            res = connection._parseResponse(result);
-                        } catch (error) {
-                            onFailed(signalR._.error(resources.errorParsingNegotiateResponse, error), connection);
-                            return;
-                        }
-
-                        // Check if the server is an ASP.NET Core app
-                        if (res.availableTransports) {
-                            protocolError = signalR._.error(resources.aspnetCoreSignalrServer);
-                            $(connection).triggerHandler(events.onError, [protocolError]);
-                            deferred.reject(protocolError);
-                            return;
-                        }
-
-                        if (!res.ProtocolVersion || (connection.supportedProtocols.indexOf(res.ProtocolVersion) === -1)) {
-                            protocolError = signalR._.error(signalR._.format(resources.protocolIncompatible, connection.clientProtocol, res.ProtocolVersion));
-                            $(connection).triggerHandler(events.onError, [protocolError]);
-                            deferred.reject(protocolError);
-
-                            return;
-                        }
-
-                        // Check for a redirect response (which must have a ProtocolVersion of 2.0)
-                        if (res.ProtocolVersion === "2.0") {
-                            if (res.Error) {
-                                protocolError = signalR._.error(signalR._.format(resources.errorFromServer, res.Error));
-                                $(connection).triggerHandler(events.onError, [protocolError]);
-                                deferred.reject(protocolError);
-                                return;
-                            }
-                            else if (res.RedirectUrl) {
-                                if (redirects === MAX_REDIRECTS) {
-                                    onFailed(signalR._.error(resources.errorRedirectionExceedsLimit), connection);
-                                    return;
-                                }
-
-                                if (config.transport === "auto") {
-                                    // Redirected connections do not support foreverFrame
-                                    config.transport = ["webSockets", "serverSentEvents", "longPolling"];
-                                }
-
-                                connection.log("Received redirect to: " + res.RedirectUrl);
-                                connection.accessToken = res.AccessToken;
-
-                                setConnectionUrl(connection, res.RedirectUrl);
-
-                                if (connection.ajaxDataType === "jsonp" && connection.accessToken) {
-                                    onFailed(signalR._.error(resources.jsonpNotSupportedWithAccessToken), connection);
-                                    return;
-                                }
-
-                                redirects++;
-                                negotiate(connection, callback);
-                                return;
-                            }
-                        }
-
-                        keepAliveData = connection._.keepAliveData;
-                        connection.appRelativeUrl = res.Url;
-                        connection.id = res.ConnectionId;
-                        connection.token = res.ConnectionToken;
-                        connection.webSocketServerUrl = res.WebSocketServerUrl;
-
-                        // The long poll timeout is the ConnectionTimeout plus 10 seconds
-                        connection._.pollTimeout = res.ConnectionTimeout * 1000 + 10000; // in ms
-
-                        // Once the server has labeled the PersistentConnection as Disconnected, we should stop attempting to reconnect
-                        // after res.DisconnectTimeout seconds.
-                        connection.disconnectTimeout = res.DisconnectTimeout * 1000; // in ms
-
-                        // Add the TransportConnectTimeout from the response to the transportConnectTimeout from the client to calculate the total timeout
-                        connection._.totalTransportConnectTimeout = connection.transportConnectTimeout + res.TransportConnectTimeout * 1000;
-
-                        // If we have a keep alive
-                        if (res.KeepAliveTimeout) {
-                            // Register the keep alive data as activated
-                            keepAliveData.activated = true;
-
-                            // Timeout to designate when to force the connection into reconnecting converted to milliseconds
-                            keepAliveData.timeout = res.KeepAliveTimeout * 1000;
-
-                            // Timeout to designate when to warn the developer that the connection may be dead or is not responding.
-                            keepAliveData.timeoutWarning = keepAliveData.timeout * connection.keepAliveWarnAt;
-
-                            // Instantiate the frequency in which we check the keep alive.  It must be short in order to not miss/pick up any changes
-                            connection._.beatInterval = (keepAliveData.timeout - keepAliveData.timeoutWarning) / 3;
-                        } else {
-                            keepAliveData.activated = false;
-                        }
-
-                        connection.reconnectWindow = connection.disconnectTimeout + (keepAliveData.timeout || 0);
-
-                        $.each(signalR.transports, function (key) {
-                            if ((key.indexOf("_") === 0) || (key === "webSockets" && !res.TryWebSockets)) {
-                                return true;
-                            }
-                            supportedTransports.push(key);
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Debug, "Starting HubConnection.");
+                        this.receivedHandshakeResponse = false;
+                        handshakePromise = new Promise(function (resolve, reject) {
+                            _this.handshakeResolver = resolve;
+                            _this.handshakeRejecter = reject;
                         });
-
-                        if ($.isArray(config.transport)) {
-                            $.each(config.transport, function (_, transport) {
-                                if ($.inArray(transport, supportedTransports) >= 0) {
-                                    transports.push(transport);
-                                }
-                            });
-                        } else if (config.transport === "auto") {
-                            transports = supportedTransports;
-                        } else if ($.inArray(config.transport, supportedTransports) >= 0) {
-                            transports.push(config.transport);
+                        return [4 /*yield*/, this.connection.start(this.protocol.transferFormat)];
+                    case 1:
+                        _a.sent();
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Debug, "Sending handshake request.");
+                        return [4 /*yield*/, this.sendMessage(this.handshakeProtocol.writeHandshakeRequest(handshakeRequest))];
+                    case 2:
+                        _a.sent();
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Information, "Using HubProtocol '" + this.protocol.name + "'.");
+                        // defensively cleanup timeout in case we receive a message from the server before we finish start
+                        this.cleanupTimeout();
+                        this.resetTimeoutPeriod();
+                        this.resetKeepAliveInterval();
+                        // Wait for the handshake to complete before marking connection as connected
+                        return [4 /*yield*/, handshakePromise];
+                    case 3:
+                        // Wait for the handshake to complete before marking connection as connected
+                        _a.sent();
+                        this.connectionState = HubConnectionState.Connected;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /** Stops the connection.
+     *
+     * @returns {Promise<void>} A Promise that resolves when the connection has been successfully terminated, or rejects with an error.
+     */
+    HubConnection.prototype.stop = function () {
+        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Debug, "Stopping HubConnection.");
+        this.cleanupTimeout();
+        this.cleanupPingTimer();
+        return this.connection.stop();
+    };
+    /** Invokes a streaming hub method on the server using the specified name and arguments.
+     *
+     * @typeparam T The type of the items returned by the server.
+     * @param {string} methodName The name of the server method to invoke.
+     * @param {any[]} args The arguments used to invoke the server method.
+     * @returns {IStreamResult<T>} An object that yields results from the server as they are received.
+     */
+    HubConnection.prototype.stream = function (methodName) {
+        var _this = this;
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        var invocationDescriptor = this.createStreamInvocation(methodName, args);
+        var subject = new _Utils__WEBPACK_IMPORTED_MODULE_3__["Subject"](function () {
+            var cancelInvocation = _this.createCancelInvocation(invocationDescriptor.invocationId);
+            var cancelMessage = _this.protocol.writeMessage(cancelInvocation);
+            delete _this.callbacks[invocationDescriptor.invocationId];
+            return _this.sendMessage(cancelMessage);
+        });
+        this.callbacks[invocationDescriptor.invocationId] = function (invocationEvent, error) {
+            if (error) {
+                subject.error(error);
+                return;
+            }
+            else if (invocationEvent) {
+                // invocationEvent will not be null when an error is not passed to the callback
+                if (invocationEvent.type === _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Completion) {
+                    if (invocationEvent.error) {
+                        subject.error(new Error(invocationEvent.error));
+                    }
+                    else {
+                        subject.complete();
+                    }
+                }
+                else {
+                    subject.next((invocationEvent.item));
+                }
+            }
+        };
+        var message = this.protocol.writeMessage(invocationDescriptor);
+        this.sendMessage(message)
+            .catch(function (e) {
+            subject.error(e);
+            delete _this.callbacks[invocationDescriptor.invocationId];
+        });
+        return subject;
+    };
+    HubConnection.prototype.sendMessage = function (message) {
+        this.resetKeepAliveInterval();
+        return this.connection.send(message);
+    };
+    /** Invokes a hub method on the server using the specified name and arguments. Does not wait for a response from the receiver.
+     *
+     * The Promise returned by this method resolves when the client has sent the invocation to the server. The server may still
+     * be processing the invocation.
+     *
+     * @param {string} methodName The name of the server method to invoke.
+     * @param {any[]} args The arguments used to invoke the server method.
+     * @returns {Promise<void>} A Promise that resolves when the invocation has been successfully sent, or rejects with an error.
+     */
+    HubConnection.prototype.send = function (methodName) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        var invocationDescriptor = this.createInvocation(methodName, args, true);
+        var message = this.protocol.writeMessage(invocationDescriptor);
+        return this.sendMessage(message);
+    };
+    /** Invokes a hub method on the server using the specified name and arguments.
+     *
+     * The Promise returned by this method resolves when the server indicates it has finished invoking the method. When the promise
+     * resolves, the server has finished invoking the method. If the server method returns a result, it is produced as the result of
+     * resolving the Promise.
+     *
+     * @typeparam T The expected return type.
+     * @param {string} methodName The name of the server method to invoke.
+     * @param {any[]} args The arguments used to invoke the server method.
+     * @returns {Promise<T>} A Promise that resolves with the result of the server method (if any), or rejects with an error.
+     */
+    HubConnection.prototype.invoke = function (methodName) {
+        var _this = this;
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        var invocationDescriptor = this.createInvocation(methodName, args, false);
+        var p = new Promise(function (resolve, reject) {
+            // invocationId will always have a value for a non-blocking invocation
+            _this.callbacks[invocationDescriptor.invocationId] = function (invocationEvent, error) {
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                else if (invocationEvent) {
+                    // invocationEvent will not be null when an error is not passed to the callback
+                    if (invocationEvent.type === _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Completion) {
+                        if (invocationEvent.error) {
+                            reject(new Error(invocationEvent.error));
                         }
-
-                        initialize(transports);
-                    };
-
-                return negotiate(connection, callback);
-            }();
-
-            return deferred.promise();
-        },
-
-        starting: function (callback) {
-            /// <summary>Adds a callback that will be invoked before anything is sent over the connection</summary>
-            /// <param name="callback" type="Function">A callback function to execute before the connection is fully instantiated.</param>
-            /// <returns type="signalR" />
-            var connection = this;
-            $(connection).bind(events.onStarting, function (e, data) {
-                callback.call(connection);
-            });
-            return connection;
-        },
-
-        send: function (data) {
-            /// <summary>Sends data over the connection</summary>
-            /// <param name="data" type="String">The data to send over the connection</param>
-            /// <returns type="signalR" />
-            var connection = this;
-
-            if (connection.state === signalR.connectionState.disconnected) {
-                // Connection hasn't been started yet
-                throw new Error("SignalR: Connection must be started before data can be sent. Call .start() before .send()");
-            }
-
-            if (connection.state === signalR.connectionState.connecting) {
-                // Connection hasn't been started yet
-                throw new Error("SignalR: Connection has not been fully initialized. Use .start().done() or .start().fail() to run logic after the connection has started.");
-            }
-
-            connection.transport.send(connection, data);
-            // REVIEW: Should we return deferred here?
-            return connection;
-        },
-
-        received: function (callback) {
-            /// <summary>Adds a callback that will be invoked after anything is received over the connection</summary>
-            /// <param name="callback" type="Function">A callback function to execute when any data is received on the connection</param>
-            /// <returns type="signalR" />
-            var connection = this;
-            $(connection).bind(events.onReceived, function (e, data) {
-                callback.call(connection, data);
-            });
-            return connection;
-        },
-
-        stateChanged: function (callback) {
-            /// <summary>Adds a callback that will be invoked when the connection state changes</summary>
-            /// <param name="callback" type="Function">A callback function to execute when the connection state changes</param>
-            /// <returns type="signalR" />
-            var connection = this;
-            $(connection).bind(events.onStateChanged, function (e, data) {
-                callback.call(connection, data);
-            });
-            return connection;
-        },
-
-        error: function (callback) {
-            /// <summary>Adds a callback that will be invoked after an error occurs with the connection</summary>
-            /// <param name="callback" type="Function">A callback function to execute when an error occurs on the connection</param>
-            /// <returns type="signalR" />
-            var connection = this;
-            $(connection).bind(events.onError, function (e, errorData, sendData) {
-                connection.lastError = errorData;
-                // In practice 'errorData' is the SignalR built error object.
-                // In practice 'sendData' is undefined for all error events except those triggered by
-                // 'ajaxSend' and 'webSockets.send'.'sendData' is the original send payload.
-                callback.call(connection, errorData, sendData);
-            });
-            return connection;
-        },
-
-        disconnected: function (callback) {
-            /// <summary>Adds a callback that will be invoked when the client disconnects</summary>
-            /// <param name="callback" type="Function">A callback function to execute when the connection is broken</param>
-            /// <returns type="signalR" />
-            var connection = this;
-            $(connection).bind(events.onDisconnect, function (e, data) {
-                callback.call(connection);
-            });
-            return connection;
-        },
-
-        connectionSlow: function (callback) {
-            /// <summary>Adds a callback that will be invoked when the client detects a slow connection</summary>
-            /// <param name="callback" type="Function">A callback function to execute when the connection is slow</param>
-            /// <returns type="signalR" />
-            var connection = this;
-            $(connection).bind(events.onConnectionSlow, function (e, data) {
-                callback.call(connection);
-            });
-
-            return connection;
-        },
-
-        reconnecting: function (callback) {
-            /// <summary>Adds a callback that will be invoked when the underlying transport begins reconnecting</summary>
-            /// <param name="callback" type="Function">A callback function to execute when the connection enters a reconnecting state</param>
-            /// <returns type="signalR" />
-            var connection = this;
-            $(connection).bind(events.onReconnecting, function (e, data) {
-                callback.call(connection);
-            });
-            return connection;
-        },
-
-        reconnected: function (callback) {
-            /// <summary>Adds a callback that will be invoked when the underlying transport reconnects</summary>
-            /// <param name="callback" type="Function">A callback function to execute when the connection is restored</param>
-            /// <returns type="signalR" />
-            var connection = this;
-            $(connection).bind(events.onReconnect, function (e, data) {
-                callback.call(connection);
-            });
-            return connection;
-        },
-
-        stop: function (async, notifyServer) {
-            /// <summary>Stops listening</summary>
-            /// <param name="async" type="Boolean">Whether or not to asynchronously abort the connection</param>
-            /// <param name="notifyServer" type="Boolean">Whether we want to notify the server that we are aborting the connection</param>
-            /// <returns type="signalR" />
-            var connection = this,
-                // Save deferral because this is always cleaned up
-                deferral = connection._deferral;
-
-            // Verify that we've bound a load event.
-            if (connection._.deferredStartHandler) {
-                // Unbind the event.
-                _pageWindow.unbind("load", connection._.deferredStartHandler);
-            }
-
-            // Always clean up private non-timeout based state.
-            delete connection._.config;
-            delete connection._.deferredStartHandler;
-
-            // This needs to be checked despite the connection state because a connection start can be deferred until page load.
-            // If we've deferred the start due to a page load we need to unbind the "onLoad" -> start event.
-            if (!_pageLoaded && (!connection._.config || connection._.config.waitForPageLoad === true)) {
-                connection.log("Stopping connection prior to negotiate.");
-
-                // If we have a deferral we should reject it
-                if (deferral) {
-                    deferral.reject(signalR._.error(resources.stoppedWhileLoading));
+                        else {
+                            resolve(invocationEvent.result);
+                        }
+                    }
+                    else {
+                        reject(new Error("Unexpected message type: " + invocationEvent.type));
+                    }
                 }
-
-                // Short-circuit because the start has not been fully started.
-                return;
-            }
-
-            if (connection.state === signalR.connectionState.disconnected) {
-                return;
-            }
-
-            connection.log("Stopping connection.");
-
-            // Clear this no matter what
-            window.clearTimeout(connection._.beatHandle);
-            window.clearInterval(connection._.pingIntervalId);
-
-            if (connection.transport) {
-                connection.transport.stop(connection);
-
-                if (notifyServer !== false) {
-                    connection.transport.abort(connection, async);
+            };
+            var message = _this.protocol.writeMessage(invocationDescriptor);
+            _this.sendMessage(message)
+                .catch(function (e) {
+                reject(e);
+                // invocationId will always have a value for a non-blocking invocation
+                delete _this.callbacks[invocationDescriptor.invocationId];
+            });
+        });
+        return p;
+    };
+    /** Registers a handler that will be invoked when the hub method with the specified method name is invoked.
+     *
+     * @param {string} methodName The name of the hub method to define.
+     * @param {Function} newMethod The handler that will be raised when the hub method is invoked.
+     */
+    HubConnection.prototype.on = function (methodName, newMethod) {
+        if (!methodName || !newMethod) {
+            return;
+        }
+        methodName = methodName.toLowerCase();
+        if (!this.methods[methodName]) {
+            this.methods[methodName] = [];
+        }
+        // Preventing adding the same handler multiple times.
+        if (this.methods[methodName].indexOf(newMethod) !== -1) {
+            return;
+        }
+        this.methods[methodName].push(newMethod);
+    };
+    HubConnection.prototype.off = function (methodName, method) {
+        if (!methodName) {
+            return;
+        }
+        methodName = methodName.toLowerCase();
+        var handlers = this.methods[methodName];
+        if (!handlers) {
+            return;
+        }
+        if (method) {
+            var removeIdx = handlers.indexOf(method);
+            if (removeIdx !== -1) {
+                handlers.splice(removeIdx, 1);
+                if (handlers.length === 0) {
+                    delete this.methods[methodName];
                 }
-
-                if (supportsKeepAlive(connection)) {
-                    signalR.transports._logic.stopMonitoringKeepAlive(connection);
-                }
-
-                connection.transport = null;
             }
-
-            if (connection._.negotiateRequest) {
-                // If the negotiation request has already completed this will noop.
-                connection._.negotiateRequest.abort(_negotiateAbortText);
-                delete connection._.negotiateRequest;
-            }
-
-            // Ensure that initHandler.stop() is called before connection._deferral is deleted
-            if (connection._.initHandler) {
-                connection._.initHandler.stop();
-            }
-
-            delete connection._deferral;
-            delete connection.messageId;
-            delete connection.groupsToken;
-            delete connection.id;
-            delete connection._.pingIntervalId;
-            delete connection._.lastMessageAt;
-            delete connection._.lastActiveAt;
-
-            // Clear out our message buffer
-            connection._.connectingMessageBuffer.clear();
-
-            // Clean up this event
-            $(connection).unbind(events.onStart);
-
-            // Reset the URL and clear the access token
-            delete connection.accessToken;
-            connection.url = connection._originalUrl;
-
-            // Trigger the disconnect event
-            changeState(connection, connection.state, signalR.connectionState.disconnected);
-            $(connection).triggerHandler(events.onDisconnect);
-
-            return connection;
-        },
-
-        log: function (msg) {
-            log(msg, this.logging);
+        }
+        else {
+            delete this.methods[methodName];
         }
     };
-
-    signalR.fn.init.prototype = signalR.fn;
-
-    signalR.noConflict = function () {
-        /// <summary>Reinstates the original value of $.connection and returns the signalR object for manual assignment</summary>
-        /// <returns type="signalR" />
-        if ($.connection === signalR) {
-            $.connection = _connection;
+    /** Registers a handler that will be invoked when the connection is closed.
+     *
+     * @param {Function} callback The handler that will be invoked when the connection is closed. Optionally receives a single argument containing the error that caused the connection to close (if any).
+     */
+    HubConnection.prototype.onclose = function (callback) {
+        if (callback) {
+            this.closedCallbacks.push(callback);
         }
-        return signalR;
     };
+    HubConnection.prototype.processIncomingData = function (data) {
+        this.cleanupTimeout();
+        if (!this.receivedHandshakeResponse) {
+            data = this.processHandshakeResponse(data);
+            this.receivedHandshakeResponse = true;
+        }
+        // Data may have all been read when processing handshake response
+        if (data) {
+            // Parse the messages
+            var messages = this.protocol.parseMessages(data, this.logger);
+            for (var _i = 0, messages_1 = messages; _i < messages_1.length; _i++) {
+                var message = messages_1[_i];
+                switch (message.type) {
+                    case _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Invocation:
+                        this.invokeClientMethod(message);
+                        break;
+                    case _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].StreamItem:
+                    case _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Completion:
+                        var callback = this.callbacks[message.invocationId];
+                        if (callback != null) {
+                            if (message.type === _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Completion) {
+                                delete this.callbacks[message.invocationId];
+                            }
+                            callback(message);
+                        }
+                        break;
+                    case _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Ping:
+                        // Don't care about pings
+                        break;
+                    case _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Close:
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Information, "Close message received from server.");
+                        // We don't want to wait on the stop itself.
+                        // tslint:disable-next-line:no-floating-promises
+                        this.connection.stop(message.error ? new Error("Server returned an error on close: " + message.error) : undefined);
+                        break;
+                    default:
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Warning, "Invalid message type: " + message.type + ".");
+                        break;
+                }
+            }
+        }
+        this.resetTimeoutPeriod();
+    };
+    HubConnection.prototype.processHandshakeResponse = function (data) {
+        var _a;
+        var responseMessage;
+        var remainingData;
+        try {
+            _a = this.handshakeProtocol.parseHandshakeResponse(data), remainingData = _a[0], responseMessage = _a[1];
+        }
+        catch (e) {
+            var message = "Error parsing handshake response: " + e;
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Error, message);
+            var error = new Error(message);
+            // We don't want to wait on the stop itself.
+            // tslint:disable-next-line:no-floating-promises
+            this.connection.stop(error);
+            this.handshakeRejecter(error);
+            throw error;
+        }
+        if (responseMessage.error) {
+            var message = "Server returned handshake error: " + responseMessage.error;
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Error, message);
+            this.handshakeRejecter(message);
+            // We don't want to wait on the stop itself.
+            // tslint:disable-next-line:no-floating-promises
+            this.connection.stop(new Error(message));
+            throw new Error(message);
+        }
+        else {
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Debug, "Server handshake complete.");
+        }
+        this.handshakeResolver();
+        return remainingData;
+    };
+    HubConnection.prototype.resetKeepAliveInterval = function () {
+        var _this = this;
+        this.cleanupPingTimer();
+        this.pingServerHandle = setTimeout(function () { return __awaiter(_this, void 0, void 0, function () {
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        if (!(this.connectionState === HubConnectionState.Connected)) return [3 /*break*/, 4];
+                        _b.label = 1;
+                    case 1:
+                        _b.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, this.sendMessage(this.cachedPingMessage)];
+                    case 2:
+                        _b.sent();
+                        return [3 /*break*/, 4];
+                    case 3:
+                        _a = _b.sent();
+                        // We don't care about the error. It should be seen elsewhere in the client.
+                        // The connection is probably in a bad or closed state now, cleanup the timer so it stops triggering
+                        this.cleanupPingTimer();
+                        return [3 /*break*/, 4];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        }); }, this.keepAliveIntervalInMilliseconds);
+    };
+    HubConnection.prototype.resetTimeoutPeriod = function () {
+        var _this = this;
+        if (!this.connection.features || !this.connection.features.inherentKeepAlive) {
+            // Set the timeout timer
+            this.timeoutHandle = setTimeout(function () { return _this.serverTimeout(); }, this.serverTimeoutInMilliseconds);
+        }
+    };
+    HubConnection.prototype.serverTimeout = function () {
+        // The server hasn't talked to us in a while. It doesn't like us anymore ... :(
+        // Terminate the connection, but we don't need to wait on the promise.
+        // tslint:disable-next-line:no-floating-promises
+        this.connection.stop(new Error("Server timeout elapsed without receiving a message from the server."));
+    };
+    HubConnection.prototype.invokeClientMethod = function (invocationMessage) {
+        var _this = this;
+        var methods = this.methods[invocationMessage.target.toLowerCase()];
+        if (methods) {
+            methods.forEach(function (m) { return m.apply(_this, invocationMessage.arguments); });
+            if (invocationMessage.invocationId) {
+                // This is not supported in v1. So we return an error to avoid blocking the server waiting for the response.
+                var message = "Server requested a response, which is not supported in this version of the client.";
+                this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Error, message);
+                // We don't need to wait on this Promise.
+                // tslint:disable-next-line:no-floating-promises
+                this.connection.stop(new Error(message));
+            }
+        }
+        else {
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Warning, "No client method with the name '" + invocationMessage.target + "' found.");
+        }
+    };
+    HubConnection.prototype.connectionClosed = function (error) {
+        var _this = this;
+        var callbacks = this.callbacks;
+        this.callbacks = {};
+        this.connectionState = HubConnectionState.Disconnected;
+        // if handshake is in progress start will be waiting for the handshake promise, so we complete it
+        // if it has already completed this should just noop
+        if (this.handshakeRejecter) {
+            this.handshakeRejecter(error);
+        }
+        Object.keys(callbacks)
+            .forEach(function (key) {
+            var callback = callbacks[key];
+            callback(null, error ? error : new Error("Invocation canceled due to connection being closed."));
+        });
+        this.cleanupTimeout();
+        this.cleanupPingTimer();
+        this.closedCallbacks.forEach(function (c) { return c.apply(_this, [error]); });
+    };
+    HubConnection.prototype.cleanupPingTimer = function () {
+        if (this.pingServerHandle) {
+            clearTimeout(this.pingServerHandle);
+        }
+    };
+    HubConnection.prototype.cleanupTimeout = function () {
+        if (this.timeoutHandle) {
+            clearTimeout(this.timeoutHandle);
+        }
+    };
+    HubConnection.prototype.createInvocation = function (methodName, args, nonblocking) {
+        if (nonblocking) {
+            return {
+                arguments: args,
+                target: methodName,
+                type: _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Invocation,
+            };
+        }
+        else {
+            var id = this.id;
+            this.id++;
+            return {
+                arguments: args,
+                invocationId: id.toString(),
+                target: methodName,
+                type: _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].Invocation,
+            };
+        }
+    };
+    HubConnection.prototype.createStreamInvocation = function (methodName, args) {
+        var id = this.id;
+        this.id++;
+        return {
+            arguments: args,
+            invocationId: id.toString(),
+            target: methodName,
+            type: _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].StreamInvocation,
+        };
+    };
+    HubConnection.prototype.createCancelInvocation = function (id) {
+        return {
+            invocationId: id,
+            type: _IHubProtocol__WEBPACK_IMPORTED_MODULE_1__["MessageType"].CancelInvocation,
+        };
+    };
+    return HubConnection;
+}());
 
-    if ($.connection) {
-        _connection = $.connection;
-    }
 
-    $.connection = $.signalR = signalR;
 
-}(window.jQuery, window));
-/* jquery.signalR.transports.common.js */
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HandshakeProtocol", function() { return HandshakeProtocol; });
+/* harmony import */ var _TextMessageFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
 // Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
-/*global window:false */
-/// <reference path="jquery.signalR.core.js" />
 
-(function ($, window, undefined) {
-
-    var signalR = $.signalR,
-        events = $.signalR.events,
-        changeState = $.signalR.changeState,
-        startAbortText = "__Start Aborted__",
-        transportLogic;
-
-    signalR.transports = {};
-
-    function beat(connection) {
-        if (connection._.keepAliveData.monitoring) {
-            checkIfAlive(connection);
+/** @private */
+var HandshakeProtocol = /** @class */ (function () {
+    function HandshakeProtocol() {
+    }
+    // Handshake request is always JSON
+    HandshakeProtocol.prototype.writeHandshakeRequest = function (handshakeRequest) {
+        return _TextMessageFormat__WEBPACK_IMPORTED_MODULE_0__["TextMessageFormat"].write(JSON.stringify(handshakeRequest));
+    };
+    HandshakeProtocol.prototype.parseHandshakeResponse = function (data) {
+        var responseMessage;
+        var messageData;
+        var remainingData;
+        if (Object(_Utils__WEBPACK_IMPORTED_MODULE_1__["isArrayBuffer"])(data) || (typeof Buffer !== "undefined" && data instanceof Buffer)) {
+            // Format is binary but still need to read JSON text from handshake response
+            var binaryData = new Uint8Array(data);
+            var separatorIndex = binaryData.indexOf(_TextMessageFormat__WEBPACK_IMPORTED_MODULE_0__["TextMessageFormat"].RecordSeparatorCode);
+            if (separatorIndex === -1) {
+                throw new Error("Message is incomplete.");
+            }
+            // content before separator is handshake response
+            // optional content after is additional messages
+            var responseLength = separatorIndex + 1;
+            messageData = String.fromCharCode.apply(null, binaryData.slice(0, responseLength));
+            remainingData = (binaryData.byteLength > responseLength) ? binaryData.slice(responseLength).buffer : null;
         }
+        else {
+            var textData = data;
+            var separatorIndex = textData.indexOf(_TextMessageFormat__WEBPACK_IMPORTED_MODULE_0__["TextMessageFormat"].RecordSeparator);
+            if (separatorIndex === -1) {
+                throw new Error("Message is incomplete.");
+            }
+            // content before separator is handshake response
+            // optional content after is additional messages
+            var responseLength = separatorIndex + 1;
+            messageData = textData.substring(0, responseLength);
+            remainingData = (textData.length > responseLength) ? textData.substring(responseLength) : null;
+        }
+        // At this point we should have just the single handshake message
+        var messages = _TextMessageFormat__WEBPACK_IMPORTED_MODULE_0__["TextMessageFormat"].parse(messageData);
+        var response = JSON.parse(messages[0]);
+        if (response.type) {
+            throw new Error("Expected a handshake response from the server.");
+        }
+        responseMessage = response;
+        // multiple messages could have arrived with handshake
+        // return additional data to be parsed as usual, or null if all parsed
+        return [remainingData, responseMessage];
+    };
+    return HandshakeProtocol;
+}());
 
-        // Ensure that we successfully marked active before continuing the heartbeat.
-        if (transportLogic.markActive(connection)) {
-            connection._.beatHandle = window.setTimeout(function () {
-                beat(connection);
-            }, connection._.beatInterval);
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextMessageFormat", function() { return TextMessageFormat; });
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+// Not exported from index
+/** @private */
+var TextMessageFormat = /** @class */ (function () {
+    function TextMessageFormat() {
+    }
+    TextMessageFormat.write = function (output) {
+        return "" + output + TextMessageFormat.RecordSeparator;
+    };
+    TextMessageFormat.parse = function (input) {
+        if (input[input.length - 1] !== TextMessageFormat.RecordSeparator) {
+            throw new Error("Message is incomplete.");
+        }
+        var messages = input.split(TextMessageFormat.RecordSeparator);
+        messages.pop();
+        return messages;
+    };
+    TextMessageFormat.RecordSeparatorCode = 0x1e;
+    TextMessageFormat.RecordSeparator = String.fromCharCode(TextMessageFormat.RecordSeparatorCode);
+    return TextMessageFormat;
+}());
+
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Arg", function() { return Arg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDataDetail", function() { return getDataDetail; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatArrayBuffer", function() { return formatArrayBuffer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isArrayBuffer", function() { return isArrayBuffer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendMessage", function() { return sendMessage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLogger", function() { return createLogger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Subject", function() { return Subject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubjectSubscription", function() { return SubjectSubscription; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConsoleLogger", function() { return ConsoleLogger; });
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _Loggers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+/** @private */
+var Arg = /** @class */ (function () {
+    function Arg() {
+    }
+    Arg.isRequired = function (val, name) {
+        if (val === null || val === undefined) {
+            throw new Error("The '" + name + "' argument is required.");
+        }
+    };
+    Arg.isIn = function (val, values, name) {
+        // TypeScript enums have keys for **both** the name and the value of each enum member on the type itself.
+        if (!(val in values)) {
+            throw new Error("Unknown " + name + " value: " + val + ".");
+        }
+    };
+    return Arg;
+}());
+
+/** @private */
+function getDataDetail(data, includeContent) {
+    var detail = "";
+    if (isArrayBuffer(data)) {
+        detail = "Binary data of length " + data.byteLength;
+        if (includeContent) {
+            detail += ". Content: '" + formatArrayBuffer(data) + "'";
         }
     }
-
-    function checkIfAlive(connection) {
-        var keepAliveData = connection._.keepAliveData,
-            timeElapsed;
-
-        // Only check if we're connected
-        if (connection.state === signalR.connectionState.connected) {
-            timeElapsed = new Date().getTime() - connection._.lastMessageAt;
-
-            // Check if the keep alive has completely timed out
-            if (timeElapsed >= keepAliveData.timeout) {
-                connection.log("Keep alive timed out.  Notifying transport that connection has been lost.");
-
-                // Notify transport that the connection has been lost
-                connection.transport.lostConnection(connection);
-            } else if (timeElapsed >= keepAliveData.timeoutWarning) {
-                // This is to assure that the user only gets a single warning
-                if (!keepAliveData.userNotified) {
-                    connection.log("Keep alive has been missed, connection may be dead/slow.");
-                    $(connection).triggerHandler(events.onConnectionSlow);
-                    keepAliveData.userNotified = true;
-                }
-            } else {
-                keepAliveData.userNotified = false;
-            }
+    else if (typeof data === "string") {
+        detail = "String data of length " + data.length;
+        if (includeContent) {
+            detail += ". Content: '" + data + "'";
         }
     }
-
-    function getAjaxUrl(connection, path) {
-        var url = connection.url + path;
-
-        if (connection.transport) {
-            url += "?transport=" + connection.transport.name;
+    return detail;
+}
+/** @private */
+function formatArrayBuffer(data) {
+    var view = new Uint8Array(data);
+    // Uint8Array.map only supports returning another Uint8Array?
+    var str = "";
+    view.forEach(function (num) {
+        var pad = num < 16 ? "0" : "";
+        str += "0x" + pad + num.toString(16) + " ";
+    });
+    // Trim of trailing space.
+    return str.substr(0, str.length - 1);
+}
+// Also in signalr-protocol-msgpack/Utils.ts
+/** @private */
+function isArrayBuffer(val) {
+    return val && typeof ArrayBuffer !== "undefined" &&
+        (val instanceof ArrayBuffer ||
+            // Sometimes we get an ArrayBuffer that doesn't satisfy instanceof
+            (val.constructor && val.constructor.name === "ArrayBuffer"));
+}
+/** @private */
+function sendMessage(logger, transportName, httpClient, url, accessTokenFactory, content, logMessageContent) {
+    return __awaiter(this, void 0, void 0, function () {
+        var _a, headers, token, responseType, response;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    if (!accessTokenFactory) return [3 /*break*/, 2];
+                    return [4 /*yield*/, accessTokenFactory()];
+                case 1:
+                    token = _b.sent();
+                    if (token) {
+                        headers = (_a = {},
+                            _a["Authorization"] = "Bearer " + token,
+                            _a);
+                    }
+                    _b.label = 2;
+                case 2:
+                    logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Trace, "(" + transportName + " transport) sending data. " + getDataDetail(content, logMessageContent) + ".");
+                    responseType = isArrayBuffer(content) ? "arraybuffer" : "text";
+                    return [4 /*yield*/, httpClient.post(url, {
+                            content: content,
+                            headers: headers,
+                            responseType: responseType,
+                        })];
+                case 3:
+                    response = _b.sent();
+                    logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Trace, "(" + transportName + " transport) request complete. Response status: " + response.statusCode + ".");
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+/** @private */
+function createLogger(logger) {
+    if (logger === undefined) {
+        return new ConsoleLogger(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Information);
+    }
+    if (logger === null) {
+        return _Loggers__WEBPACK_IMPORTED_MODULE_1__["NullLogger"].instance;
+    }
+    if (logger.log) {
+        return logger;
+    }
+    return new ConsoleLogger(logger);
+}
+/** @private */
+var Subject = /** @class */ (function () {
+    function Subject(cancelCallback) {
+        this.observers = [];
+        this.cancelCallback = cancelCallback;
+    }
+    Subject.prototype.next = function (item) {
+        for (var _i = 0, _a = this.observers; _i < _a.length; _i++) {
+            var observer = _a[_i];
+            observer.next(item);
         }
-
-        return transportLogic.prepareQueryString(connection, url);
-    }
-
-    function InitHandler(connection) {
-        this.connection = connection;
-
-        this.startRequested = false;
-        this.startCompleted = false;
-        this.connectionStopped = false;
-    }
-
-    InitHandler.prototype = {
-        start: function (transport, onSuccess, onFallback) {
-            var that = this,
-                connection = that.connection,
-                failCalled = false;
-
-            if (that.startRequested || that.connectionStopped) {
-                connection.log("WARNING! " + transport.name + " transport cannot be started. Initialization ongoing or completed.");
-                return;
-            }
-
-            connection.log(transport.name + " transport starting.");
-
-            transport.start(connection, function () {
-                if (!failCalled) {
-                    that.initReceived(transport, onSuccess);
-                }
-            }, function (error) {
-                // Don't allow the same transport to cause onFallback to be called twice
-                if (!failCalled) {
-                    failCalled = true;
-                    that.transportFailed(transport, error, onFallback);
-                }
-
-                // Returns true if the transport should stop;
-                // false if it should attempt to reconnect
-                return !that.startCompleted || that.connectionStopped;
-            });
-
-            that.transportTimeoutHandle = window.setTimeout(function () {
-                if (!failCalled) {
-                    failCalled = true;
-                    connection.log(transport.name + " transport timed out when trying to connect.");
-                    that.transportFailed(transport, undefined, onFallback);
-                }
-            }, connection._.totalTransportConnectTimeout);
-        },
-
-        stop: function () {
-            this.connectionStopped = true;
-            window.clearTimeout(this.transportTimeoutHandle);
-            signalR.transports._logic.tryAbortStartRequest(this.connection);
-        },
-
-        initReceived: function (transport, onSuccess) {
-            var that = this,
-                connection = that.connection;
-
-            if (that.startRequested) {
-                connection.log("WARNING! The client received multiple init messages.");
-                return;
-            }
-
-            if (that.connectionStopped) {
-                return;
-            }
-
-            that.startRequested = true;
-            window.clearTimeout(that.transportTimeoutHandle);
-
-            connection.log(transport.name + " transport connected. Initiating start request.");
-            signalR.transports._logic.ajaxStart(connection, function () {
-                that.startCompleted = true;
-                onSuccess();
-            });
-        },
-
-        transportFailed: function (transport, error, onFallback) {
-            var connection = this.connection,
-                deferred = connection._deferral,
-                wrappedError;
-
-            if (this.connectionStopped) {
-                return;
-            }
-
-            window.clearTimeout(this.transportTimeoutHandle);
-
-            if (!this.startRequested) {
-                transport.stop(connection);
-
-                connection.log(transport.name + " transport failed to connect. Attempting to fall back.");
-                onFallback();
-            } else if (!this.startCompleted) {
-                // Do not attempt to fall back if a start request is ongoing during a transport failure.
-                // Instead, trigger an error and stop the connection.
-                wrappedError = signalR._.error(signalR.resources.errorDuringStartRequest, error);
-
-                connection.log(transport.name + " transport failed during the start request. Stopping the connection.");
-                $(connection).triggerHandler(events.onError, [wrappedError]);
-                if (deferred) {
-                    deferred.reject(wrappedError);
-                }
-
-                connection.stop();
-            } else {
-                // The start request has completed, but the connection has not stopped.
-                // No need to do anything here. The transport should attempt its normal reconnect logic.
+    };
+    Subject.prototype.error = function (err) {
+        for (var _i = 0, _a = this.observers; _i < _a.length; _i++) {
+            var observer = _a[_i];
+            if (observer.error) {
+                observer.error(err);
             }
         }
     };
+    Subject.prototype.complete = function () {
+        for (var _i = 0, _a = this.observers; _i < _a.length; _i++) {
+            var observer = _a[_i];
+            if (observer.complete) {
+                observer.complete();
+            }
+        }
+    };
+    Subject.prototype.subscribe = function (observer) {
+        this.observers.push(observer);
+        return new SubjectSubscription(this, observer);
+    };
+    return Subject;
+}());
 
-    transportLogic = signalR.transports._logic = {
-        ajax: function (connection, options) {
-            return $.ajax(
-                $.extend(/*deep copy*/ true, {}, $.signalR.ajaxDefaults, {
-                    type: "GET",
-                    data: {},
-                    xhrFields: { withCredentials: connection.withCredentials },
-                    contentType: connection.contentType,
-                    dataType: connection.ajaxDataType
-                }, options));
-        },
+/** @private */
+var SubjectSubscription = /** @class */ (function () {
+    function SubjectSubscription(subject, observer) {
+        this.subject = subject;
+        this.observer = observer;
+    }
+    SubjectSubscription.prototype.dispose = function () {
+        var index = this.subject.observers.indexOf(this.observer);
+        if (index > -1) {
+            this.subject.observers.splice(index, 1);
+        }
+        if (this.subject.observers.length === 0) {
+            this.subject.cancelCallback().catch(function (_) { });
+        }
+    };
+    return SubjectSubscription;
+}());
 
-        pingServer: function (connection) {
-            /// <summary>Pings the server</summary>
-            /// <param name="connection" type="signalr">Connection associated with the server ping</param>
-            /// <returns type="signalR" />
-            var url,
-                xhr,
-                deferral = $.Deferred();
+/** @private */
+var ConsoleLogger = /** @class */ (function () {
+    function ConsoleLogger(minimumLogLevel) {
+        this.minimumLogLevel = minimumLogLevel;
+    }
+    ConsoleLogger.prototype.log = function (logLevel, message) {
+        if (logLevel >= this.minimumLogLevel) {
+            switch (logLevel) {
+                case _ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Critical:
+                case _ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Error:
+                    console.error("[" + new Date().toISOString() + "] " + _ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"][logLevel] + ": " + message);
+                    break;
+                case _ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Warning:
+                    console.warn("[" + new Date().toISOString() + "] " + _ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"][logLevel] + ": " + message);
+                    break;
+                case _ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Information:
+                    console.info("[" + new Date().toISOString() + "] " + _ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"][logLevel] + ": " + message);
+                    break;
+                default:
+                    // console.debug only goes to attached debuggers in Node, so we use console.log for Trace and Debug
+                    console.log("[" + new Date().toISOString() + "] " + _ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"][logLevel] + ": " + message);
+                    break;
+            }
+        }
+    };
+    return ConsoleLogger;
+}());
 
-            if (connection.transport) {
-                url = connection.url + "/ping";
 
-                url = transportLogic.addQs(url, connection.qs);
 
-                xhr = transportLogic.ajax(connection, {
-                    url: url,
-                    headers: connection.accessToken ? { "Authorization": "Bearer " + connection.accessToken } : {},
-                    success: function (result) {
-                        var data;
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-                        try {
-                            data = connection._parseResponse(result);
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NullLogger", function() { return NullLogger; });
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+/** A logger that does nothing when log messages are sent to it. */
+var NullLogger = /** @class */ (function () {
+    function NullLogger() {
+    }
+    /** @inheritDoc */
+    // tslint:disable-next-line
+    NullLogger.prototype.log = function (_logLevel, _message) {
+    };
+    /** The singleton instance of the {@link @aspnet/signalr.NullLogger}. */
+    NullLogger.instance = new NullLogger();
+    return NullLogger;
+}());
+
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageType", function() { return MessageType; });
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+/** Defines the type of a Hub Message. */
+var MessageType;
+(function (MessageType) {
+    /** Indicates the message is an Invocation message and implements the {@link @aspnet/signalr.InvocationMessage} interface. */
+    MessageType[MessageType["Invocation"] = 1] = "Invocation";
+    /** Indicates the message is a StreamItem message and implements the {@link @aspnet/signalr.StreamItemMessage} interface. */
+    MessageType[MessageType["StreamItem"] = 2] = "StreamItem";
+    /** Indicates the message is a Completion message and implements the {@link @aspnet/signalr.CompletionMessage} interface. */
+    MessageType[MessageType["Completion"] = 3] = "Completion";
+    /** Indicates the message is a Stream Invocation message and implements the {@link @aspnet/signalr.StreamInvocationMessage} interface. */
+    MessageType[MessageType["StreamInvocation"] = 4] = "StreamInvocation";
+    /** Indicates the message is a Cancel Invocation message and implements the {@link @aspnet/signalr.CancelInvocationMessage} interface. */
+    MessageType[MessageType["CancelInvocation"] = 5] = "CancelInvocation";
+    /** Indicates the message is a Ping message and implements the {@link @aspnet/signalr.PingMessage} interface. */
+    MessageType[MessageType["Ping"] = 6] = "Ping";
+    /** Indicates the message is a Close message and implements the {@link @aspnet/signalr.CloseMessage} interface. */
+    MessageType[MessageType["Close"] = 7] = "Close";
+})(MessageType || (MessageType = {}));
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HubConnectionBuilder", function() { return HubConnectionBuilder; });
+/* harmony import */ var _HttpConnection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+/* harmony import */ var _HubConnection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _JsonHubProtocol__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
+/* harmony import */ var _Loggers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+
+
+
+
+
+/** A builder for configuring {@link @aspnet/signalr.HubConnection} instances. */
+var HubConnectionBuilder = /** @class */ (function () {
+    function HubConnectionBuilder() {
+    }
+    HubConnectionBuilder.prototype.configureLogging = function (logging) {
+        _Utils__WEBPACK_IMPORTED_MODULE_4__["Arg"].isRequired(logging, "logging");
+        if (isLogger(logging)) {
+            this.logger = logging;
+        }
+        else {
+            this.logger = new _Utils__WEBPACK_IMPORTED_MODULE_4__["ConsoleLogger"](logging);
+        }
+        return this;
+    };
+    HubConnectionBuilder.prototype.withUrl = function (url, transportTypeOrOptions) {
+        _Utils__WEBPACK_IMPORTED_MODULE_4__["Arg"].isRequired(url, "url");
+        this.url = url;
+        // Flow-typing knows where it's at. Since HttpTransportType is a number and IHttpConnectionOptions is guaranteed
+        // to be an object, we know (as does TypeScript) this comparison is all we need to figure out which overload was called.
+        if (typeof transportTypeOrOptions === "object") {
+            this.httpConnectionOptions = transportTypeOrOptions;
+        }
+        else {
+            this.httpConnectionOptions = {
+                transport: transportTypeOrOptions,
+            };
+        }
+        return this;
+    };
+    /** Configures the {@link @aspnet/signalr.HubConnection} to use the specified Hub Protocol.
+     *
+     * @param {IHubProtocol} protocol The {@link @aspnet/signalr.IHubProtocol} implementation to use.
+     */
+    HubConnectionBuilder.prototype.withHubProtocol = function (protocol) {
+        _Utils__WEBPACK_IMPORTED_MODULE_4__["Arg"].isRequired(protocol, "protocol");
+        this.protocol = protocol;
+        return this;
+    };
+    /** Creates a {@link @aspnet/signalr.HubConnection} from the configuration options specified in this builder.
+     *
+     * @returns {HubConnection} The configured {@link @aspnet/signalr.HubConnection}.
+     */
+    HubConnectionBuilder.prototype.build = function () {
+        // If httpConnectionOptions has a logger, use it. Otherwise, override it with the one
+        // provided to configureLogger
+        var httpConnectionOptions = this.httpConnectionOptions || {};
+        // If it's 'null', the user **explicitly** asked for null, don't mess with it.
+        if (httpConnectionOptions.logger === undefined) {
+            // If our logger is undefined or null, that's OK, the HttpConnection constructor will handle it.
+            httpConnectionOptions.logger = this.logger;
+        }
+        // Now create the connection
+        if (!this.url) {
+            throw new Error("The 'HubConnectionBuilder.withUrl' method must be called before building the connection.");
+        }
+        var connection = new _HttpConnection__WEBPACK_IMPORTED_MODULE_0__["HttpConnection"](this.url, httpConnectionOptions);
+        return _HubConnection__WEBPACK_IMPORTED_MODULE_1__["HubConnection"].create(connection, this.logger || _Loggers__WEBPACK_IMPORTED_MODULE_3__["NullLogger"].instance, this.protocol || new _JsonHubProtocol__WEBPACK_IMPORTED_MODULE_2__["JsonHubProtocol"]());
+    };
+    return HubConnectionBuilder;
+}());
+
+function isLogger(logger) {
+    return logger.log !== undefined;
+}
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpConnection", function() { return HttpConnection; });
+/* harmony import */ var _DefaultHttpClient__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var _ITransport__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
+/* harmony import */ var _LongPollingTransport__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
+/* harmony import */ var _ServerSentEventsTransport__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(20);
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12);
+/* harmony import */ var _WebSocketTransport__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(21);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+var MAX_REDIRECTS = 100;
+var WebSocketModule = null;
+var EventSourceModule = null;
+if (typeof window === "undefined" && "function" !== "undefined") {
+    // In order to ignore the dynamic require in webpack builds we need to do this magic
+    // @ts-ignore: TS doesn't know about these names
+    var requireFunc =  true ? require : undefined;
+    WebSocketModule = requireFunc("ws");
+    EventSourceModule = requireFunc("eventsource");
+}
+/** @private */
+var HttpConnection = /** @class */ (function () {
+    function HttpConnection(url, options) {
+        if (options === void 0) { options = {}; }
+        this.features = {};
+        _Utils__WEBPACK_IMPORTED_MODULE_5__["Arg"].isRequired(url, "url");
+        this.logger = Object(_Utils__WEBPACK_IMPORTED_MODULE_5__["createLogger"])(options.logger);
+        this.baseUrl = this.resolveUrl(url);
+        options = options || {};
+        options.logMessageContent = options.logMessageContent || false;
+        var isNode = typeof window === "undefined";
+        if (!isNode && typeof WebSocket !== "undefined" && !options.WebSocket) {
+            options.WebSocket = WebSocket;
+        }
+        else if (isNode && !options.WebSocket) {
+            if (WebSocketModule) {
+                options.WebSocket = WebSocketModule;
+            }
+        }
+        if (!isNode && typeof EventSource !== "undefined" && !options.EventSource) {
+            options.EventSource = EventSource;
+        }
+        else if (isNode && !options.EventSource) {
+            if (typeof EventSourceModule !== "undefined") {
+                options.EventSource = EventSourceModule;
+            }
+        }
+        this.httpClient = options.httpClient || new _DefaultHttpClient__WEBPACK_IMPORTED_MODULE_0__["DefaultHttpClient"](this.logger);
+        this.connectionState = 2 /* Disconnected */;
+        this.options = options;
+        this.onreceive = null;
+        this.onclose = null;
+    }
+    HttpConnection.prototype.start = function (transferFormat) {
+        transferFormat = transferFormat || _ITransport__WEBPACK_IMPORTED_MODULE_2__["TransferFormat"].Binary;
+        _Utils__WEBPACK_IMPORTED_MODULE_5__["Arg"].isIn(transferFormat, _ITransport__WEBPACK_IMPORTED_MODULE_2__["TransferFormat"], "transferFormat");
+        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Debug, "Starting connection with transfer format '" + _ITransport__WEBPACK_IMPORTED_MODULE_2__["TransferFormat"][transferFormat] + "'.");
+        if (this.connectionState !== 2 /* Disconnected */) {
+            return Promise.reject(new Error("Cannot start a connection that is not in the 'Disconnected' state."));
+        }
+        this.connectionState = 0 /* Connecting */;
+        this.startPromise = this.startInternal(transferFormat);
+        return this.startPromise;
+    };
+    HttpConnection.prototype.send = function (data) {
+        if (this.connectionState !== 1 /* Connected */) {
+            throw new Error("Cannot send data if the connection is not in the 'Connected' State.");
+        }
+        // Transport will not be null if state is connected
+        return this.transport.send(data);
+    };
+    HttpConnection.prototype.stop = function (error) {
+        return __awaiter(this, void 0, void 0, function () {
+            var e_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.connectionState = 2 /* Disconnected */;
+                        // Set error as soon as possible otherwise there is a race between
+                        // the transport closing and providing an error and the error from a close message
+                        // We would prefer the close message error.
+                        this.stopError = error;
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, this.startPromise];
+                    case 2:
+                        _a.sent();
+                        return [3 /*break*/, 4];
+                    case 3:
+                        e_1 = _a.sent();
+                        return [3 /*break*/, 4];
+                    case 4:
+                        if (!this.transport) return [3 /*break*/, 6];
+                        return [4 /*yield*/, this.transport.stop()];
+                    case 5:
+                        _a.sent();
+                        this.transport = undefined;
+                        _a.label = 6;
+                    case 6: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HttpConnection.prototype.startInternal = function (transferFormat) {
+        return __awaiter(this, void 0, void 0, function () {
+            var url, negotiateResponse, redirects, _loop_1, this_1, state_1, e_2;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        url = this.baseUrl;
+                        this.accessTokenFactory = this.options.accessTokenFactory;
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 12, , 13]);
+                        if (!this.options.skipNegotiation) return [3 /*break*/, 5];
+                        if (!(this.options.transport === _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"].WebSockets)) return [3 /*break*/, 3];
+                        // No need to add a connection ID in this case
+                        this.transport = this.constructTransport(_ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"].WebSockets);
+                        // We should just call connect directly in this case.
+                        // No fallback or negotiate in this case.
+                        return [4 /*yield*/, this.transport.connect(url, transferFormat)];
+                    case 2:
+                        // We should just call connect directly in this case.
+                        // No fallback or negotiate in this case.
+                        _a.sent();
+                        return [3 /*break*/, 4];
+                    case 3: throw Error("Negotiation can only be skipped when using the WebSocket transport directly.");
+                    case 4: return [3 /*break*/, 11];
+                    case 5:
+                        negotiateResponse = null;
+                        redirects = 0;
+                        _loop_1 = function () {
+                            var accessToken_1;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0: return [4 /*yield*/, this_1.getNegotiationResponse(url)];
+                                    case 1:
+                                        negotiateResponse = _a.sent();
+                                        // the user tries to stop the connection when it is being started
+                                        if (this_1.connectionState === 2 /* Disconnected */) {
+                                            return [2 /*return*/, { value: void 0 }];
+                                        }
+                                        if (negotiateResponse.error) {
+                                            throw Error(negotiateResponse.error);
+                                        }
+                                        if (negotiateResponse.ProtocolVersion) {
+                                            throw Error("Detected a connection attempt to an ASP.NET SignalR Server. This client only supports connecting to an ASP.NET Core SignalR Server. See https://aka.ms/signalr-core-differences for details.");
+                                        }
+                                        if (negotiateResponse.url) {
+                                            url = negotiateResponse.url;
+                                        }
+                                        if (negotiateResponse.accessToken) {
+                                            accessToken_1 = negotiateResponse.accessToken;
+                                            this_1.accessTokenFactory = function () { return accessToken_1; };
+                                        }
+                                        redirects++;
+                                        return [2 /*return*/];
+                                }
+                            });
+                        };
+                        this_1 = this;
+                        _a.label = 6;
+                    case 6: return [5 /*yield**/, _loop_1()];
+                    case 7:
+                        state_1 = _a.sent();
+                        if (typeof state_1 === "object")
+                            return [2 /*return*/, state_1.value];
+                        _a.label = 8;
+                    case 8:
+                        if (negotiateResponse.url && redirects < MAX_REDIRECTS) return [3 /*break*/, 6];
+                        _a.label = 9;
+                    case 9:
+                        if (redirects === MAX_REDIRECTS && negotiateResponse.url) {
+                            throw Error("Negotiate redirection limit exceeded.");
                         }
-                        catch (error) {
-                            deferral.reject(
-                                signalR._.transportError(
-                                    signalR.resources.pingServerFailedParse,
-                                    connection.transport,
-                                    error,
-                                    xhr
-                                )
-                            );
-                            connection.stop();
-                            return;
+                        return [4 /*yield*/, this.createTransport(url, this.options.transport, negotiateResponse, transferFormat)];
+                    case 10:
+                        _a.sent();
+                        _a.label = 11;
+                    case 11:
+                        if (this.transport instanceof _LongPollingTransport__WEBPACK_IMPORTED_MODULE_3__["LongPollingTransport"]) {
+                            this.features.inherentKeepAlive = true;
                         }
-
-                        if (data.Response === "pong") {
-                            deferral.resolve();
+                        this.transport.onreceive = this.onreceive;
+                        this.transport.onclose = function (e) { return _this.stopConnection(e); };
+                        // only change the state if we were connecting to not overwrite
+                        // the state if the connection is already marked as Disconnected
+                        this.changeState(0 /* Connecting */, 1 /* Connected */);
+                        return [3 /*break*/, 13];
+                    case 12:
+                        e_2 = _a.sent();
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Error, "Failed to start the connection: " + e_2);
+                        this.connectionState = 2 /* Disconnected */;
+                        this.transport = undefined;
+                        throw e_2;
+                    case 13: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HttpConnection.prototype.getNegotiationResponse = function (url) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a, headers, token, negotiateUrl, response, e_3;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        if (!this.accessTokenFactory) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.accessTokenFactory()];
+                    case 1:
+                        token = _b.sent();
+                        if (token) {
+                            headers = (_a = {},
+                                _a["Authorization"] = "Bearer " + token,
+                                _a);
                         }
-                        else {
-                            deferral.reject(
-                                signalR._.transportError(
-                                    signalR._.format(signalR.resources.pingServerFailedInvalidResponse, result),
-                                    connection.transport,
-                                    null /* error */,
-                                    xhr
-                                )
-                            );
+                        _b.label = 2;
+                    case 2:
+                        negotiateUrl = this.resolveNegotiateUrl(url);
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Debug, "Sending negotiation request: " + negotiateUrl + ".");
+                        _b.label = 3;
+                    case 3:
+                        _b.trys.push([3, 5, , 6]);
+                        return [4 /*yield*/, this.httpClient.post(negotiateUrl, {
+                                content: "",
+                                headers: headers,
+                            })];
+                    case 4:
+                        response = _b.sent();
+                        if (response.statusCode !== 200) {
+                            throw Error("Unexpected status code returned from negotiate " + response.statusCode);
                         }
-                    },
-                    error: function (error) {
-                        if (error.status === 401 || error.status === 403) {
-                            deferral.reject(
-                                signalR._.transportError(
-                                    signalR._.format(signalR.resources.pingServerFailedStatusCode, error.status),
-                                    connection.transport,
-                                    error,
-                                    xhr
-                                )
-                            );
-                            connection.stop();
-                        }
-                        else {
-                            deferral.reject(
-                                signalR._.transportError(
-                                    signalR.resources.pingServerFailed,
-                                    connection.transport,
-                                    error,
-                                    xhr
-                                )
-                            );
-                        }
+                        return [2 /*return*/, JSON.parse(response.content)];
+                    case 5:
+                        e_3 = _b.sent();
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Error, "Failed to complete negotiation with the server: " + e_3);
+                        throw e_3;
+                    case 6: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HttpConnection.prototype.createConnectUrl = function (url, connectionId) {
+        if (!connectionId) {
+            return url;
+        }
+        return url + (url.indexOf("?") === -1 ? "?" : "&") + ("id=" + connectionId);
+    };
+    HttpConnection.prototype.createTransport = function (url, requestedTransport, negotiateResponse, requestedTransferFormat) {
+        return __awaiter(this, void 0, void 0, function () {
+            var connectUrl, transports, _i, transports_1, endpoint, transport, ex_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        connectUrl = this.createConnectUrl(url, negotiateResponse.connectionId);
+                        if (!this.isITransport(requestedTransport)) return [3 /*break*/, 2];
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Debug, "Connection was provided an instance of ITransport, using that directly.");
+                        this.transport = requestedTransport;
+                        return [4 /*yield*/, this.transport.connect(connectUrl, requestedTransferFormat)];
+                    case 1:
+                        _a.sent();
+                        // only change the state if we were connecting to not overwrite
+                        // the state if the connection is already marked as Disconnected
+                        this.changeState(0 /* Connecting */, 1 /* Connected */);
+                        return [2 /*return*/];
+                    case 2:
+                        transports = negotiateResponse.availableTransports || [];
+                        _i = 0, transports_1 = transports;
+                        _a.label = 3;
+                    case 3:
+                        if (!(_i < transports_1.length)) return [3 /*break*/, 9];
+                        endpoint = transports_1[_i];
+                        this.connectionState = 0 /* Connecting */;
+                        transport = this.resolveTransport(endpoint, requestedTransport, requestedTransferFormat);
+                        if (!(typeof transport === "number")) return [3 /*break*/, 8];
+                        this.transport = this.constructTransport(transport);
+                        if (!!negotiateResponse.connectionId) return [3 /*break*/, 5];
+                        return [4 /*yield*/, this.getNegotiationResponse(url)];
+                    case 4:
+                        negotiateResponse = _a.sent();
+                        connectUrl = this.createConnectUrl(url, negotiateResponse.connectionId);
+                        _a.label = 5;
+                    case 5:
+                        _a.trys.push([5, 7, , 8]);
+                        return [4 /*yield*/, this.transport.connect(connectUrl, requestedTransferFormat)];
+                    case 6:
+                        _a.sent();
+                        this.changeState(0 /* Connecting */, 1 /* Connected */);
+                        return [2 /*return*/];
+                    case 7:
+                        ex_1 = _a.sent();
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Error, "Failed to start the transport '" + _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"][transport] + "': " + ex_1);
+                        this.connectionState = 2 /* Disconnected */;
+                        negotiateResponse.connectionId = undefined;
+                        return [3 /*break*/, 8];
+                    case 8:
+                        _i++;
+                        return [3 /*break*/, 3];
+                    case 9: throw new Error("Unable to initialize any of the available transports.");
+                }
+            });
+        });
+    };
+    HttpConnection.prototype.constructTransport = function (transport) {
+        switch (transport) {
+            case _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"].WebSockets:
+                if (!this.options.WebSocket) {
+                    throw new Error("'WebSocket' is not supported in your environment.");
+                }
+                return new _WebSocketTransport__WEBPACK_IMPORTED_MODULE_6__["WebSocketTransport"](this.httpClient, this.accessTokenFactory, this.logger, this.options.logMessageContent || false, this.options.WebSocket);
+            case _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"].ServerSentEvents:
+                if (!this.options.EventSource) {
+                    throw new Error("'EventSource' is not supported in your environment.");
+                }
+                return new _ServerSentEventsTransport__WEBPACK_IMPORTED_MODULE_4__["ServerSentEventsTransport"](this.httpClient, this.accessTokenFactory, this.logger, this.options.logMessageContent || false, this.options.EventSource);
+            case _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"].LongPolling:
+                return new _LongPollingTransport__WEBPACK_IMPORTED_MODULE_3__["LongPollingTransport"](this.httpClient, this.accessTokenFactory, this.logger, this.options.logMessageContent || false);
+            default:
+                throw new Error("Unknown transport: " + transport + ".");
+        }
+    };
+    HttpConnection.prototype.resolveTransport = function (endpoint, requestedTransport, requestedTransferFormat) {
+        var transport = _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"][endpoint.transport];
+        if (transport === null || transport === undefined) {
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Debug, "Skipping transport '" + endpoint.transport + "' because it is not supported by this client.");
+        }
+        else {
+            var transferFormats = endpoint.transferFormats.map(function (s) { return _ITransport__WEBPACK_IMPORTED_MODULE_2__["TransferFormat"][s]; });
+            if (transportMatches(requestedTransport, transport)) {
+                if (transferFormats.indexOf(requestedTransferFormat) >= 0) {
+                    if ((transport === _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"].WebSockets && !this.options.WebSocket) ||
+                        (transport === _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"].ServerSentEvents && !this.options.EventSource)) {
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Debug, "Skipping transport '" + _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"][transport] + "' because it is not supported in your environment.'");
                     }
-                });
+                    else {
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Debug, "Selecting transport '" + _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"][transport] + "'.");
+                        return transport;
+                    }
+                }
+                else {
+                    this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Debug, "Skipping transport '" + _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"][transport] + "' because it does not support the requested transfer format '" + _ITransport__WEBPACK_IMPORTED_MODULE_2__["TransferFormat"][requestedTransferFormat] + "'.");
+                }
             }
             else {
-                deferral.reject(
-                    signalR._.transportError(
-                        signalR.resources.noConnectionTransport,
-                        connection.transport
-                    )
-                );
+                this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Debug, "Skipping transport '" + _ITransport__WEBPACK_IMPORTED_MODULE_2__["HttpTransportType"][transport] + "' because it was disabled by the client.");
             }
-
-            return deferral.promise();
-        },
-
-        prepareQueryString: function (connection, url) {
-            var preparedUrl;
-
-            // Use addQs to start since it handles the ?/& prefix for us
-            preparedUrl = transportLogic.addQs(url, "clientProtocol=" + connection.clientProtocol);
-
-            // Add the user-specified query string params if any
-            preparedUrl = transportLogic.addQs(preparedUrl, connection.qs);
-
-            if (connection.token) {
-                preparedUrl += "&connectionToken=" + window.encodeURIComponent(connection.token);
-            }
-
-            if (connection.data) {
-                preparedUrl += "&connectionData=" + window.encodeURIComponent(connection.data);
-            }
-
-            return preparedUrl;
-        },
-
-        addQs: function (url, qs) {
-            var appender = url.indexOf("?") !== -1 ? "&" : "?",
-                firstChar;
-
-            if (!qs) {
-                return url;
-            }
-
-            if (typeof (qs) === "object") {
-                return url + appender + $.param(qs);
-            }
-
-            if (typeof (qs) === "string") {
-                firstChar = qs.charAt(0);
-
-                if (firstChar === "?" || firstChar === "&") {
-                    appender = "";
-                }
-
-                return url + appender + qs;
-            }
-
-            throw new Error("Query string property must be either a string or object.");
-        },
-
-        // BUG #2953: The url needs to be same otherwise it will cause a memory leak
-        getUrl: function (connection, transport, reconnecting, poll, ajaxPost) {
-            /// <summary>Gets the url for making a GET based connect request</summary>
-            var baseUrl = transport === "webSockets" ? "" : connection.baseUrl,
-                url = baseUrl + connection.appRelativeUrl,
-                qs = "transport=" + transport;
-
-            if (!ajaxPost && connection.groupsToken) {
-                qs += "&groupsToken=" + window.encodeURIComponent(connection.groupsToken);
-            }
-
-            if (!reconnecting) {
-                url += "/connect";
-            } else {
-                if (poll) {
-                    // longPolling transport specific
-                    url += "/poll";
-                } else {
-                    url += "/reconnect";
-                }
-
-                if (!ajaxPost && connection.messageId) {
-                    qs += "&messageId=" + window.encodeURIComponent(connection.messageId);
-                }
-            }
-            url += "?" + qs;
-            url = transportLogic.prepareQueryString(connection, url);
-
-            // With sse or ws, access_token in request header is not supported
-            if (connection.transport && connection.accessToken) {
-                if (connection.transport.name === "serverSentEvents" || connection.transport.name === "webSockets") {
-                    url += "&access_token=" + window.encodeURIComponent(connection.accessToken);
-                }
-            }
-
-            if (!ajaxPost) {
-                url += "&tid=" + Math.floor(Math.random() * 11);
-            }
-
-            return url;
-        },
-
-        maximizePersistentResponse: function (minPersistentResponse) {
-            return {
-                MessageId: minPersistentResponse.C,
-                Messages: minPersistentResponse.M,
-                Initialized: typeof (minPersistentResponse.S) !== "undefined" ? true : false,
-                ShouldReconnect: typeof (minPersistentResponse.T) !== "undefined" ? true : false,
-                LongPollDelay: minPersistentResponse.L,
-                GroupsToken: minPersistentResponse.G,
-                Error: minPersistentResponse.E
-            };
-        },
-
-        updateGroups: function (connection, groupsToken) {
-            if (groupsToken) {
-                connection.groupsToken = groupsToken;
-            }
-        },
-
-        stringifySend: function (connection, message) {
-            if (typeof (message) === "string" || typeof (message) === "undefined" || message === null) {
-                return message;
-            }
-            return connection.json.stringify(message);
-        },
-
-        ajaxSend: function (connection, data) {
-            var payload = transportLogic.stringifySend(connection, data),
-                url = getAjaxUrl(connection, "/send"),
-                xhr,
-                onFail = function (error, connection) {
-                    $(connection).triggerHandler(events.onError, [signalR._.transportError(signalR.resources.sendFailed, connection.transport, error, xhr), data]);
-                };
-
-
-            xhr = transportLogic.ajax(connection, {
-                url: url,
-                type: connection.ajaxDataType === "jsonp" ? "GET" : "POST",
-                contentType: signalR._.defaultContentType,
-                headers: connection.accessToken ? { "Authorization": "Bearer " + connection.accessToken } : {},
-                data: {
-                    data: payload
-                },
-                success: function (result) {
-                    var res;
-
-                    if (result) {
-                        try {
-                            res = connection._parseResponse(result);
-                        }
-                        catch (error) {
-                            onFail(error, connection);
-                            connection.stop();
-                            return;
-                        }
-
-                        transportLogic.triggerReceived(connection, res);
-                    }
-                },
-                error: function (error, textStatus) {
-                    if (textStatus === "abort" || textStatus === "parsererror") {
-                        // The parsererror happens for sends that don't return any data, and hence
-                        // don't write the jsonp callback to the response. This is harder to fix on the server
-                        // so just hack around it on the client for now.
-                        return;
-                    }
-
-                    onFail(error, connection);
-                }
-            });
-
-            return xhr;
-        },
-
-        ajaxAbort: function (connection, async) {
-            if (typeof (connection.transport) === "undefined") {
-                return;
-            }
-
-            // Async by default unless explicitly overidden
-            async = typeof async === "undefined" ? true : async;
-
-            var url = getAjaxUrl(connection, "/abort");
-
-            transportLogic.ajax(connection, {
-                url: url,
-                async: async,
-                timeout: 1000,
-                type: "POST",
-                headers: connection.accessToken ? { "Authorization": "Bearer " + connection.accessToken } : {},
-                dataType: "text" // We don't want to use JSONP here even when JSONP is enabled
-            });
-
-            connection.log("Fired ajax abort async = " + async + ".");
-        },
-
-        ajaxStart: function (connection, onSuccess) {
-            var rejectDeferred = function (error) {
-                    var deferred = connection._deferral;
-                    if (deferred) {
-                        deferred.reject(error);
-                    }
-                },
-                triggerStartError = function (error) {
-                    connection.log("The start request failed. Stopping the connection.");
-                    $(connection).triggerHandler(events.onError, [error]);
-                    rejectDeferred(error);
-                    connection.stop();
-                };
-
-            connection._.startRequest = transportLogic.ajax(connection, {
-                url: getAjaxUrl(connection, "/start"),
-                headers: connection.accessToken ? { "Authorization": "Bearer " + connection.accessToken } : {},
-                success: function (result, statusText, xhr) {
-                    var data;
-
-                    try {
-                        data = connection._parseResponse(result);
-                    } catch (error) {
-                        triggerStartError(signalR._.error(
-                            signalR._.format(signalR.resources.errorParsingStartResponse, result),
-                            error, xhr));
-                        return;
-                    }
-
-                    if (data.Response === "started") {
-                        onSuccess();
-                    } else {
-                        triggerStartError(signalR._.error(
-                            signalR._.format(signalR.resources.invalidStartResponse, result),
-                            null /* error */, xhr));
-                    }
-                },
-                error: function (xhr, statusText, error) {
-                    if (statusText !== startAbortText) {
-                        triggerStartError(signalR._.error(
-                            signalR.resources.errorDuringStartRequest,
-                            error, xhr));
-                    } else {
-                        // Stop has been called, no need to trigger the error handler
-                        // or stop the connection again with onStartError
-                        connection.log("The start request aborted because connection.stop() was called.");
-                        rejectDeferred(signalR._.error(
-                            signalR.resources.stoppedDuringStartRequest,
-                            null /* error */, xhr));
-                    }
-                }
-            });
-        },
-
-        tryAbortStartRequest: function (connection) {
-            if (connection._.startRequest) {
-                // If the start request has already completed this will noop.
-                connection._.startRequest.abort(startAbortText);
-                delete connection._.startRequest;
-            }
-        },
-
-        tryInitialize: function (connection, persistentResponse, onInitialized) {
-            if (persistentResponse.Initialized && onInitialized) {
-                onInitialized();
-            } else if (persistentResponse.Initialized) {
-                connection.log("WARNING! The client received an init message after reconnecting.");
-            }
-
-        },
-
-        triggerReceived: function (connection, data) {
-            if (!connection._.connectingMessageBuffer.tryBuffer(data)) {
-                $(connection).triggerHandler(events.onReceived, [data]);
-            }
-        },
-
-        processMessages: function (connection, minData, onInitialized) {
-            var data;
-
-            if(minData && (typeof minData.I !== "undefined")) {
-                // This is a response to a message the client sent
-                transportLogic.triggerReceived(connection, minData);
-                return;
-            }
-
-            // Update the last message time stamp
-            transportLogic.markLastMessage(connection);
-
-            if (minData) {
-                // This is a message send directly to the client
-                data = transportLogic.maximizePersistentResponse(minData);
-
-                if(data.Error) {
-                    // This is a global error, stop the connection.
-                    connection.log("Received an error message from the server: " + minData.E);
-                    $(connection).triggerHandler(signalR.events.onError, [signalR._.error(minData.E, /* source */ "ServerError")]);
-                    connection.stop(/* async */ false, /* notifyServer */ false);
-                }
-
-                transportLogic.updateGroups(connection, data.GroupsToken);
-
-                if (data.MessageId) {
-                    connection.messageId = data.MessageId;
-                }
-
-                if (data.Messages) {
-                    $.each(data.Messages, function (index, message) {
-                        transportLogic.triggerReceived(connection, message);
-                    });
-
-                    transportLogic.tryInitialize(connection, data, onInitialized);
-                }
-            }
-        },
-
-        monitorKeepAlive: function (connection) {
-            var keepAliveData = connection._.keepAliveData;
-
-            // If we haven't initiated the keep alive timeouts then we need to
-            if (!keepAliveData.monitoring) {
-                keepAliveData.monitoring = true;
-
-                transportLogic.markLastMessage(connection);
-
-                // Save the function so we can unbind it on stop
-                connection._.keepAliveData.reconnectKeepAliveUpdate = function () {
-                    // Mark a new message so that keep alive doesn't time out connections
-                    transportLogic.markLastMessage(connection);
-                };
-
-                // Update Keep alive on reconnect
-                $(connection).bind(events.onReconnect, connection._.keepAliveData.reconnectKeepAliveUpdate);
-
-                connection.log("Now monitoring keep alive with a warning timeout of " + keepAliveData.timeoutWarning + ", keep alive timeout of " + keepAliveData.timeout + " and disconnecting timeout of " + connection.disconnectTimeout);
-            } else {
-                connection.log("Tried to monitor keep alive but it's already being monitored.");
-            }
-        },
-
-        stopMonitoringKeepAlive: function (connection) {
-            var keepAliveData = connection._.keepAliveData;
-
-            // Only attempt to stop the keep alive monitoring if its being monitored
-            if (keepAliveData.monitoring) {
-                // Stop monitoring
-                keepAliveData.monitoring = false;
-
-                // Remove the updateKeepAlive function from the reconnect event
-                $(connection).unbind(events.onReconnect, connection._.keepAliveData.reconnectKeepAliveUpdate);
-
-                // Clear all the keep alive data
-                connection._.keepAliveData = {};
-                connection.log("Stopping the monitoring of the keep alive.");
-            }
-        },
-
-        startHeartbeat: function (connection) {
-            connection._.lastActiveAt = new Date().getTime();
-            beat(connection);
-        },
-
-        markLastMessage: function (connection) {
-            connection._.lastMessageAt = new Date().getTime();
-        },
-
-        markActive: function (connection) {
-            if (transportLogic.verifyLastActive(connection)) {
-                connection._.lastActiveAt = new Date().getTime();
-                return true;
-            }
-
-            return false;
-        },
-
-        isConnectedOrReconnecting: function (connection) {
-            return connection.state === signalR.connectionState.connected ||
-                   connection.state === signalR.connectionState.reconnecting;
-        },
-
-        ensureReconnectingState: function (connection) {
-            if (changeState(connection,
-                        signalR.connectionState.connected,
-                        signalR.connectionState.reconnecting) === true) {
-                $(connection).triggerHandler(events.onReconnecting);
-            }
-            return connection.state === signalR.connectionState.reconnecting;
-        },
-
-        clearReconnectTimeout: function (connection) {
-            if (connection && connection._.reconnectTimeout) {
-                window.clearTimeout(connection._.reconnectTimeout);
-                delete connection._.reconnectTimeout;
-            }
-        },
-
-        verifyLastActive: function (connection) {
-            if (new Date().getTime() - connection._.lastActiveAt >= connection.reconnectWindow) {
-                var message = signalR._.format(signalR.resources.reconnectWindowTimeout, new Date(connection._.lastActiveAt), connection.reconnectWindow);
-                connection.log(message);
-                $(connection).triggerHandler(events.onError, [signalR._.error(message, /* source */ "TimeoutException")]);
-                connection.stop(/* async */ false, /* notifyServer */ false);
-                return false;
-            }
-
+        }
+        return null;
+    };
+    HttpConnection.prototype.isITransport = function (transport) {
+        return transport && typeof (transport) === "object" && "connect" in transport;
+    };
+    HttpConnection.prototype.changeState = function (from, to) {
+        if (this.connectionState === from) {
+            this.connectionState = to;
             return true;
-        },
-
-        reconnect: function (connection, transportName) {
-            var transport = signalR.transports[transportName];
-
-            // We should only set a reconnectTimeout if we are currently connected
-            // and a reconnectTimeout isn't already set.
-            if (transportLogic.isConnectedOrReconnecting(connection) && !connection._.reconnectTimeout) {
-                // Need to verify before the setTimeout occurs because an application sleep could occur during the setTimeout duration.
-                if (!transportLogic.verifyLastActive(connection)) {
-                    return;
-                }
-
-                connection._.reconnectTimeout = window.setTimeout(function () {
-                    if (!transportLogic.verifyLastActive(connection)) {
-                        return;
-                    }
-
-                    transport.stop(connection);
-
-                    if (transportLogic.ensureReconnectingState(connection)) {
-                        connection.log(transportName + " reconnecting.");
-                        transport.start(connection);
-                    }
-                }, connection.reconnectDelay);
-            }
-        },
-
-        handleParseFailure: function (connection, result, error, onFailed, context) {
-            var wrappedError = signalR._.transportError(
-                signalR._.format(signalR.resources.parseFailed, result),
-                connection.transport,
-                error,
-                context);
-
-            // If we're in the initialization phase trigger onFailed, otherwise stop the connection.
-            if (onFailed && onFailed(wrappedError)) {
-                connection.log("Failed to parse server response while attempting to connect.");
-            } else {
-                $(connection).triggerHandler(events.onError, [wrappedError]);
-                connection.stop();
-            }
-        },
-
-        initHandler: function (connection) {
-            return new InitHandler(connection);
-        },
-
-        foreverFrame: {
-            count: 0,
-            connections: {}
         }
-    };
-
-}(window.jQuery, window));
-/* jquery.signalR.transports.webSockets.js */
-// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-
-
-/*global window:false */
-/// <reference path="jquery.signalR.transports.common.js" />
-
-(function ($, window, undefined) {
-
-    var signalR = $.signalR,
-        events = $.signalR.events,
-        changeState = $.signalR.changeState,
-        transportLogic = signalR.transports._logic;
-
-    signalR.transports.webSockets = {
-        name: "webSockets",
-
-        supportsKeepAlive: function () {
-            return true;
-        },
-
-        send: function (connection, data) {
-            var payload = transportLogic.stringifySend(connection, data);
-
-            try {
-                connection.socket.send(payload);
-            } catch (ex) {
-                $(connection).triggerHandler(events.onError,
-                    [signalR._.transportError(
-                        signalR.resources.webSocketsInvalidState,
-                        connection.transport,
-                        ex,
-                        connection.socket
-                    ),
-                    data]);
-            }
-        },
-
-        start: function (connection, onSuccess, onFailed) {
-            var url,
-                opened = false,
-                that = this,
-                reconnecting = !onSuccess,
-                $connection = $(connection);
-
-            if (!window.WebSocket) {
-                onFailed();
-                return;
-            }
-
-            if (!connection.socket) {
-                if (connection.webSocketServerUrl) {
-                    url = connection.webSocketServerUrl;
-                } else {
-                    url = connection.wsProtocol + connection.host;
-                }
-
-                url += transportLogic.getUrl(connection, this.name, reconnecting);
-
-                connection.log("Connecting to websocket endpoint '" + url + "'.");
-                connection.socket = new window.WebSocket(url);
-
-                connection.socket.onopen = function () {
-                    opened = true;
-                    connection.log("Websocket opened.");
-
-                    transportLogic.clearReconnectTimeout(connection);
-
-                    if (changeState(connection,
-                                    signalR.connectionState.reconnecting,
-                                    signalR.connectionState.connected) === true) {
-                        $connection.triggerHandler(events.onReconnect);
-                    }
-                };
-
-                connection.socket.onclose = function (event) {
-                    var error;
-
-                    // Only handle a socket close if the close is from the current socket.
-                    // Sometimes on disconnect the server will push down an onclose event
-                    // to an expired socket.
-
-                    if (this === connection.socket) {
-                        if (opened && typeof event.wasClean !== "undefined" && event.wasClean === false) {
-                            // Ideally this would use the websocket.onerror handler (rather than checking wasClean in onclose) but
-                            // I found in some circumstances Chrome won't call onerror. This implementation seems to work on all browsers.
-                            error = signalR._.transportError(
-                                signalR.resources.webSocketClosed,
-                                connection.transport,
-                                event);
-
-                            connection.log("Unclean disconnect from websocket: " + (event.reason || "[no reason given]."));
-                        } else {
-                            connection.log("Websocket closed.");
-                        }
-
-                        if (!onFailed || !onFailed(error)) {
-                            if (error) {
-                                $(connection).triggerHandler(events.onError, [error]);
-                            }
-
-                            that.reconnect(connection);
-                        }
-                    }
-                };
-
-                connection.socket.onmessage = function (event) {
-                    var data;
-
-                    try {
-                        data = connection._parseResponse(event.data);
-                    }
-                    catch (error) {
-                        transportLogic.handleParseFailure(connection, event.data, error, onFailed, event);
-                        return;
-                    }
-
-                    if (data) {
-                        transportLogic.processMessages(connection, data, onSuccess);
-                    }
-                };
-            }
-        },
-
-        reconnect: function (connection) {
-            transportLogic.reconnect(connection, this.name);
-        },
-
-        lostConnection: function (connection) {
-            this.reconnect(connection);
-        },
-
-        stop: function (connection) {
-            // Don't trigger a reconnect after stopping
-            transportLogic.clearReconnectTimeout(connection);
-
-            if (connection.socket) {
-                connection.log("Closing the Websocket.");
-                connection.socket.close();
-                connection.socket = null;
-            }
-        },
-
-        abort: function (connection, async) {
-            transportLogic.ajaxAbort(connection, async);
-        }
-    };
-
-}(window.jQuery, window));
-/* jquery.signalR.transports.serverSentEvents.js */
-// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-
-
-/*global window:false */
-/// <reference path="jquery.signalR.transports.common.js" />
-
-(function ($, window, undefined) {
-
-    var signalR = $.signalR,
-        events = $.signalR.events,
-        changeState = $.signalR.changeState,
-        transportLogic = signalR.transports._logic,
-        clearReconnectAttemptTimeout = function (connection) {
-            window.clearTimeout(connection._.reconnectAttemptTimeoutHandle);
-            delete connection._.reconnectAttemptTimeoutHandle;
-        };
-
-    signalR.transports.serverSentEvents = {
-        name: "serverSentEvents",
-
-        supportsKeepAlive: function () {
-            return true;
-        },
-
-        timeOut: 3000,
-
-        start: function (connection, onSuccess, onFailed) {
-            var that = this,
-                opened = false,
-                $connection = $(connection),
-                reconnecting = !onSuccess,
-                url;
-
-            if (connection.eventSource) {
-                connection.log("The connection already has an event source. Stopping it.");
-                connection.stop();
-            }
-
-            if (!window.EventSource) {
-                if (onFailed) {
-                    connection.log("This browser doesn't support SSE.");
-                    onFailed();
-                }
-                return;
-            }
-
-            url = transportLogic.getUrl(connection, this.name, reconnecting);
-
-            try {
-                connection.log("Attempting to connect to SSE endpoint '" + url + "'.");
-                connection.eventSource = new window.EventSource(url, { withCredentials: connection.withCredentials });
-            }
-            catch (e) {
-                connection.log("EventSource failed trying to connect with error " + e.Message + ".");
-                if (onFailed) {
-                    // The connection failed, call the failed callback
-                    onFailed();
-                } else {
-                    $connection.triggerHandler(events.onError, [signalR._.transportError(signalR.resources.eventSourceFailedToConnect, connection.transport, e)]);
-                    if (reconnecting) {
-                        // If we were reconnecting, rather than doing initial connect, then try reconnect again
-                        that.reconnect(connection);
-                    }
-                }
-                return;
-            }
-
-            if (reconnecting) {
-                connection._.reconnectAttemptTimeoutHandle = window.setTimeout(function () {
-                    if (opened === false) {
-                        // If we're reconnecting and the event source is attempting to connect,
-                        // don't keep retrying. This causes duplicate connections to spawn.
-                        if (connection.eventSource.readyState !== window.EventSource.OPEN) {
-                            // If we were reconnecting, rather than doing initial connect, then try reconnect again
-                            that.reconnect(connection);
-                        }
-                    }
-                },
-                that.timeOut);
-            }
-
-            connection.eventSource.addEventListener("open", function (e) {
-                connection.log("EventSource connected.");
-
-                clearReconnectAttemptTimeout(connection);
-                transportLogic.clearReconnectTimeout(connection);
-
-                if (opened === false) {
-                    opened = true;
-
-                    if (changeState(connection,
-                                         signalR.connectionState.reconnecting,
-                                         signalR.connectionState.connected) === true) {
-                        $connection.triggerHandler(events.onReconnect);
-                    }
-                }
-            }, false);
-
-            connection.eventSource.addEventListener("message", function (e) {
-                var res;
-
-                // process messages
-                if (e.data === "initialized") {
-                    return;
-                }
-
-                try {
-                    res = connection._parseResponse(e.data);
-                }
-                catch (error) {
-                    transportLogic.handleParseFailure(connection, e.data, error, onFailed, e);
-                    return;
-                }
-
-                transportLogic.processMessages(connection, res, onSuccess);
-            }, false);
-
-            connection.eventSource.addEventListener("error", function (e) {
-                var error = signalR._.transportError(
-                    signalR.resources.eventSourceError,
-                    connection.transport,
-                    e);
-
-                // Only handle an error if the error is from the current Event Source.
-                // Sometimes on disconnect the server will push down an error event
-                // to an expired Event Source.
-                if (this !== connection.eventSource) {
-                    return;
-                }
-
-                if (onFailed && onFailed(error)) {
-                    return;
-                }
-
-                connection.log("EventSource readyState: " + connection.eventSource.readyState + ".");
-
-                if (e.eventPhase === window.EventSource.CLOSED) {
-                    // We don't use the EventSource's native reconnect function as it
-                    // doesn't allow us to change the URL when reconnecting. We need
-                    // to change the URL to not include the /connect suffix, and pass
-                    // the last message id we received.
-                    connection.log("EventSource reconnecting due to the server connection ending.");
-                    that.reconnect(connection);
-                } else {
-                    // connection error
-                    connection.log("EventSource error.");
-                    $connection.triggerHandler(events.onError, [error]);
-                }
-            }, false);
-        },
-
-        reconnect: function (connection) {
-            transportLogic.reconnect(connection, this.name);
-        },
-
-        lostConnection: function (connection) {
-            this.reconnect(connection);
-        },
-
-        send: function (connection, data) {
-            transportLogic.ajaxSend(connection, data);
-        },
-
-        stop: function (connection) {
-            // Don't trigger a reconnect after stopping
-            clearReconnectAttemptTimeout(connection);
-            transportLogic.clearReconnectTimeout(connection);
-
-            if (connection && connection.eventSource) {
-                connection.log("EventSource calling close().");
-                connection.eventSource.close();
-                connection.eventSource = null;
-                delete connection.eventSource;
-            }
-        },
-
-        abort: function (connection, async) {
-            transportLogic.ajaxAbort(connection, async);
-        }
-    };
-
-}(window.jQuery, window));
-/* jquery.signalR.transports.foreverFrame.js */
-// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-
-
-/*global window:false */
-/// <reference path="jquery.signalR.transports.common.js" />
-
-(function ($, window, undefined) {
-
-    var signalR = $.signalR,
-        events = $.signalR.events,
-        changeState = $.signalR.changeState,
-        transportLogic = signalR.transports._logic,
-        createFrame = function () {
-            var frame = window.document.createElement("iframe");
-            frame.setAttribute("style", "position:absolute;top:0;left:0;width:0;height:0;visibility:hidden;");
-            return frame;
-        },
-        // Used to prevent infinite loading icon spins in older versions of ie
-        // We build this object inside a closure so we don't pollute the rest of
-        // the foreverFrame transport with unnecessary functions/utilities.
-        loadPreventer = (function () {
-            var loadingFixIntervalId = null,
-                loadingFixInterval = 1000,
-                attachedTo = 0;
-
-            return {
-                prevent: function () {
-                    // Prevent additional iframe removal procedures from newer browsers
-                    if (signalR._.ieVersion <= 8) {
-                        // We only ever want to set the interval one time, so on the first attachedTo
-                        if (attachedTo === 0) {
-                            // Create and destroy iframe every 3 seconds to prevent loading icon, super hacky
-                            loadingFixIntervalId = window.setInterval(function () {
-                                var tempFrame = createFrame();
-
-                                window.document.body.appendChild(tempFrame);
-                                window.document.body.removeChild(tempFrame);
-
-                                tempFrame = null;
-                            }, loadingFixInterval);
-                        }
-
-                        attachedTo++;
-                    }
-                },
-                cancel: function () {
-                    // Only clear the interval if there's only one more object that the loadPreventer is attachedTo
-                    if (attachedTo === 1) {
-                        window.clearInterval(loadingFixIntervalId);
-                    }
-
-                    if (attachedTo > 0) {
-                        attachedTo--;
-                    }
-                }
-            };
-        })();
-
-    signalR.transports.foreverFrame = {
-        name: "foreverFrame",
-
-        supportsKeepAlive: function () {
-            return true;
-        },
-
-        // Added as a value here so we can create tests to verify functionality
-        iframeClearThreshold: 50,
-
-        start: function (connection, onSuccess, onFailed) {
-            if (connection.accessToken) {
-                if (onFailed) {
-                    connection.log("Forever Frame does not support connections that require a Bearer token to connect, such as the Azure SignalR Service.");
-                    onFailed();
-                }
-                return;
-            }
-
-            var that = this,
-                frameId = (transportLogic.foreverFrame.count += 1),
-                url,
-                frame = createFrame(),
-                frameLoadHandler = function () {
-                    connection.log("Forever frame iframe finished loading and is no longer receiving messages.");
-                    if (!onFailed || !onFailed()) {
-                        that.reconnect(connection);
-                    }
-                };
-
-            if (window.EventSource) {
-                // If the browser supports SSE, don't use Forever Frame
-                if (onFailed) {
-                    connection.log("Forever Frame is not supported by SignalR on browsers with SSE support.");
-                    onFailed();
-                }
-                return;
-            }
-
-            frame.setAttribute("data-signalr-connection-id", connection.id);
-
-            // Start preventing loading icon
-            // This will only perform work if the loadPreventer is not attached to another connection.
-            loadPreventer.prevent();
-
-            // Build the url
-            url = transportLogic.getUrl(connection, this.name);
-            url += "&frameId=" + frameId;
-
-            // add frame to the document prior to setting URL to avoid caching issues.
-            window.document.documentElement.appendChild(frame);
-
-            connection.log("Binding to iframe's load event.");
-
-            if (frame.addEventListener) {
-                frame.addEventListener("load", frameLoadHandler, false);
-            } else if (frame.attachEvent) {
-                frame.attachEvent("onload", frameLoadHandler);
-            }
-
-            frame.src = url;
-            transportLogic.foreverFrame.connections[frameId] = connection;
-
-            connection.frame = frame;
-            connection.frameId = frameId;
-
-            if (onSuccess) {
-                connection.onSuccess = function () {
-                    connection.log("Iframe transport started.");
-                    onSuccess();
-                };
-            }
-        },
-
-        reconnect: function (connection) {
-            var that = this;
-
-            // Need to verify connection state and verify before the setTimeout occurs because an application sleep could occur during the setTimeout duration.
-            if (transportLogic.isConnectedOrReconnecting(connection) && transportLogic.verifyLastActive(connection)) {
-                window.setTimeout(function () {
-                    // Verify that we're ok to reconnect.
-                    if (!transportLogic.verifyLastActive(connection)) {
-                        return;
-                    }
-
-                    if (connection.frame && transportLogic.ensureReconnectingState(connection)) {
-                        var frame = connection.frame,
-                            src = transportLogic.getUrl(connection, that.name, true) + "&frameId=" + connection.frameId;
-                        connection.log("Updating iframe src to '" + src + "'.");
-                        frame.src = src;
-                    }
-                }, connection.reconnectDelay);
-            }
-        },
-
-        lostConnection: function (connection) {
-            this.reconnect(connection);
-        },
-
-        send: function (connection, data) {
-            transportLogic.ajaxSend(connection, data);
-        },
-
-        receive: function (connection, data) {
-            var cw,
-                body,
-                response;
-
-            if (connection.json !== connection._originalJson) {
-                // If there's a custom JSON parser configured then serialize the object
-                // using the original (browser) JSON parser and then deserialize it using
-                // the custom parser (connection._parseResponse does that). This is so we
-                // can easily send the response from the server as "raw" JSON but still
-                // support custom JSON deserialization in the browser.
-                data = connection._originalJson.stringify(data);
-            }
-
-            response = connection._parseResponse(data);
-
-            transportLogic.processMessages(connection, response, connection.onSuccess);
-
-            // Protect against connection stopping from a callback trigger within the processMessages above.
-            if (connection.state === $.signalR.connectionState.connected) {
-                // Delete the script & div elements
-                connection.frameMessageCount = (connection.frameMessageCount || 0) + 1;
-                if (connection.frameMessageCount > signalR.transports.foreverFrame.iframeClearThreshold) {
-                    connection.frameMessageCount = 0;
-                    cw = connection.frame.contentWindow || connection.frame.contentDocument;
-                    if (cw && cw.document && cw.document.body) {
-                        body = cw.document.body;
-
-                        // Remove all the child elements from the iframe's body to conserver memory
-                        while (body.firstChild) {
-                            body.removeChild(body.firstChild);
-                        }
-                    }
-                }
-            }
-        },
-
-        stop: function (connection) {
-            var cw = null;
-
-            // Stop attempting to prevent loading icon
-            loadPreventer.cancel();
-
-            if (connection.frame) {
-                if (connection.frame.stop) {
-                    connection.frame.stop();
-                } else {
-                    try {
-                        cw = connection.frame.contentWindow || connection.frame.contentDocument;
-                        if (cw.document && cw.document.execCommand) {
-                            cw.document.execCommand("Stop");
-                        }
-                    }
-                    catch (e) {
-                        connection.log("Error occurred when stopping foreverFrame transport. Message = " + e.message + ".");
-                    }
-                }
-
-                // Ensure the iframe is where we left it
-                if (connection.frame.parentNode === window.document.documentElement) {
-                    window.document.documentElement.removeChild(connection.frame);
-                }
-
-                delete transportLogic.foreverFrame.connections[connection.frameId];
-                connection.frame = null;
-                connection.frameId = null;
-                delete connection.frame;
-                delete connection.frameId;
-                delete connection.onSuccess;
-                delete connection.frameMessageCount;
-                connection.log("Stopping forever frame.");
-            }
-        },
-
-        abort: function (connection, async) {
-            transportLogic.ajaxAbort(connection, async);
-        },
-
-        getConnection: function (id) {
-            return transportLogic.foreverFrame.connections[id];
-        },
-
-        started: function (connection) {
-            if (changeState(connection,
-                signalR.connectionState.reconnecting,
-                signalR.connectionState.connected) === true) {
-
-                $(connection).triggerHandler(events.onReconnect);
-            }
-        }
-    };
-
-}(window.jQuery, window));
-/* jquery.signalR.transports.longPolling.js */
-// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-
-
-/*global window:false */
-/// <reference path="jquery.signalR.transports.common.js" />
-
-(function ($, window, undefined) {
-
-    var signalR = $.signalR,
-        events = $.signalR.events,
-        changeState = $.signalR.changeState,
-        isDisconnecting = $.signalR.isDisconnecting,
-        transportLogic = signalR.transports._logic;
-
-    signalR.transports.longPolling = {
-        name: "longPolling",
-
-        supportsKeepAlive: function () {
-            return false;
-        },
-
-        reconnectDelay: 3000,
-
-        start: function (connection, onSuccess, onFailed) {
-            /// <summary>Starts the long polling connection</summary>
-            /// <param name="connection" type="signalR">The SignalR connection to start</param>
-            var that = this,
-                fireConnect = function () {
-                    fireConnect = $.noop;
-
-                    connection.log("LongPolling connected.");
-
-                    if (onSuccess) {
-                        onSuccess();
-                    } else {
-                        connection.log("WARNING! The client received an init message after reconnecting.");
-                    }
-                },
-                tryFailConnect = function (error) {
-                    if (onFailed(error)) {
-                        connection.log("LongPolling failed to connect.");
-                        return true;
-                    }
-
-                    return false;
-                },
-                privateData = connection._,
-                reconnectErrors = 0,
-                fireReconnected = function (instance) {
-                    window.clearTimeout(privateData.reconnectTimeoutId);
-                    privateData.reconnectTimeoutId = null;
-
-                    if (changeState(instance,
-                                    signalR.connectionState.reconnecting,
-                                    signalR.connectionState.connected) === true) {
-                        // Successfully reconnected!
-                        instance.log("Raising the reconnect event");
-                        $(instance).triggerHandler(events.onReconnect);
-                    }
-                },
-                // 1 hour
-                maxFireReconnectedTimeout = 3600000;
-
-            if (connection.pollXhr) {
-                connection.log("Polling xhr requests already exists, aborting.");
-                connection.stop();
-            }
-
-            connection.messageId = null;
-
-            privateData.reconnectTimeoutId = null;
-
-            privateData.pollTimeoutId = window.setTimeout(function () {
-                (function poll(instance, raiseReconnect) {
-                    var messageId = instance.messageId,
-                        connect = (messageId === null),
-                        reconnecting = !connect,
-                        polling = !raiseReconnect,
-                        url = transportLogic.getUrl(instance, that.name, reconnecting, polling, true /* use Post for longPolling */),
-                        postData = {};
-
-                    if (instance.messageId) {
-                        postData.messageId = instance.messageId;
-                    }
-
-                    if (instance.groupsToken) {
-                        postData.groupsToken = instance.groupsToken;
-                    }
-
-                    // If we've disconnected during the time we've tried to re-instantiate the poll then stop.
-                    if (isDisconnecting(instance) === true) {
-                        return;
-                    }
-
-                    connection.log("Opening long polling request to '" + url + "'.");
-                    instance.pollXhr = transportLogic.ajax(connection, {
-                        xhrFields: {
-                            onprogress: function () {
-                                transportLogic.markLastMessage(connection);
-                            }
-                        },
-                        url: url,
-                        type: "POST",
-                        contentType: signalR._.defaultContentType,
-                        data: postData,
-                        timeout: connection._.pollTimeout,
-                        headers: connection.accessToken ? { "Authorization": "Bearer " + connection.accessToken } : {},
-                        success: function (result) {
-                            var minData,
-                                delay = 0,
-                                data,
-                                shouldReconnect;
-
-                            connection.log("Long poll complete.");
-
-                            // Reset our reconnect errors so if we transition into a reconnecting state again we trigger
-                            // reconnected quickly
-                            reconnectErrors = 0;
-
-                            try {
-                                // Remove any keep-alives from the beginning of the result
-                                minData = connection._parseResponse(result);
-                            }
-                            catch (error) {
-                                transportLogic.handleParseFailure(instance, result, error, tryFailConnect, instance.pollXhr);
-                                return;
-                            }
-
-                            // If there's currently a timeout to trigger reconnect, fire it now before processing messages
-                            if (privateData.reconnectTimeoutId !== null) {
-                                fireReconnected(instance);
-                            }
-
-                            if (minData) {
-                                data = transportLogic.maximizePersistentResponse(minData);
-                            }
-
-                            transportLogic.processMessages(instance, minData, fireConnect);
-
-                            if (data &&
-                                $.type(data.LongPollDelay) === "number") {
-                                delay = data.LongPollDelay;
-                            }
-
-                            if (isDisconnecting(instance) === true) {
-                                return;
-                            }
-
-                            shouldReconnect = data && data.ShouldReconnect;
-                            if (shouldReconnect) {
-                                // Transition into the reconnecting state
-                                // If this fails then that means that the user transitioned the connection into a invalid state in processMessages.
-                                if (!transportLogic.ensureReconnectingState(instance)) {
-                                    return;
-                                }
-                            }
-
-                            // We never want to pass a raiseReconnect flag after a successful poll.  This is handled via the error function
-                            if (delay > 0) {
-                                privateData.pollTimeoutId = window.setTimeout(function () {
-                                    poll(instance, shouldReconnect);
-                                }, delay);
-                            } else {
-                                poll(instance, shouldReconnect);
-                            }
-                        },
-
-                        error: function (data, textStatus) {
-                            var error = signalR._.transportError(signalR.resources.longPollFailed, connection.transport, data, instance.pollXhr);
-
-                            // Stop trying to trigger reconnect, connection is in an error state
-                            // If we're not in the reconnect state this will noop
-                            window.clearTimeout(privateData.reconnectTimeoutId);
-                            privateData.reconnectTimeoutId = null;
-
-                            if (textStatus === "abort") {
-                                connection.log("Aborted xhr request.");
-                                return;
-                            }
-
-                            if (!tryFailConnect(error)) {
-
-                                // Increment our reconnect errors, we assume all errors to be reconnect errors
-                                // In the case that it's our first error this will cause Reconnect to be fired
-                                // after 1 second due to reconnectErrors being = 1.
-                                reconnectErrors++;
-
-                                if (connection.state !== signalR.connectionState.reconnecting) {
-                                    connection.log("An error occurred using longPolling. Status = " + textStatus + ".  Response = " + data.responseText + ".");
-                                    $(instance).triggerHandler(events.onError, [error]);
-                                }
-
-                                // We check the state here to verify that we're not in an invalid state prior to verifying Reconnect.
-                                // If we're not in connected or reconnecting then the next ensureReconnectingState check will fail and will return.
-                                // Therefore we don't want to change that failure code path.
-                                if ((connection.state === signalR.connectionState.connected ||
-                                    connection.state === signalR.connectionState.reconnecting) &&
-                                    !transportLogic.verifyLastActive(connection)) {
-                                    return;
-                                }
-
-                                // Transition into the reconnecting state
-                                // If this fails then that means that the user transitioned the connection into the disconnected or connecting state within the above error handler trigger.
-                                if (!transportLogic.ensureReconnectingState(instance)) {
-                                    return;
-                                }
-
-                                // Call poll with the raiseReconnect flag as true after the reconnect delay
-                                privateData.pollTimeoutId = window.setTimeout(function () {
-                                    poll(instance, true);
-                                }, that.reconnectDelay);
-                            }
-                        }
-                    });
-
-                    // This will only ever pass after an error has occurred via the poll ajax procedure.
-                    if (reconnecting && raiseReconnect === true) {
-                        // We wait to reconnect depending on how many times we've failed to reconnect.
-                        // This is essentially a heuristic that will exponentially increase in wait time before
-                        // triggering reconnected.  This depends on the "error" handler of Poll to cancel this
-                        // timeout if it triggers before the Reconnected event fires.
-                        // The Math.min at the end is to ensure that the reconnect timeout does not overflow.
-                        privateData.reconnectTimeoutId = window.setTimeout(function () { fireReconnected(instance); }, Math.min(1000 * (Math.pow(2, reconnectErrors) - 1), maxFireReconnectedTimeout));
-                    }
-                }(connection));
-            }, 250); // Have to delay initial poll so Chrome doesn't show loader spinner in tab
-        },
-
-        lostConnection: function (connection) {
-            if (connection.pollXhr) {
-                connection.pollXhr.abort("lostConnection");
-            }
-        },
-
-        send: function (connection, data) {
-            transportLogic.ajaxSend(connection, data);
-        },
-
-        stop: function (connection) {
-            /// <summary>Stops the long polling connection</summary>
-            /// <param name="connection" type="signalR">The SignalR connection to stop</param>
-
-            window.clearTimeout(connection._.pollTimeoutId);
-            window.clearTimeout(connection._.reconnectTimeoutId);
-
-            delete connection._.pollTimeoutId;
-            delete connection._.reconnectTimeoutId;
-
-            if (connection.pollXhr) {
-                connection.pollXhr.abort();
-                connection.pollXhr = null;
-                delete connection.pollXhr;
-            }
-        },
-
-        abort: function (connection, async) {
-            transportLogic.ajaxAbort(connection, async);
-        }
-    };
-
-}(window.jQuery, window));
-/* jquery.signalR.hubs.js */
-// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-
-/*global window:false */
-/// <reference path="jquery.signalR.core.js" />
-
-(function ($, window, undefined) {
-
-    var nextGuid = 0;
-    var eventNamespace = ".hubProxy",
-        signalR = $.signalR;
-
-    function makeEventName(event) {
-        return event + eventNamespace;
-    }
-
-    // Equivalent to Array.prototype.map
-    function map(arr, fun, thisp) {
-        var i,
-            length = arr.length,
-            result = [];
-        for (i = 0; i < length; i += 1) {
-            if (arr.hasOwnProperty(i)) {
-                result[i] = fun.call(thisp, arr[i], i, arr);
-            }
-        }
-        return result;
-    }
-
-    function getArgValue(a) {
-        return $.isFunction(a) ? null : ($.type(a) === "undefined" ? null : a);
-    }
-
-    function hasMembers(obj) {
-        for (var key in obj) {
-            // If we have any properties in our callback map then we have callbacks and can exit the loop via return
-            if (obj.hasOwnProperty(key)) {
-                return true;
-            }
-        }
-
         return false;
-    }
-
-    function clearInvocationCallbacks(connection, error) {
-        /// <param name="connection" type="hubConnection" />
-        var callbacks = connection._.invocationCallbacks,
-            callback;
-
-        if (hasMembers(callbacks)) {
-            connection.log("Clearing hub invocation callbacks with error: " + error + ".");
+    };
+    HttpConnection.prototype.stopConnection = function (error) {
+        this.transport = undefined;
+        // If we have a stopError, it takes precedence over the error from the transport
+        error = this.stopError || error;
+        if (error) {
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Error, "Connection disconnected with error '" + error + "'.");
         }
-
-        // Reset the callback cache now as we have a local var referencing it
-        connection._.invocationCallbackId = 0;
-        delete connection._.invocationCallbacks;
-        connection._.invocationCallbacks = {};
-
-        // Loop over the callbacks and invoke them.
-        // We do this using a local var reference and *after* we've cleared the cache
-        // so that if a fail callback itself tries to invoke another method we don't
-        // end up with its callback in the list we're looping over.
-        for (var callbackId in callbacks) {
-            callback = callbacks[callbackId];
-            callback.method.call(callback.scope, { E: error });
+        else {
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Information, "Connection disconnected.");
         }
-    }
-
-    // hubProxy
-    function hubProxy(hubConnection, hubName) {
-        /// <summary>
-        ///     Creates a new proxy object for the given hub connection that can be used to invoke
-        ///     methods on server hubs and handle client method invocation requests from the server.
-        /// </summary>
-        return new hubProxy.fn.init(hubConnection, hubName);
-    }
-
-    hubProxy.fn = hubProxy.prototype = {
-        init: function (connection, hubName) {
-            this.state = {};
-            this.connection = connection;
-            this.hubName = hubName;
-            this._ = {
-                callbackMap: {}
-            };
-        },
-
-        constructor: hubProxy,
-
-        hasSubscriptions: function () {
-            return hasMembers(this._.callbackMap);
-        },
-
-        on: function (eventName, callback, callbackIdentity) {
-            /// <summary>Wires up a callback to be invoked when a invocation request is received from the server hub.</summary>
-            /// <param name="eventName" type="String">The name of the hub event to register the callback for.</param>
-            /// <param name="callback" type="Function">The callback to be invoked.</param>
-            /// <param name="callbackIdentity" type="Object">An optional object to use as the "identity" for the callback when checking if the handler has already been registered. Defaults to the value of 'callback' if not provided.</param>
-            var that = this,
-                callbackMap = that._.callbackMap;
-
-            // We need the third "identity" argument because the registerHubProxies call made by signalr/js wraps the user-provided callback in a custom wrapper which breaks the identity comparison.
-            // callbackIdentity allows the caller of `on` to provide a separate object to use as the "identity". `registerHubProxies` uses the original user callback as this identity object.
-            callbackIdentity = callbackIdentity || callback;
-
-            // Assign a global ID to the identity object. This tags the object so we can detect the same object when it comes back.
-            if(!callbackIdentity._signalRGuid) {
-                callbackIdentity._signalRGuid = nextGuid++;
-            }
-
-            // Normalize the event name to lowercase
-            eventName = eventName.toLowerCase();
-
-            // If there is not an event registered for this callback yet we want to create its event space in the callback map.
-            var callbackSpace = callbackMap[eventName];
-            if (!callbackSpace) {
-                callbackSpace = [];
-                callbackMap[eventName] = callbackSpace;
-            }
-
-            // Check if there's already a registration
-            var registration;
-            for (var i = 0; i < callbackSpace.length; i++) {
-                if (callbackSpace[i].guid === callbackIdentity._signalRGuid) {
-                    registration = callbackSpace[i];
-                }
-            }
-
-            // Create a registration if there isn't one already
-            if (!registration) {
-                registration = {
-                    guid: callbackIdentity._signalRGuid,
-                    eventHandlers: []
-                };
-                callbackMap[eventName].push(registration);
-            }
-
-            var handler = function (e, data) {
-                callback.apply(that, data);
-            };
-            registration.eventHandlers.push(handler);
-
-            $(that).bind(makeEventName(eventName), handler);
-
-            return that;
-        },
-
-        off: function (eventName, callback, callbackIdentity) {
-            /// <summary>Removes the callback invocation request from the server hub for the given event name.</summary>
-            /// <param name="eventName" type="String">The name of the hub event to unregister the callback for.</param>
-            /// <param name="callback" type="Function">The callback to be removed.</param>
-            /// <param name="callbackIdentity" type="Object">An optional object to use as the "identity" when looking up the callback. Corresponds to the same parameter provided to 'on'. Defaults to the value of 'callback' if not provided.</param>
-            var that = this,
-                callbackMap = that._.callbackMap,
-                callbackSpace;
-
-            callbackIdentity = callbackIdentity || callback;
-
-            // Normalize the event name to lowercase
-            eventName = eventName.toLowerCase();
-
-            callbackSpace = callbackMap[eventName];
-
-            // Verify that there is an event space to unbind
-            if (callbackSpace) {
-
-                if (callback) {
-                    // Find the callback registration
-                    var callbackRegistration;
-                    var callbackIndex;
-                    for (var i = 0; i < callbackSpace.length; i++) {
-                        if (callbackSpace[i].guid === callbackIdentity._signalRGuid) {
-                            callbackIndex = i;
-                            callbackRegistration = callbackSpace[i];
-                        }
-                    }
-
-                    // Only unbind if there's an event bound with eventName and a callback with the specified callback
-                    if (callbackRegistration) {
-                        // Unbind all event handlers associated with the registration.
-                        for (var j = 0; j < callbackRegistration.eventHandlers.length; j++) {
-                            $(that).unbind(makeEventName(eventName), callbackRegistration.eventHandlers[j]);
-                        }
-
-                        // Remove the registration from the list
-                        callbackSpace.splice(i, 1);
-
-                        // Check if there are any registrations left, if not we need to destroy it.
-                        if (callbackSpace.length === 0) {
-                            delete callbackMap[eventName];
-                        }
-                    }
-                } else if (!callback) { // Check if we're removing the whole event and we didn't error because of an invalid callback
-                    $(that).unbind(makeEventName(eventName));
-
-                    delete callbackMap[eventName];
-                }
-            }
-
-            return that;
-        },
-
-        invoke: function (methodName) {
-            /// <summary>Invokes a server hub method with the given arguments.</summary>
-            /// <param name="methodName" type="String">The name of the server hub method.</param>
-
-            var that = this,
-                connection = that.connection,
-                args = $.makeArray(arguments).slice(1),
-                argValues = map(args, getArgValue),
-                data = { H: that.hubName, M: methodName, A: argValues, I: connection._.invocationCallbackId },
-                d = $.Deferred(),
-                callback = function (minResult) {
-                    var result = that._maximizeHubResponse(minResult),
-                        source,
-                        error;
-
-                    // Update the hub state
-                    $.extend(that.state, result.State);
-
-                    if (result.Progress) {
-                        if (d.notifyWith) {
-                            // Progress is only supported in jQuery 1.7+
-                            d.notifyWith(that, [result.Progress.Data]);
-                        } else if (!connection._.progressjQueryVersionLogged) {
-                            connection.log("A hub method invocation progress update was received but the version of jQuery in use (" + $.prototype.jquery + ") does not support progress updates. Upgrade to jQuery 1.7+ to receive progress notifications.");
-                            connection._.progressjQueryVersionLogged = true;
-                        }
-                    } else if (result.Error) {
-                        // Server hub method threw an exception, log it & reject the deferred
-                        if (result.StackTrace) {
-                            connection.log(result.Error + "\n" + result.StackTrace + ".");
-                        }
-
-                        // result.ErrorData is only set if a HubException was thrown
-                        source = result.IsHubException ? "HubException" : "Exception";
-                        error = signalR._.error(result.Error, source);
-                        error.data = result.ErrorData;
-
-                        connection.log(that.hubName + "." + methodName + " failed to execute. Error: " + error.message);
-                        d.rejectWith(that, [error]);
-                    } else {
-                        // Server invocation succeeded, resolve the deferred
-                        connection.log("Invoked " + that.hubName + "." + methodName);
-                        d.resolveWith(that, [result.Result]);
-                    }
-                };
-
-            connection._.invocationCallbacks[connection._.invocationCallbackId.toString()] = { scope: that, method: callback };
-            connection._.invocationCallbackId += 1;
-
-            if (!$.isEmptyObject(that.state)) {
-                data.S = that.state;
-            }
-
-            connection.log("Invoking " + that.hubName + "." + methodName);
-            connection.send(data);
-
-            return d.promise();
-        },
-
-        _maximizeHubResponse: function (minHubResponse) {
-            return {
-                State: minHubResponse.S,
-                Result: minHubResponse.R,
-                Progress: minHubResponse.P ? {
-                    Id: minHubResponse.P.I,
-                    Data: minHubResponse.P.D
-                } : null,
-                Id: minHubResponse.I,
-                IsHubException: minHubResponse.H,
-                Error: minHubResponse.E,
-                StackTrace: minHubResponse.T,
-                ErrorData: minHubResponse.D
-            };
+        this.connectionState = 2 /* Disconnected */;
+        if (this.onclose) {
+            this.onclose(error);
         }
     };
-
-    hubProxy.fn.init.prototype = hubProxy.fn;
-
-    // hubConnection
-    function hubConnection(url, options) {
-        /// <summary>Creates a new hub connection.</summary>
-        /// <param name="url" type="String">[Optional] The hub route url, defaults to "/signalr".</param>
-        /// <param name="options" type="Object">[Optional] Settings to use when creating the hubConnection.</param>
-        var settings = {
-            qs: null,
-            logging: false,
-            useDefaultPath: true
-        };
-
-        $.extend(settings, options);
-
-        if (!url || settings.useDefaultPath) {
-            url = (url || "") + "/signalr";
+    HttpConnection.prototype.resolveUrl = function (url) {
+        // startsWith is not supported in IE
+        if (url.lastIndexOf("https://", 0) === 0 || url.lastIndexOf("http://", 0) === 0) {
+            return url;
         }
-        return new hubConnection.fn.init(url, settings);
+        if (typeof window === "undefined" || !window || !window.document) {
+            throw new Error("Cannot resolve '" + url + "'.");
+        }
+        // Setting the url to the href propery of an anchor tag handles normalization
+        // for us. There are 3 main cases.
+        // 1. Relative  path normalization e.g "b" -> "http://localhost:5000/a/b"
+        // 2. Absolute path normalization e.g "/a/b" -> "http://localhost:5000/a/b"
+        // 3. Networkpath reference normalization e.g "//localhost:5000/a/b" -> "http://localhost:5000/a/b"
+        var aTag = window.document.createElement("a");
+        aTag.href = url;
+        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Information, "Normalizing '" + url + "' to '" + aTag.href + "'.");
+        return aTag.href;
+    };
+    HttpConnection.prototype.resolveNegotiateUrl = function (url) {
+        var index = url.indexOf("?");
+        var negotiateUrl = url.substring(0, index === -1 ? url.length : index);
+        if (negotiateUrl[negotiateUrl.length - 1] !== "/") {
+            negotiateUrl += "/";
+        }
+        negotiateUrl += "negotiate";
+        negotiateUrl += index === -1 ? "" : url.substring(index);
+        return negotiateUrl;
+    };
+    return HttpConnection;
+}());
+
+function transportMatches(requestedTransport, actualTransport) {
+    return !requestedTransport || ((actualTransport & requestedTransport) !== 0);
+}
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpTransportType", function() { return HttpTransportType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransferFormat", function() { return TransferFormat; });
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+// This will be treated as a bit flag in the future, so we keep it using power-of-two values.
+/** Specifies a specific HTTP transport type. */
+var HttpTransportType;
+(function (HttpTransportType) {
+    /** Specifies no transport preference. */
+    HttpTransportType[HttpTransportType["None"] = 0] = "None";
+    /** Specifies the WebSockets transport. */
+    HttpTransportType[HttpTransportType["WebSockets"] = 1] = "WebSockets";
+    /** Specifies the Server-Sent Events transport. */
+    HttpTransportType[HttpTransportType["ServerSentEvents"] = 2] = "ServerSentEvents";
+    /** Specifies the Long Polling transport. */
+    HttpTransportType[HttpTransportType["LongPolling"] = 4] = "LongPolling";
+})(HttpTransportType || (HttpTransportType = {}));
+/** Specifies the transfer format for a connection. */
+var TransferFormat;
+(function (TransferFormat) {
+    /** Specifies that only text data will be transmitted over the connection. */
+    TransferFormat[TransferFormat["Text"] = 1] = "Text";
+    /** Specifies that binary data will be transmitted over the connection. */
+    TransferFormat[TransferFormat["Binary"] = 2] = "Binary";
+})(TransferFormat || (TransferFormat = {}));
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LongPollingTransport", function() { return LongPollingTransport; });
+/* harmony import */ var _AbortController__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony import */ var _Errors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var _ITransport__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(17);
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
+};
 
-    hubConnection.fn = hubConnection.prototype = $.connection();
 
-    hubConnection.fn.init = function (url, options) {
-        var settings = {
-            qs: null,
-            logging: false,
-            useDefaultPath: true
+
+
+
+// Not exported from 'index', this type is internal.
+/** @private */
+var LongPollingTransport = /** @class */ (function () {
+    function LongPollingTransport(httpClient, accessTokenFactory, logger, logMessageContent) {
+        this.httpClient = httpClient;
+        this.accessTokenFactory = accessTokenFactory;
+        this.logger = logger;
+        this.pollAbort = new _AbortController__WEBPACK_IMPORTED_MODULE_0__["AbortController"]();
+        this.logMessageContent = logMessageContent;
+        this.running = false;
+        this.onreceive = null;
+        this.onclose = null;
+    }
+    Object.defineProperty(LongPollingTransport.prototype, "pollAborted", {
+        // This is an internal type, not exported from 'index' so this is really just internal.
+        get: function () {
+            return this.pollAbort.aborted;
         },
-            connection = this;
-
-        $.extend(settings, options);
-
-        // Call the base constructor
-        $.signalR.fn.init.call(connection, url, settings.qs, settings.logging);
-
-        // Object to store hub proxies for this connection
-        connection.proxies = {};
-
-        connection._.invocationCallbackId = 0;
-        connection._.invocationCallbacks = {};
-
-        // Wire up the received handler
-        connection.received(function (minData) {
-            var data, proxy, dataCallbackId, callback, hubName, eventName;
-            if (!minData) {
-                return;
-            }
-
-            // We have to handle progress updates first in order to ensure old clients that receive
-            // progress updates enter the return value branch and then no-op when they can't find
-            // the callback in the map (because the minData.I value will not be a valid callback ID)
-            // Process progress notification
-            if (typeof (minData.P) !== "undefined") {
-                dataCallbackId = minData.P.I.toString();
-                callback = connection._.invocationCallbacks[dataCallbackId];
-                if (callback) {
-                    callback.method.call(callback.scope, minData);
+        enumerable: true,
+        configurable: true
+    });
+    LongPollingTransport.prototype.connect = function (url, transferFormat) {
+        return __awaiter(this, void 0, void 0, function () {
+            var pollOptions, token, pollUrl, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _Utils__WEBPACK_IMPORTED_MODULE_4__["Arg"].isRequired(url, "url");
+                        _Utils__WEBPACK_IMPORTED_MODULE_4__["Arg"].isRequired(transferFormat, "transferFormat");
+                        _Utils__WEBPACK_IMPORTED_MODULE_4__["Arg"].isIn(transferFormat, _ITransport__WEBPACK_IMPORTED_MODULE_3__["TransferFormat"], "transferFormat");
+                        this.url = url;
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) Connecting.");
+                        // Allow binary format on Node and Browsers that support binary content (indicated by the presence of responseType property)
+                        if (transferFormat === _ITransport__WEBPACK_IMPORTED_MODULE_3__["TransferFormat"].Binary &&
+                            (typeof XMLHttpRequest !== "undefined" && typeof new XMLHttpRequest().responseType !== "string")) {
+                            throw new Error("Binary protocols over XmlHttpRequest not implementing advanced features are not supported.");
+                        }
+                        pollOptions = {
+                            abortSignal: this.pollAbort.signal,
+                            headers: {},
+                            timeout: 100000,
+                        };
+                        if (transferFormat === _ITransport__WEBPACK_IMPORTED_MODULE_3__["TransferFormat"].Binary) {
+                            pollOptions.responseType = "arraybuffer";
+                        }
+                        return [4 /*yield*/, this.getAccessToken()];
+                    case 1:
+                        token = _a.sent();
+                        this.updateHeaderToken(pollOptions, token);
+                        pollUrl = url + "&_=" + Date.now();
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) polling: " + pollUrl + ".");
+                        return [4 /*yield*/, this.httpClient.get(pollUrl, pollOptions)];
+                    case 2:
+                        response = _a.sent();
+                        if (response.statusCode !== 200) {
+                            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Error, "(LongPolling transport) Unexpected response code: " + response.statusCode + ".");
+                            // Mark running as false so that the poll immediately ends and runs the close logic
+                            this.closeError = new _Errors__WEBPACK_IMPORTED_MODULE_1__["HttpError"](response.statusText || "", response.statusCode);
+                            this.running = false;
+                        }
+                        else {
+                            this.running = true;
+                        }
+                        this.receiving = this.poll(this.url, pollOptions);
+                        return [2 /*return*/];
                 }
-            } else if (typeof (minData.I) !== "undefined") {
-                // We received the return value from a server method invocation, look up callback by id and call it
-                dataCallbackId = minData.I.toString();
-                callback = connection._.invocationCallbacks[dataCallbackId];
-                if (callback) {
-                    // Delete the callback from the proxy
-                    connection._.invocationCallbacks[dataCallbackId] = null;
-                    delete connection._.invocationCallbacks[dataCallbackId];
-
-                    // Invoke the callback
-                    callback.method.call(callback.scope, minData);
-                }
-            } else {
-                data = this._maximizeClientHubInvocation(minData);
-
-                // We received a client invocation request, i.e. broadcast from server hub
-                connection.log("Triggering client hub event '" + data.Method + "' on hub '" + data.Hub + "'.");
-
-                // Normalize the names to lowercase
-                hubName = data.Hub.toLowerCase();
-                eventName = data.Method.toLowerCase();
-
-                // Trigger the local invocation event
-                proxy = this.proxies[hubName];
-
-                // Update the hub state
-                $.extend(proxy.state, data.State);
-                $(proxy).triggerHandler(makeEventName(eventName), [data.Args]);
-            }
-        });
-
-        connection.error(function (errData, origData) {
-            var callbackId, callback;
-
-            if (!origData) {
-                // No original data passed so this is not a send error
-                return;
-            }
-
-            callbackId = origData.I;
-            callback = connection._.invocationCallbacks[callbackId];
-
-            // Verify that there is a callback bound (could have been cleared)
-            if (callback) {
-                // Delete the callback
-                connection._.invocationCallbacks[callbackId] = null;
-                delete connection._.invocationCallbacks[callbackId];
-
-                // Invoke the callback with an error to reject the promise
-                callback.method.call(callback.scope, { E: errData });
-            }
-        });
-
-        connection.reconnecting(function () {
-            if (connection.transport && connection.transport.name === "webSockets") {
-                clearInvocationCallbacks(connection, "Connection started reconnecting before invocation result was received.");
-            }
-        });
-
-        connection.disconnected(function () {
-            clearInvocationCallbacks(connection, "Connection was disconnected before invocation result was received.");
-        });
-    };
-
-    hubConnection.fn._maximizeClientHubInvocation = function (minClientHubInvocation) {
-        return {
-            Hub: minClientHubInvocation.H,
-            Method: minClientHubInvocation.M,
-            Args: minClientHubInvocation.A,
-            State: minClientHubInvocation.S
-        };
-    };
-
-    hubConnection.fn._registerSubscribedHubs = function () {
-        /// <summary>
-        ///     Sets the starting event to loop through the known hubs and register any new hubs
-        ///     that have been added to the proxy.
-        /// </summary>
-        var connection = this;
-
-        if (!connection._subscribedToHubs) {
-            connection._subscribedToHubs = true;
-            connection.starting(function () {
-                // Set the connection's data object with all the hub proxies with active subscriptions.
-                // These proxies will receive notifications from the server.
-                var subscribedHubs = [];
-
-                $.each(connection.proxies, function (key) {
-                    if (this.hasSubscriptions()) {
-                        subscribedHubs.push({ name: key });
-                        connection.log("Client subscribed to hub '" + key + "'.");
-                    }
-                });
-
-                if (subscribedHubs.length === 0) {
-                    connection.log("No hubs have been subscribed to.  The client will not receive data from hubs.  To fix, declare at least one client side function prior to connection start for each hub you wish to subscribe to.");
-                }
-
-                connection.data = connection.json.stringify(subscribedHubs);
             });
+        });
+    };
+    LongPollingTransport.prototype.getAccessToken = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!this.accessTokenFactory) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.accessTokenFactory()];
+                    case 1: return [2 /*return*/, _a.sent()];
+                    case 2: return [2 /*return*/, null];
+                }
+            });
+        });
+    };
+    LongPollingTransport.prototype.updateHeaderToken = function (request, token) {
+        if (!request.headers) {
+            request.headers = {};
+        }
+        if (token) {
+            // tslint:disable-next-line:no-string-literal
+            request.headers["Authorization"] = "Bearer " + token;
+            return;
+        }
+        // tslint:disable-next-line:no-string-literal
+        if (request.headers["Authorization"]) {
+            // tslint:disable-next-line:no-string-literal
+            delete request.headers["Authorization"];
         }
     };
-
-    hubConnection.fn.createHubProxy = function (hubName) {
-        /// <summary>
-        ///     Creates a new proxy object for the given hub connection that can be used to invoke
-        ///     methods on server hubs and handle client method invocation requests from the server.
-        /// </summary>
-        /// <param name="hubName" type="String">
-        ///     The name of the hub on the server to create the proxy for.
-        /// </param>
-
-        // Normalize the name to lowercase
-        hubName = hubName.toLowerCase();
-
-        var proxy = this.proxies[hubName];
-        if (!proxy) {
-            proxy = hubProxy(this, hubName);
-            this.proxies[hubName] = proxy;
-        }
-
-        this._registerSubscribedHubs();
-
-        return proxy;
+    LongPollingTransport.prototype.poll = function (url, pollOptions) {
+        return __awaiter(this, void 0, void 0, function () {
+            var token, pollUrl, response, e_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, , 8, 9]);
+                        _a.label = 1;
+                    case 1:
+                        if (!this.running) return [3 /*break*/, 7];
+                        return [4 /*yield*/, this.getAccessToken()];
+                    case 2:
+                        token = _a.sent();
+                        this.updateHeaderToken(pollOptions, token);
+                        _a.label = 3;
+                    case 3:
+                        _a.trys.push([3, 5, , 6]);
+                        pollUrl = url + "&_=" + Date.now();
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) polling: " + pollUrl + ".");
+                        return [4 /*yield*/, this.httpClient.get(pollUrl, pollOptions)];
+                    case 4:
+                        response = _a.sent();
+                        if (response.statusCode === 204) {
+                            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Information, "(LongPolling transport) Poll terminated by server.");
+                            this.running = false;
+                        }
+                        else if (response.statusCode !== 200) {
+                            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Error, "(LongPolling transport) Unexpected response code: " + response.statusCode + ".");
+                            // Unexpected status code
+                            this.closeError = new _Errors__WEBPACK_IMPORTED_MODULE_1__["HttpError"](response.statusText || "", response.statusCode);
+                            this.running = false;
+                        }
+                        else {
+                            // Process the response
+                            if (response.content) {
+                                this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) data received. " + Object(_Utils__WEBPACK_IMPORTED_MODULE_4__["getDataDetail"])(response.content, this.logMessageContent) + ".");
+                                if (this.onreceive) {
+                                    this.onreceive(response.content);
+                                }
+                            }
+                            else {
+                                // This is another way timeout manifest.
+                                this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) Poll timed out, reissuing.");
+                            }
+                        }
+                        return [3 /*break*/, 6];
+                    case 5:
+                        e_1 = _a.sent();
+                        if (!this.running) {
+                            // Log but disregard errors that occur after stopping
+                            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) Poll errored after shutdown: " + e_1.message);
+                        }
+                        else {
+                            if (e_1 instanceof _Errors__WEBPACK_IMPORTED_MODULE_1__["TimeoutError"]) {
+                                // Ignore timeouts and reissue the poll.
+                                this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) Poll timed out, reissuing.");
+                            }
+                            else {
+                                // Close the connection with the error as the result.
+                                this.closeError = e_1;
+                                this.running = false;
+                            }
+                        }
+                        return [3 /*break*/, 6];
+                    case 6: return [3 /*break*/, 1];
+                    case 7: return [3 /*break*/, 9];
+                    case 8:
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) Polling complete.");
+                        // We will reach here with pollAborted==false when the server returned a response causing the transport to stop.
+                        // If pollAborted==true then client initiated the stop and the stop method will raise the close event after DELETE is sent.
+                        if (!this.pollAborted) {
+                            this.raiseOnClose();
+                        }
+                        return [7 /*endfinally*/];
+                    case 9: return [2 /*return*/];
+                }
+            });
+        });
     };
+    LongPollingTransport.prototype.send = function (data) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                if (!this.running) {
+                    return [2 /*return*/, Promise.reject(new Error("Cannot send until the transport is connected"))];
+                }
+                return [2 /*return*/, Object(_Utils__WEBPACK_IMPORTED_MODULE_4__["sendMessage"])(this.logger, "LongPolling", this.httpClient, this.url, this.accessTokenFactory, data, this.logMessageContent)];
+            });
+        });
+    };
+    LongPollingTransport.prototype.stop = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var deleteOptions, token;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) Stopping polling.");
+                        // Tell receiving loop to stop, abort any current request, and then wait for it to finish
+                        this.running = false;
+                        this.pollAbort.abort();
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, , 5, 6]);
+                        return [4 /*yield*/, this.receiving];
+                    case 2:
+                        _a.sent();
+                        // Send DELETE to clean up long polling on the server
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) sending DELETE request to " + this.url + ".");
+                        deleteOptions = {
+                            headers: {},
+                        };
+                        return [4 /*yield*/, this.getAccessToken()];
+                    case 3:
+                        token = _a.sent();
+                        this.updateHeaderToken(deleteOptions, token);
+                        return [4 /*yield*/, this.httpClient.delete(this.url, deleteOptions)];
+                    case 4:
+                        _a.sent();
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) DELETE request sent.");
+                        return [3 /*break*/, 6];
+                    case 5:
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, "(LongPolling transport) Stop finished.");
+                        // Raise close event here instead of in polling
+                        // It needs to happen after the DELETE request is sent
+                        this.raiseOnClose();
+                        return [7 /*endfinally*/];
+                    case 6: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    LongPollingTransport.prototype.raiseOnClose = function () {
+        if (this.onclose) {
+            var logMessage = "(LongPolling transport) Firing onclose event.";
+            if (this.closeError) {
+                logMessage += " Error: " + this.closeError;
+            }
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Trace, logMessage);
+            this.onclose(this.closeError);
+        }
+    };
+    return LongPollingTransport;
+}());
 
-    hubConnection.fn.init.prototype = hubConnection.fn;
 
-    $.hubConnection = hubConnection;
 
-}(window.jQuery, window));
-/* jquery.signalR.version.js */
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AbortController", function() { return AbortController; });
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+// Rough polyfill of https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+// We don't actually ever use the API being polyfilled, we always use the polyfill because
+// it's a very new API right now.
+// Not exported from index.
+/** @private */
+var AbortController = /** @class */ (function () {
+    function AbortController() {
+        this.isAborted = false;
+        this.onabort = null;
+    }
+    AbortController.prototype.abort = function () {
+        if (!this.isAborted) {
+            this.isAborted = true;
+            if (this.onabort) {
+                this.onabort();
+            }
+        }
+    };
+    Object.defineProperty(AbortController.prototype, "signal", {
+        get: function () {
+            return this;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbortController.prototype, "aborted", {
+        get: function () {
+            return this.isAborted;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return AbortController;
+}());
+
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServerSentEventsTransport", function() { return ServerSentEventsTransport; });
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _ITransport__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17);
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+/** @private */
+var ServerSentEventsTransport = /** @class */ (function () {
+    function ServerSentEventsTransport(httpClient, accessTokenFactory, logger, logMessageContent, eventSourceConstructor) {
+        this.httpClient = httpClient;
+        this.accessTokenFactory = accessTokenFactory;
+        this.logger = logger;
+        this.logMessageContent = logMessageContent;
+        this.eventSourceConstructor = eventSourceConstructor;
+        this.onreceive = null;
+        this.onclose = null;
+    }
+    ServerSentEventsTransport.prototype.connect = function (url, transferFormat) {
+        return __awaiter(this, void 0, void 0, function () {
+            var token;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _Utils__WEBPACK_IMPORTED_MODULE_2__["Arg"].isRequired(url, "url");
+                        _Utils__WEBPACK_IMPORTED_MODULE_2__["Arg"].isRequired(transferFormat, "transferFormat");
+                        _Utils__WEBPACK_IMPORTED_MODULE_2__["Arg"].isIn(transferFormat, _ITransport__WEBPACK_IMPORTED_MODULE_1__["TransferFormat"], "transferFormat");
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Trace, "(SSE transport) Connecting.");
+                        // set url before accessTokenFactory because this.url is only for send and we set the auth header instead of the query string for send
+                        this.url = url;
+                        if (!this.accessTokenFactory) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.accessTokenFactory()];
+                    case 1:
+                        token = _a.sent();
+                        if (token) {
+                            url += (url.indexOf("?") < 0 ? "?" : "&") + ("access_token=" + encodeURIComponent(token));
+                        }
+                        _a.label = 2;
+                    case 2: return [2 /*return*/, new Promise(function (resolve, reject) {
+                            var opened = false;
+                            if (transferFormat !== _ITransport__WEBPACK_IMPORTED_MODULE_1__["TransferFormat"].Text) {
+                                reject(new Error("The Server-Sent Events transport only supports the 'Text' transfer format"));
+                                return;
+                            }
+                            var eventSource;
+                            if (typeof window !== "undefined") {
+                                eventSource = new _this.eventSourceConstructor(url, { withCredentials: true });
+                            }
+                            else {
+                                // Non-browser passes cookies via the dictionary
+                                var cookies = _this.httpClient.getCookieString(url);
+                                eventSource = new _this.eventSourceConstructor(url, { withCredentials: true, headers: { Cookie: cookies } });
+                            }
+                            try {
+                                eventSource.onmessage = function (e) {
+                                    if (_this.onreceive) {
+                                        try {
+                                            _this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Trace, "(SSE transport) data received. " + Object(_Utils__WEBPACK_IMPORTED_MODULE_2__["getDataDetail"])(e.data, _this.logMessageContent) + ".");
+                                            _this.onreceive(e.data);
+                                        }
+                                        catch (error) {
+                                            _this.close(error);
+                                            return;
+                                        }
+                                    }
+                                };
+                                eventSource.onerror = function (e) {
+                                    var error = new Error(e.data || "Error occurred");
+                                    if (opened) {
+                                        _this.close(error);
+                                    }
+                                    else {
+                                        reject(error);
+                                    }
+                                };
+                                eventSource.onopen = function () {
+                                    _this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Information, "SSE connected to " + _this.url);
+                                    _this.eventSource = eventSource;
+                                    opened = true;
+                                    resolve();
+                                };
+                            }
+                            catch (e) {
+                                reject(e);
+                                return;
+                            }
+                        })];
+                }
+            });
+        });
+    };
+    ServerSentEventsTransport.prototype.send = function (data) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                if (!this.eventSource) {
+                    return [2 /*return*/, Promise.reject(new Error("Cannot send until the transport is connected"))];
+                }
+                return [2 /*return*/, Object(_Utils__WEBPACK_IMPORTED_MODULE_2__["sendMessage"])(this.logger, "SSE", this.httpClient, this.url, this.accessTokenFactory, data, this.logMessageContent)];
+            });
+        });
+    };
+    ServerSentEventsTransport.prototype.stop = function () {
+        this.close();
+        return Promise.resolve();
+    };
+    ServerSentEventsTransport.prototype.close = function (e) {
+        if (this.eventSource) {
+            this.eventSource.close();
+            this.eventSource = undefined;
+            if (this.onclose) {
+                this.onclose(e);
+            }
+        }
+    };
+    return ServerSentEventsTransport;
+}());
+
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WebSocketTransport", function() { return WebSocketTransport; });
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _ITransport__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17);
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+/** @private */
+var WebSocketTransport = /** @class */ (function () {
+    function WebSocketTransport(httpClient, accessTokenFactory, logger, logMessageContent, webSocketConstructor) {
+        this.logger = logger;
+        this.accessTokenFactory = accessTokenFactory;
+        this.logMessageContent = logMessageContent;
+        this.webSocketConstructor = webSocketConstructor;
+        this.httpClient = httpClient;
+        this.onreceive = null;
+        this.onclose = null;
+    }
+    WebSocketTransport.prototype.connect = function (url, transferFormat) {
+        return __awaiter(this, void 0, void 0, function () {
+            var token;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _Utils__WEBPACK_IMPORTED_MODULE_2__["Arg"].isRequired(url, "url");
+                        _Utils__WEBPACK_IMPORTED_MODULE_2__["Arg"].isRequired(transferFormat, "transferFormat");
+                        _Utils__WEBPACK_IMPORTED_MODULE_2__["Arg"].isIn(transferFormat, _ITransport__WEBPACK_IMPORTED_MODULE_1__["TransferFormat"], "transferFormat");
+                        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Trace, "(WebSockets transport) Connecting.");
+                        if (!this.accessTokenFactory) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.accessTokenFactory()];
+                    case 1:
+                        token = _a.sent();
+                        if (token) {
+                            url += (url.indexOf("?") < 0 ? "?" : "&") + ("access_token=" + encodeURIComponent(token));
+                        }
+                        _a.label = 2;
+                    case 2: return [2 /*return*/, new Promise(function (resolve, reject) {
+                            url = url.replace(/^http/, "ws");
+                            var webSocket;
+                            var cookies = _this.httpClient.getCookieString(url);
+                            if (typeof window === "undefined" && cookies) {
+                                // Only pass cookies when in non-browser environments
+                                webSocket = new _this.webSocketConstructor(url, undefined, {
+                                    headers: {
+                                        Cookie: "" + cookies,
+                                    },
+                                });
+                            }
+                            if (!webSocket) {
+                                // Chrome is not happy with passing 'undefined' as protocol
+                                webSocket = new _this.webSocketConstructor(url);
+                            }
+                            if (transferFormat === _ITransport__WEBPACK_IMPORTED_MODULE_1__["TransferFormat"].Binary) {
+                                webSocket.binaryType = "arraybuffer";
+                            }
+                            // tslint:disable-next-line:variable-name
+                            webSocket.onopen = function (_event) {
+                                _this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Information, "WebSocket connected to " + url + ".");
+                                _this.webSocket = webSocket;
+                                resolve();
+                            };
+                            webSocket.onerror = function (event) {
+                                var error = null;
+                                // ErrorEvent is a browser only type we need to check if the type exists before using it
+                                if (typeof ErrorEvent !== "undefined" && event instanceof ErrorEvent) {
+                                    error = event.error;
+                                }
+                                reject(error);
+                            };
+                            webSocket.onmessage = function (message) {
+                                _this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Trace, "(WebSockets transport) data received. " + Object(_Utils__WEBPACK_IMPORTED_MODULE_2__["getDataDetail"])(message.data, _this.logMessageContent) + ".");
+                                if (_this.onreceive) {
+                                    _this.onreceive(message.data);
+                                }
+                            };
+                            webSocket.onclose = function (event) { return _this.close(event); };
+                        })];
+                }
+            });
+        });
+    };
+    WebSocketTransport.prototype.send = function (data) {
+        if (this.webSocket && this.webSocket.readyState === this.webSocketConstructor.OPEN) {
+            this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Trace, "(WebSockets transport) sending data. " + Object(_Utils__WEBPACK_IMPORTED_MODULE_2__["getDataDetail"])(data, this.logMessageContent) + ".");
+            this.webSocket.send(data);
+            return Promise.resolve();
+        }
+        return Promise.reject("WebSocket is not in the OPEN state");
+    };
+    WebSocketTransport.prototype.stop = function () {
+        if (this.webSocket) {
+            // Clear websocket handlers because we are considering the socket closed now
+            this.webSocket.onclose = function () { };
+            this.webSocket.onmessage = function () { };
+            this.webSocket.onerror = function () { };
+            this.webSocket.close();
+            this.webSocket = undefined;
+            // Manually invoke onclose callback inline so we know the HttpConnection was closed properly before returning
+            // This also solves an issue where websocket.onclose could take 18+ seconds to trigger during network disconnects
+            this.close(undefined);
+        }
+        return Promise.resolve();
+    };
+    WebSocketTransport.prototype.close = function (event) {
+        // webSocket will be null if the transport did not start successfully
+        this.logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_0__["LogLevel"].Trace, "(WebSockets transport) socket closed.");
+        if (this.onclose) {
+            if (event && (event.wasClean === false || event.code !== 1000)) {
+                this.onclose(new Error("WebSocket closed with status code: " + event.code + " (" + event.reason + ")."));
+            }
+            else {
+                this.onclose();
+            }
+        }
+    };
+    return WebSocketTransport;
+}());
+
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JsonHubProtocol", function() { return JsonHubProtocol; });
+/* harmony import */ var _IHubProtocol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
+/* harmony import */ var _ILogger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var _ITransport__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
+/* harmony import */ var _Loggers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
+/* harmony import */ var _TextMessageFormat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
 // Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 
-/*global window:false */
-/// <reference path="jquery.signalR.core.js" />
-(function ($, undefined) {
-    // This will be modified by the build script
-    $.signalR.version = "2.4.0";
-}(window.jQuery));
+
+
+
+var JSON_HUB_PROTOCOL_NAME = "json";
+/** Implements the JSON Hub Protocol. */
+var JsonHubProtocol = /** @class */ (function () {
+    function JsonHubProtocol() {
+        /** @inheritDoc */
+        this.name = JSON_HUB_PROTOCOL_NAME;
+        /** @inheritDoc */
+        this.version = 1;
+        /** @inheritDoc */
+        this.transferFormat = _ITransport__WEBPACK_IMPORTED_MODULE_2__["TransferFormat"].Text;
+    }
+    /** Creates an array of {@link @aspnet/signalr.HubMessage} objects from the specified serialized representation.
+     *
+     * @param {string} input A string containing the serialized representation.
+     * @param {ILogger} logger A logger that will be used to log messages that occur during parsing.
+     */
+    JsonHubProtocol.prototype.parseMessages = function (input, logger) {
+        // The interface does allow "ArrayBuffer" to be passed in, but this implementation does not. So let's throw a useful error.
+        if (typeof input !== "string") {
+            throw new Error("Invalid input for JSON hub protocol. Expected a string.");
+        }
+        if (!input) {
+            return [];
+        }
+        if (logger === null) {
+            logger = _Loggers__WEBPACK_IMPORTED_MODULE_3__["NullLogger"].instance;
+        }
+        // Parse the messages
+        var messages = _TextMessageFormat__WEBPACK_IMPORTED_MODULE_4__["TextMessageFormat"].parse(input);
+        var hubMessages = [];
+        for (var _i = 0, messages_1 = messages; _i < messages_1.length; _i++) {
+            var message = messages_1[_i];
+            var parsedMessage = JSON.parse(message);
+            if (typeof parsedMessage.type !== "number") {
+                throw new Error("Invalid payload.");
+            }
+            switch (parsedMessage.type) {
+                case _IHubProtocol__WEBPACK_IMPORTED_MODULE_0__["MessageType"].Invocation:
+                    this.isInvocationMessage(parsedMessage);
+                    break;
+                case _IHubProtocol__WEBPACK_IMPORTED_MODULE_0__["MessageType"].StreamItem:
+                    this.isStreamItemMessage(parsedMessage);
+                    break;
+                case _IHubProtocol__WEBPACK_IMPORTED_MODULE_0__["MessageType"].Completion:
+                    this.isCompletionMessage(parsedMessage);
+                    break;
+                case _IHubProtocol__WEBPACK_IMPORTED_MODULE_0__["MessageType"].Ping:
+                    // Single value, no need to validate
+                    break;
+                case _IHubProtocol__WEBPACK_IMPORTED_MODULE_0__["MessageType"].Close:
+                    // All optional values, no need to validate
+                    break;
+                default:
+                    // Future protocol changes can add message types, old clients can ignore them
+                    logger.log(_ILogger__WEBPACK_IMPORTED_MODULE_1__["LogLevel"].Information, "Unknown message type '" + parsedMessage.type + "' ignored.");
+                    continue;
+            }
+            hubMessages.push(parsedMessage);
+        }
+        return hubMessages;
+    };
+    /** Writes the specified {@link @aspnet/signalr.HubMessage} to a string and returns it.
+     *
+     * @param {HubMessage} message The message to write.
+     * @returns {string} A string containing the serialized representation of the message.
+     */
+    JsonHubProtocol.prototype.writeMessage = function (message) {
+        return _TextMessageFormat__WEBPACK_IMPORTED_MODULE_4__["TextMessageFormat"].write(JSON.stringify(message));
+    };
+    JsonHubProtocol.prototype.isInvocationMessage = function (message) {
+        this.assertNotEmptyString(message.target, "Invalid payload for Invocation message.");
+        if (message.invocationId !== undefined) {
+            this.assertNotEmptyString(message.invocationId, "Invalid payload for Invocation message.");
+        }
+    };
+    JsonHubProtocol.prototype.isStreamItemMessage = function (message) {
+        this.assertNotEmptyString(message.invocationId, "Invalid payload for StreamItem message.");
+        if (message.item === undefined) {
+            throw new Error("Invalid payload for StreamItem message.");
+        }
+    };
+    JsonHubProtocol.prototype.isCompletionMessage = function (message) {
+        if (message.result && message.error) {
+            throw new Error("Invalid payload for Completion message.");
+        }
+        if (!message.result && message.error) {
+            this.assertNotEmptyString(message.error, "Invalid payload for Completion message.");
+        }
+        this.assertNotEmptyString(message.invocationId, "Invalid payload for Completion message.");
+    };
+    JsonHubProtocol.prototype.assertNotEmptyString = function (value, errorMessage) {
+        if (typeof value !== "string" || value === "") {
+            throw new Error(errorMessage);
+        }
+    };
+    return JsonHubProtocol;
+}());
+
+
+
+/***/ })
+/******/ ]);
+});
+//# sourceMappingURL=signalr.js.map

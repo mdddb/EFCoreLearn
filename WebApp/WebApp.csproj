@@ -10,6 +10,10 @@
 
   <ItemGroup>
     <Content Remove="bundleconfig.json" />
+    <Content Remove="wwwroot\signalr.js" />
+    <Content Remove="wwwroot\signalr.js.map" />
+    <Content Remove="wwwroot\signalr.min.js" />
+    <Content Remove="wwwroot\signalr.min.js.map" />
   </ItemGroup>
 
   <ItemGroup>
@@ -772,6 +776,10 @@
     <None Include="node_modules\ws\lib\websocket.js" />
     <None Include="node_modules\ws\LICENSE" />
     <None Include="node_modules\ws\README.md" />
+    <None Include="wwwroot\lib\signalr.js" />
+    <None Include="wwwroot\lib\signalr.js.map" />
+    <None Include="wwwroot\lib\signalr.min.js" />
+    <None Include="wwwroot\lib\signalr.min.js.map" />
   </ItemGroup>
 
 
@@ -873,5 +881,8 @@
     <TypeScriptCompile Include="node_modules\uri-js\src\uri.ts" />
     <TypeScriptCompile Include="node_modules\uri-js\src\util.ts" />
   </ItemGroup>
+
+
+  <ProjectExtensions><VisualStudio><UserProperties tsconfig_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
