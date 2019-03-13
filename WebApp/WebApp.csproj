@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\test.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="node_modules\%40aspnet\signalr\package.json" />
     <Content Include="node_modules\%40aspnet\signalr\src\third-party-notices.txt" />
     <Content Include="node_modules\ajv\lib\refs\data.json" />
@@ -880,6 +884,7 @@
     <TypeScriptCompile Include="node_modules\uri-js\src\schemes\urn.ts" />
     <TypeScriptCompile Include="node_modules\uri-js\src\uri.ts" />
     <TypeScriptCompile Include="node_modules\uri-js\src\util.ts" />
+    <TypeScriptCompile Include="Scripts\test.ts" />
   </ItemGroup>
 
 

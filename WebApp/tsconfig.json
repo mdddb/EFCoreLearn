@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "allowJs": true, // These settings apply to .js files as well as .ts files
-    "noEmit": true // Do not compile the JS (or TS) files in this project on build
-  }
+    "target": "es5",
+    "removeComments": true,
+    "outDir": "wwwroot/js",
+    "sourceMap": true,
+    "outFile": "wwwroot/js/main.js"
+  },
+  "compileOnSave": true
 }
